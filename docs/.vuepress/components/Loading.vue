@@ -1,9 +1,7 @@
 <template>
 
   <CCallout color="info">
-
-    <CSpinner/>
-
+    <CSpinner component="span"/>
     {{ message }}
 
 

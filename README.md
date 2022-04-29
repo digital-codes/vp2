@@ -15,3 +15,20 @@ not to vuepress-vite/bin/vuepress.js
 
 issue in vue3-component-base, simple fix available, see PR at
 https://github.com/CarterLi/vue-component-base/issues/2
+
+
+### coreui
+carrousel throws error when moving away from page.
+Fix in node_modules/@coreui/vue/dist/index.es.js ~ line 1250
+
+const isVisible$1 = (element) => {
+    // Add this line
+    if ((element || "") === "") return false
+    //
+    const rect = element.getBoundingClientRect();
+    return (rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth));
+};
+
