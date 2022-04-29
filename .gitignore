@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# cahce and temp files (set in package.json)
+cache
+temp
+
