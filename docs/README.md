@@ -34,6 +34,9 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
   --homepage-width: 1160px;
 ```
 
+## Oruga
+
+<OrugaTest></OrugaTest>
 
 ## Leaflet map
 <Suspense>
