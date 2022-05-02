@@ -11,6 +11,7 @@ const { localTheme } = require('./theme')
 
 const { palettePlugin } = require('@vuepress/plugin-palette')
 
+const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 
 module.exports = {
 	// globals
@@ -82,6 +83,16 @@ module.exports = {
                 OrugaTest: path.resolve(__dirname, './components/OrugaTest.vue'),
               },
 		}),
+		],
+		[
+			mediumZoomPlugin({
+				selector: 'img.zoomable',
+				// medium-zoom options here
+				// See: https://github.com/francoischalifour/medium-zoom#options
+				options: {
+				  margin: 16
+				}
+			  })
 		],
 		/*
 		[

@@ -296,7 +296,7 @@ import { cilList, cilShieldAlt, cilCalendar } from '@coreui/icons';
 */
 //import '../public/css/cicons.css'
 
-    export default {
+export default {
       // provide injected icons
       //inject: ['icons'],
       data:() => ({
@@ -364,6 +364,6 @@ import { cilList, cilShieldAlt, cilCalendar } from '@coreui/icons';
        }
       }
     }
-  </script>
+</script>
 
 
