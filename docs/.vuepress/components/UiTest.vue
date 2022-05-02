@@ -1,6 +1,13 @@
 
 <template>
 
+  <div>
+  <CIcon icon="cilList" size="sm"/>
+  <CIcon icon="cilShieldAlt" size="lg"/>
+  <CIcon icon="cilCalendar" size="xxl"/>
+  </div>
+
+
   <CContainer>
   <CRow class="row row-cols-1 row-cols-md-3 g-2 ">
     <CCol >
@@ -282,8 +289,16 @@ import { ref } from "vue"
 
 import axios from 'axios'
 
+// icons
+/* importing here alone gives error. Provide in enhance.app file instead
+import { CIcon } from '@coreui/icons-vue';
+import { cilList, cilShieldAlt, cilCalendar } from '@coreui/icons';
+*/
+import '../public/css/icons.css'
 
     export default {
+      // provide injected icons
+      inject: ['icons'],
       data:() => ({
         active: 0,
         toasts: []
@@ -294,7 +309,8 @@ import axios from 'axios'
         CCard,CCardImage,CCardBody,CCardTitle ,CCardText,
         CToast,CToaster,CToastHeader,CToastBody,
         CChart, CWidgetStatsB,CWidgetStatsE,
-        WordCloudController, WordElement
+        WordCloudController, WordElement,
+        //CIcon,
       },
       methods: {
         createToast() {
@@ -342,7 +358,10 @@ import axios from 'axios'
           console.log("Countries:",countries.value)
         })
         */
-        return { axios, countries }
+        return { axios, countries,
+        // no need to return icons here: available via inject
+        //cilList, cilShieldAlt, cilCalendar
+       }
       }
     }
   </script>

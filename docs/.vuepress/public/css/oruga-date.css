@@ -387,3 +387,31 @@
   flex-shrink: 1;
 }
 
+/* New AKU */
+
+.o-drop__menu  {
+  padding: 10px;
+}
+
+.o-dpck__table__cell {
+  padding: 5px;
+}
+
+/* not yet working */
+
+.o-ctrl-input .o-dtpck__date input {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*
+.o-ctrl-input input  {
+  padding: 5px;
+
+}
+*/
+
+.o-dtpck__date input {
+  padding: 5px;
+  
+}

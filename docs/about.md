@@ -19,7 +19,6 @@ fd
 > d,flwefew
 
 
-
 ## Footnotes
 
 direct entry^[of text at the location] of the footnote

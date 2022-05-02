@@ -1,5 +1,14 @@
 <template>
   <section>
+    <o-field >
+    <calendar-icon class="icon-2x"/>
+      <o-datetimepicker rounded placeholder="Click to select..."
+      :locale="locale" 
+      :datepicker="{showWeekNumber}"
+      :timepicker="{ enableSeconds, hourFormat }">
+      </o-datetimepicker>
+    </o-field>
+    <!--
     <o-field label="Select datetime">
       <o-datetimepicker rounded placeholder="Click to select..."  icon="calendar"
       :locale="locale" 
@@ -7,6 +16,7 @@
       :timepicker="{ enableSeconds, hourFormat }">
       </o-datetimepicker>
     </o-field>
+    -->
   </section>
 </template>
 
