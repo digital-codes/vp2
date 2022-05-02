@@ -294,11 +294,11 @@ import axios from 'axios'
 import { CIcon } from '@coreui/icons-vue';
 import { cilList, cilShieldAlt, cilCalendar } from '@coreui/icons';
 */
-import '../public/css/icons.css'
+//import '../public/css/cicons.css'
 
     export default {
       // provide injected icons
-      inject: ['icons'],
+      //inject: ['icons'],
       data:() => ({
         active: 0,
         toasts: []

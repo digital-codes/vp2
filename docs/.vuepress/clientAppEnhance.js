@@ -103,6 +103,9 @@ const icons = {
   cifDe,
   cifUs,
 }
+// coreicons styles
+import './public/css/cicons.css'
+
 
 
 export default defineClientAppEnhance(({ app, router, siteData }) => {
