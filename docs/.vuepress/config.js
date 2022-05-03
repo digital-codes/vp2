@@ -51,8 +51,8 @@ module.exports = {
 		    '/': {
 		        selectLanguageName: 'German',
 		        navbar: [
-		            { text: 'Home', link: '/' },
-		            { text: 'About', link: '/about/' },
+		            { text: 'Home', link: '/index.html' },
+		            { text: 'About', link: '/about.html' },
 		            ],
 		        sidebar: false,
 		        notFound : ["Nix gefunden ..."],
@@ -61,7 +61,7 @@ module.exports = {
 		    '/en/': {
 		        selectLanguageName: 'English',
 		        navbar: [
-		            { text: 'About', link: '/about/' },
+		            { text: 'About', link: '/about.html' },
 		            ],
 		            notFound : ["Sorry, we didn't find the page ..."],
 		            backToHome: "Back",
@@ -82,6 +82,7 @@ module.exports = {
                 Chart7: path.resolve(__dirname, './components/Chart7.vue'),
                 Carousel: path.resolve(__dirname, './components/Carousel.vue'),
                 OrugaTest: path.resolve(__dirname, './components/OrugaTest.vue'),
+                Download: path.resolve(__dirname, './components/Download.vue'),
               },
 		}),
 		],

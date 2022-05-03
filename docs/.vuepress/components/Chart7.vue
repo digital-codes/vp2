@@ -12,8 +12,24 @@
 
           <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
         </CCardBody>
+        <CCardBody>
+          <CCardTitle>
+            <Download :download-data="downData"
+                file-type="csv"
+                file-name="Down"
+                :data-titles="downTitles"
+                button-text="Download As CSV"/>
+          </CCardTitle>
+          <CCardTitle>
+            <Download :download-data="downData"
+                file-type="json"
+                file-name="Down"
+                :data-titles="downTitles"
+                button-text="Download As JSON"/>
+          </CCardTitle>
+        </CCardBody>
       </CCard>
-
+            
 
 </template>
 
@@ -157,7 +173,7 @@ const chartData =  [
     }
 ]
 
-
+import Download from './Download.vue'
 
 
 export default {
@@ -167,6 +183,11 @@ export default {
     },
     data ()  {
         return {
+            downData: [
+                {"a":1,"b":2,"c":3},
+                {"a":4,"b":5,"c":8}
+            ],
+            downTitles: ["A","B","C"]
         }
     },
      setup() {
@@ -194,5 +215,8 @@ export default {
     }
 }
 
+.color-2 {
+    background: #ccc;
+}
 
 </style>
