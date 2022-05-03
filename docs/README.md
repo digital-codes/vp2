@@ -9,6 +9,7 @@ pageClass: zoomable
 ---
 
 
+
 # Hello VuePress
 
 ## Intro
@@ -78,9 +79,7 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 <Chart5></Chart5>
 
 ## Chart 6
-<Suspense>
 <Chart6></Chart6>
-</Suspense>
 
 # Done
 nothing
