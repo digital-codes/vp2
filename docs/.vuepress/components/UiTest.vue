@@ -183,10 +183,10 @@
 </CRow>
 </CContainer>
 
-  <CCard >
+  <CCard  >
    <CCardBody>
    <CCardTitle>World Map</CCardTitle>
-  <CChart
+  <CChart  v-if="mapLoaded"
       type = 'choropleth'
       :data = "{
         labels: countries.map((d) => d.properties.name),
@@ -216,10 +216,12 @@
       }"
 
   />
+  <Loading v-else message="Loading Map Shapes" />
+
   </CCardBody>
   </CCard >
 
-  <CCard >
+  <CCard>
    <CCardBody>
    <CCardTitle>Word cloud</CCardTitle>
   <CChart
@@ -320,49 +322,30 @@ export default {
           })
         }
       },
-      async setup() {
+      setup() {
         const dummy = [{properties: {name:"abc"}}]
         const countries = ref(dummy)
+        const mapLoaded = ref(false)
+        return { axios, countries, mapLoaded, }
+      },
+      async beforeMount() {
+        // initialize map in before mount
+        console.log("Before  mount")
+        // load map data
         const url = 'https://unpkg.com/world-atlas/countries-50m.json'
         const r = await axios.get(url)
+        const data = r.data
         if (r.status != 200) {
           console.log("Axios failed:",r.status)
         } else {
           console.log("Axios OK")
-          const data = r.data
-          //console.log("Data:",data)
-          countries.value = ChartGeo.topojson.feature(data, data.objects.countries).features;
-          //console.log("Countries:",countries.value)
+          this.countries = ChartGeo.topojson.feature(data, data.objects.countries).features;
         }
-        /*
-        axios.get(url).then((r) => {
-          if (r.status != 200) {
-            console.log("Axios failed:",r.status)
-          } else {
-            console.log("Axios OK")
-            const data = r.data
-            //console.log("Data:",data)
-            countries.value = ChartGeo.topojson.feature(data, data.objects.countries).features;
-            //console.log("Countries:",countries.value)
-          }
-        })
-        */
-        
-        /*
-        fetch('https://unpkg.com/world-atlas/countries-50m.json')
-        .then((r) => r.json())
-        .then((data) => {
-          console.log("Fetch OK")
-          //console.log("Geo:",ChartGeo)
-          countries.value = ChartGeo.topojson.feature(data, data.objects.countries).features;
-          console.log("Countries:",countries.value)
-        })
-        */
-        return { axios, countries,
-        // no need to return icons here: available via inject
-        //cilList, cilShieldAlt, cilCalendar
-       }
-      }
+        // update loaded  state: chart will be mounted via v-if
+        this.mapLoaded = true
+        console.log("Loaded",this.mapLoaded)
+      },
+
     }
 </script>
 

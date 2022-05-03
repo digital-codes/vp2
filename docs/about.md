@@ -53,8 +53,12 @@ bla bla
 
 ## UiTest
 
-will need some time to load due to async setup and *Suspense*
 
+<UiTest>
+</UiTest>
+
+<!--
+will need some time to load due to async setup and *Suspense*
 
 <Suspense>
   <UiTest>
@@ -66,16 +70,8 @@ will need some time to load due to async setup and *Suspense*
     </div>
   </template>
 </Suspense>
-
-<!--
-<Suspense>
-  <UiTest>
-  </UiTest>
-  <template #fallback>
-    Loading UiTest
-  </template>
-</Suspense>
 -->
+
 
 123
 
