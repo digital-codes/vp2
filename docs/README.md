@@ -67,10 +67,8 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 
 
 ## Leaflet map
-<Suspense>
 <GeoMap>
 </GeoMap>
-</Suspense>
 
 ## Chart 1
 <Chart1></Chart1>

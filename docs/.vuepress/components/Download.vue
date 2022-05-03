@@ -1,6 +1,7 @@
 <template>
     <CButton 
       component="a"
+      class="down"
       role="button"
       color="primary" 
       :href="convertData"
@@ -9,8 +10,7 @@
       {{ buttonText }}
     </CButton>
   <!--
-  <a class="download-button"
-     :href="convertData"
+  <a :href="convertData"
      :download="`${fileName}.${fileType}`">
      {{ buttonText }}
   </a>
@@ -95,3 +95,9 @@ export default {
 }
 </script>
 
+<style scoped>
+.down{
+  text-decoration: none !important;
+  margin:5px;
+}
+</style>

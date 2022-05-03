@@ -4,7 +4,7 @@
       <CCard>
         <CCardBody>
           <CCardTitle>Card title</CCardTitle>
-          <div class="chart">
+          <div v-if="mapLoaded" class="chart">
           
           <l-map 
               :zoom="zoom"
@@ -37,6 +37,8 @@
           </l-map>
           -->
           </div>
+          <Loading v-else></Loading>
+
           <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
         </CCardBody>
       </CCard>
@@ -72,7 +74,6 @@ const latLng = function (x,y) {return {lat:x,lon:y}}
 
     export default {
       data:() => ({
-        mapIsReady : 0,
         // new
         zoom: 13,
         center: latLng(48.9984, 8.402),
@@ -89,9 +90,9 @@ const latLng = function (x,y) {return {lat:x,lon:y}}
         LMap, LGeoJson,
         LTileLayer, LMarker, LPopup, LTooltip
       },
-      async setup() {
-        //const axios = axios
-        const mapIsReady = ref(false)
+      setup() {
+        // load data in asyn  beforeMount ..
+        const mapLoaded = ref(false)
         const geojson = ref({
           type: "FeatureCollection",
           features: [
@@ -99,33 +100,23 @@ const latLng = function (x,y) {return {lat:x,lon:y}}
           ],
         })
         const geojsonOptions = ref({})
-        // asyn cload marker
-        /*
-        const { circleMarker } = await import("leaflet/dist/leaflet-src.esm");
-        // And now the Leaflet circleMarker function can be used by the options:
-        geojsonOptions.value.pointToLayer = (feature, latLng) =>
-          circleMarker(latLng, { radius: 8 });
-        mapIsReady.value = true;
-        */
-
-        const url = "data/pois.json"
-        const r = await axios.get(url)
-        /*
-        .then((r) => {
-            console.log(r)
-            console.log(r.data)
-            dt.value = r.data
-            console.log(dt)
-            })
-        */
-        console.log(r)
-        console.log(r.data)
-        const withPopup = ref(r.data.pop)
-        const withTooltip = ref(r.data.tool)
-        console.log(withPopup,withTooltip)
-
-        return { axios, withPopup, withTooltip , geojson, geojsonOptions, mapIsReady }
+        const withPopup = ref(null)
+        const withTooltip = ref(null)
+        return { axios, withPopup, withTooltip , geojson, geojsonOptions, mapLoaded }
       },
+      async beforeMount() {
+          // initialize map in before mount
+          console.log("Before  mount")
+          // load map data
+          const url = "data/pois.json"
+          const r = await axios.get(url)
+          this.withPopup = r.data.pop
+          this.withTooltip = r.data.tool
+          //
+          this.mapLoaded = true
+          console.log("Loaded",this.mapLoaded)
+      },
+
       methods: {
         zoomUpdate(zoom) {
           this.currentZoom = zoom;

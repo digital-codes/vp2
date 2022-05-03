@@ -5,28 +5,24 @@
       <CCard >
         <CCardBody>
           <CCardTitle>Card title</CCardTitle>
-
             <vue-echarts 
                 :option="options" class="chart" autoresize ref="chart" 
             />
 
+          <CCardSubtitle class="caption">
+            Image caption
+          </CCardSubtitle>
           <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
-        </CCardBody>
-        <CCardBody>
-          <CCardTitle>
+          <CCardSubtitle>
             <Download :download-data="downData"
                 file-type="csv"
                 file-name="Down"
-                :data-titles="downTitles"
                 button-text="Download As CSV"/>
-          </CCardTitle>
-          <CCardTitle>
             <Download :download-data="downData"
                 file-type="json"
                 file-name="Down"
-                :data-titles="downTitles"
                 button-text="Download As JSON"/>
-          </CCardTitle>
+          </CCardSubtitle>
         </CCardBody>
       </CCard>
             
@@ -45,7 +41,7 @@ import axios from 'axios'
 
 import { ref } from 'vue';
 
-import { CCard,CCardBody,CCardTitle ,CCardText} from '@coreui/vue'
+import { CCard,CCardBody,CCardTitle ,CCardSubtitle, CCardText} from '@coreui/vue'
 import '../public/css/colors.css'
 import '../public/css/positions.css'
 import '../public/css/card.css'
@@ -179,7 +175,7 @@ import Download from './Download.vue'
 export default {
     components: {
         VueEcharts, 
-        CCard,CCardBody,CCardTitle ,CCardText,
+        CCard,CCardBody,CCardTitle, CCardSubtitle, CCardText,
     },
     data ()  {
         return {
@@ -187,7 +183,6 @@ export default {
                 {"a":1,"b":2,"c":3},
                 {"a":4,"b":5,"c":8}
             ],
-            downTitles: ["A","B","C"]
         }
     },
      setup() {
