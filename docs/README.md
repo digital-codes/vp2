@@ -81,5 +81,8 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 ## Chart 6
 <Chart6></Chart6>
 
+## Chart 7
+<Chart7></Chart7>
+
 # Done
 nothing
