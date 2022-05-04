@@ -32,5 +32,6 @@ const isVisible$1 = (element) => {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth));
 };
 
-See also (PR)[https://github.com/coreui/coreui-vue/issues/206]
+See also [PR](https://github.com/coreui/coreui-vue/issues/206)
+
 
