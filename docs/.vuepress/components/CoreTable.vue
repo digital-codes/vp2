@@ -3,7 +3,7 @@
     <CCardBody>
       <CCardTitle>Card title</CCardTitle>
         <!-- -->
-        <div class="ctable">
+        <div v-if="dataLoaded" class="ctable">
         <CTable responsive="lg">
         <CTableHead v-if="stickyHeader">
             <CTableRow>
@@ -29,6 +29,16 @@
       <CCardText>Some quick example 
         text to build on the card title and make up the bulk of the card's content.
       </CCardText>
+      <CCardSubtitle>
+        <Download :download-data="rows"
+            file-type="csv"
+            file-name="Down"
+            button-text="Download As CSV"/>
+        <Download :download-data="rows"
+            file-type="json"
+            file-name="Down"
+            button-text="Download As JSON"/>
+      </CCardSubtitle>
     </CCardBody>
   </CCard>
 </template>
@@ -44,7 +54,12 @@ import '../public/css/modals.css'
 import '../public/css/container.css'
 
 import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell } from '@coreui/vue'
-//import '../public/css/tables.css'
+
+import axios from 'axios'
+import { ref } from "vue"
+
+import Download from './Download.vue'
+
 
  export default {
     components: {
@@ -83,61 +98,28 @@ import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableData
     },
     data() {
       return {
-        hdrs: ["A","B","C","D","E","F","G","H","I"],
-        rows: [
-          {
-            A: 1,
-            B: '2016/10/15 13:43:27',
-            C: 'Male',
-            D: 1,
-            E: '2016/10/15 13:43:27',
-            F: 'Male',
-            G: 1,
-            H: '2016/10/15 13:43:27',
-            I: 'Male'
-          },
-          {
-            A: 2,
-            B: '2016/12/15 06:00:53',
-            C: 'Male',
-            D: 1,
-            E: '2016/10/15 13:43:27',
-            F: 'Male',
-            G: 1,
-            H: '2016/10/15 13:43:27',
-            I: 'Male'
-
-          },
-          {
-            A: 3,
-            B: '2016/04/26 06:26:28',
-            C: 'Female',
-            D: 1,
-            E: '2016/10/15 13:43:27',
-            F: 'Male',
-            G: 1,
-            H: '2016/10/15 13:43:27',
-            I: 'Male'
-
-          },
-          {
-            A: 4,
-            B: '2017/04/26 06:26:28',
-            C: 'Diverse',
-            D: 1,
-            E: '2016/10/15 13:43:27',
-            F: 'Male',
-            G: 1,
-            H: '2016/10/15 13:43:27',
-            I: 'Male'
-
-          },
-        ],
       }
     },
+     setup() {
+       // initialize parms
+        const rows = ref([])
+        const hdrs = ref([])
+        const dataLoaded = ref(false)
+        return { dataLoaded, hdrs, rows }
+    },
     async beforeMount() {
-
-    }
+        // initialize data
+        let url = "/data/table.json"
+        let r = await axios.get(url)
+        this.rows = r.data
+        console.log("Rows:",this.rows)
+        // extract keys from item 0
+        this.hdrs = Object.keys(this.rows[0])
+        console.log("Hdrs:",this.hdrs)
+        // update loaded  state: chart will be mounted via v-if
+        this.dataLoaded = true
+        console.log("Loaded",this.dataLoaded)
+    },
   }
 </script>
 
@@ -155,6 +137,7 @@ table {
   border-spacing: 2px;
   margin-top: 0;
   display: table;
+  min-width: 100%;
 }
 
 td, th {
