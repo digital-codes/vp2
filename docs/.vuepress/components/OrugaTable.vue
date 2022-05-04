@@ -2,8 +2,13 @@
   <CCard>
     <CCardBody>
       <CCardTitle>Card title</CCardTitle>
-    <o-table :data="data" :columns="columns" :sticky-header="stickyHeaders"></o-table>
-      <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
+        <section>
+        <o-table :data="data" :columns="columns" :sticky-header="stickyHeaders"></o-table>
+        </section>
+
+      <CCardText>Some quick example 
+        text to build on the card title and make up the bulk of the card's content.
+      </CCardText>
     </CCardBody>
   </CCard>
 </template>
