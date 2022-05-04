@@ -5,234 +5,26 @@
         <!-- -->
         <div class="ctable">
         <CTable responsive="lg">
-        <CTableHead>
-            <CTableRow >
-            <CTableHeaderCell scope="col" class="sticky-index">#</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+        <CTableHead v-if="stickyHeader">
+            <CTableRow>
+              <CTableHeaderCell v-for="(item, index) in hdrs" scope="col" :class="getHdrClass(index)">{{ item }}</CTableHeaderCell>
             </CTableRow>
         </CTableHead>
         <CTableBody>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">1</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">2</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">3</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">4</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">5</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">6</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">7</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">8</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            </CTableRow>
-            <CTableRow>
-            <CTableHeaderCell scope="row" class="sticky-col">9</CTableHeaderCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
-            <CTableDataCell>Cell</CTableDataCell>
+            <CTableRow  v-for="(row) in rows" >
+            <template v-for="(item, index) in row"> 
+              <template v-if="isIdxPos(index)">
+                <CTableHeaderCell v-if="stickyIndex" scope="row" :class="getIdxClass()"> {{ item }} </CTableHeaderCell>
+                <CTableDataCell v-else > {{ item }}</CTableDataCell>
+              </template>
+              <template v-else>
+                <CTableDataCell> {{ item }}</CTableDataCell>
+              </template>
+            </template>
             </CTableRow>
         </CTableBody>
         </CTable>
         </div>
-
-        <!-- works too but needs more css
-        <table class="table-responsive-sm  table-bordered" style="max-height:150px;">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            </tr>
-        </tbody>
-        </table>
-        -->
         
       <CCardText>Some quick example 
         text to build on the card title and make up the bulk of the card's content.
@@ -259,152 +51,92 @@ import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableData
       CCard,CCardBody,CCardTitle ,CCardText, 
       CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell
     },
+    props: {
+      stickyIndex: {
+        required: true,
+        default: true,
+      },
+      stickyHeader: {
+        required: true,
+        default: true,
+      }
+    },
+    methods: {
+      getHdrClass(i) {
+        if (i == 0) {
+          if (this.stickyIndex && this.stickyHeader) return "sticky-index"
+          if (!this.stickyIndex && this.stickyHeader) return "sticky-hdr"
+          if (this.stickyIndex && !this.stickyHeader) return "sticky-col"
+          return ""
+        } else {
+          return this.stickyHeader? "sticky-hdr" : ""
+        }
+      },
+      getIdxClass() {
+        return this.stickyIndex ? "sticky-col" : ""
+      },
+      isIdxPos(i) {
+        // Note: index may be non numerical
+        //console.log("Index:",i,this.hdrs)
+        return (this.stickyIndex && (i==this.hdrs[0]))
+      }
+    },
     data() {
       return {
-        data: [
+        hdrs: ["A","B","C","D","E","F","G","H","I"],
+        rows: [
           {
-            id: 1,
-            user: { first_name: 'Jesse', last_name: 'Simmons' },
-            date: '2016/10/15 13:43:27',
-            gender: 'Male'
+            A: 1,
+            B: '2016/10/15 13:43:27',
+            C: 'Male',
+            D: 1,
+            E: '2016/10/15 13:43:27',
+            F: 'Male',
+            G: 1,
+            H: '2016/10/15 13:43:27',
+            I: 'Male'
           },
           {
-            id: 2,
-            user: { first_name: 'John', last_name: 'Jacobs' },
-            date: '2016/12/15 06:00:53',
-            gender: 'Male'
+            A: 2,
+            B: '2016/12/15 06:00:53',
+            C: 'Male',
+            D: 1,
+            E: '2016/10/15 13:43:27',
+            F: 'Male',
+            G: 1,
+            H: '2016/10/15 13:43:27',
+            I: 'Male'
+
           },
           {
-            id: 3,
-            user: { first_name: 'Tina', last_name: 'Gilbert' },
-            date: '2016/04/26 06:26:28',
-            gender: 'Female'
+            A: 3,
+            B: '2016/04/26 06:26:28',
+            C: 'Female',
+            D: 1,
+            E: '2016/10/15 13:43:27',
+            F: 'Male',
+            G: 1,
+            H: '2016/10/15 13:43:27',
+            I: 'Male'
+
           },
           {
-            id: 4,
-            user: { first_name: 'Clarence', last_name: 'Flores' },
-            date: '2016/04/10 10:28:46',
-            gender: 'Male'
+            A: 4,
+            B: '2017/04/26 06:26:28',
+            C: 'Diverse',
+            D: 1,
+            E: '2016/10/15 13:43:27',
+            F: 'Male',
+            G: 1,
+            H: '2016/10/15 13:43:27',
+            I: 'Male'
+
           },
-          {
-            id: 5,
-            user: { first_name: 'Anne', last_name: 'Lee' },
-            date: '2016/12/06 14:38:38',
-            gender: 'Female'
-          },
-          {
-            id: 6,
-            user: { first_name: 'Sara', last_name: 'Armstrong' },
-            date: '2016/09/23 18:50:04',
-            gender: 'Female'
-          },
-          {
-            id: 7,
-            user: { first_name: 'Anthony', last_name: 'Webb' },
-            date: '2016/08/30 23:49:38',
-            gender: 'Male'
-          },
-          {
-            id: 8,
-            user: { first_name: 'Andrew', last_name: 'Greene' },
-            date: '2016/11/20 14:57:47',
-            gender: 'Male'
-          },
-          {
-            id: 9,
-            user: { first_name: 'Russell', last_name: 'White' },
-            date: '2016/07/13 09:29:49',
-            gender: 'Male'
-          },
-          {
-            id: 10,
-            user: { first_name: 'Lori', last_name: 'Hunter' },
-            date: '2016/12/09 01:44:05',
-            gender: 'Female'
-          }
         ],
-        columns: [
-          {
-            field: 'id',
-            label: 'ID',
-            width: '40',
-            numeric: true,
-            sticky: true,
-            thAttrs: () => ({ class: 'is-sticky-column-one' }),
-            tdAttrs: () => ({ class: 'is-sticky-column-one' })
-          },
-          {
-            field: 'user.first_name',
-            label: 'First Name'
-          },
-          {
-            field: 'user.last_name',
-            label: 'Last Name'
-          },
-          {
-            field: 'date',
-            label: 'Date',
-            position: 'centered',
-          },
-          {
-            field: 'gender',
-            label: 'Gender'
-          },
-          {
-            field: 'id',
-            label: 'Column A'
-          },
-          {
-            field: 'id',
-            label: 'Column B'
-          },
-          {
-            field: 'id',
-            label: 'Column C'
-          },
-          {
-            field: 'id',
-            label: 'Column D'
-          },
-          {
-            field: 'id',
-            label: 'Column E'
-          },
-          {
-            field: 'id',
-            label: 'Column F'
-          },
-          {
-            field: 'id',
-            label: 'Column G'
-          },
-          {
-            field: 'id',
-            label: 'Column H'
-          },
-          {
-            field: 'id',
-            label: 'Column I'
-          },
-          {
-            field: 'id',
-            label: 'Column L'
-          },
-          {
-            field: 'id',
-            label: 'Column M'
-          },
-          {
-            field: 'id',
-            label: 'Column N'
-          },
-          {
-            field: 'id',
-            label: 'Column O'
-          }
-        ],
-        stickyHeaders: true
       }
+    },
+    async beforeMount() {
+
     }
   }
 </script>

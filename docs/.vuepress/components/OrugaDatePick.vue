@@ -1,36 +1,14 @@
 <template>
   <section>
-  <div>
-    <!-- with MDIcons -->
-    <o-field >
-    <calendar-icon class="icon-2x"/>
-      <o-datetimepicker rounded placeholder="Click to select..."
-      :locale="locale" 
-      :datepicker="{showWeekNumber}"
-      :timepicker="{ enableSeconds, hourFormat }">
-      </o-datetimepicker>
-    </o-field>
-  </div>
-  <div>
     <!-- with coreui icons -->
     <o-field >
-    <CIcon icon="cilCalendar" size="xl"/>
+    <CIcon icon="cilCalendar" size="xl" class="calIcon"/>
       <o-datetimepicker rounded placeholder="Click to select..."
       :locale="locale" 
       :datepicker="{showWeekNumber}"
       :timepicker="{ enableSeconds, hourFormat }">
       </o-datetimepicker>
     </o-field>
-  </div>
-    <!--
-    <o-field label="Select datetime">
-      <o-datetimepicker rounded placeholder="Click to select..."  icon="calendar"
-      :locale="locale" 
-      :datepicker="{showWeekNumber}"
-      :timepicker="{ enableSeconds, hourFormat }">
-      </o-datetimepicker>
-    </o-field>
-    -->
   </section>
 </template>
 
@@ -57,3 +35,10 @@ import '../public/css/oruga.css'
     }
   }
 </script>
+
+<style scoped>
+.calIcon {
+  margin-right: 5px;
+}
+
+</style>

@@ -63,16 +63,19 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 ## Oruga
 
 ### Calendar
-<OrugaTest></OrugaTest>
+<OrugaDatePick></OrugaDatePick>
 
 ### Oruga  Table
 Looks nice  with sticky header and index but 
 **Not working properly on page exit**
-
+Unused ...
+<!--
 <OrugaTable></OrugaTable>
+-->
 
 ### Coreui  Table
-Not so nice, but working
+
+With some extra effort almost as nice, and working
 <CoreTable></CoreTable>
 
 
