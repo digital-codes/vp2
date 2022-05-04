@@ -40,7 +40,6 @@ var data = [[0, 0, 5], [0, 1, 1], [0, 2, 0], [0, 3, 0], [0, 4, 0], [0, 5, 0], [0
 // cen use a 4th dimension for color, see data mapping below
 
 export default {
-  name: 'Chart5',
   components: {
         VueEcharts,
         CCard,CCardBody,CCardTitle ,CCardText,

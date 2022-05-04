@@ -1782,6 +1782,7 @@ html {
   position: sticky;
   left: 0;
   top: 0;
+  z-index:5; /*calc(var(--oruga-table-sticky-zindex,1) + 2);*/
 }
 .o-table__th--unselectable {
   -webkit-touch-callout: none;

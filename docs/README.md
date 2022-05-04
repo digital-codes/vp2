@@ -62,7 +62,12 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 
 ## Oruga
 
+### Calendar
 <OrugaTest></OrugaTest>
+
+### Table
+
+<OrugaTable></OrugaTable>
 
 
 

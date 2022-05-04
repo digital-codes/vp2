@@ -82,6 +82,7 @@ module.exports = {
                 Chart7: path.resolve(__dirname, './components/Chart7.vue'),
                 Carousel: path.resolve(__dirname, './components/Carousel.vue'),
                 OrugaTest: path.resolve(__dirname, './components/OrugaTest.vue'),
+                OrugaTable: path.resolve(__dirname, './components/OrugaTable.vue'),
                 Download: path.resolve(__dirname, './components/Download.vue'),
               },
 		}),

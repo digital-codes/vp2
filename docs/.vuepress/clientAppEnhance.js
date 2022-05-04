@@ -7,6 +7,11 @@ import { defineClientAppEnhance } from '@vuepress/client'
 import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
 import './public/css/oruga-date.css'
 
+// oruga table
+import {  Table } from '@oruga-ui/oruga-next'
+import './public/css/oruga-table.css'
+
+
 // MDIcons
 // https://github.com/Templarian/MaterialDesign
 // https://github.com/google/material-design-icons
@@ -115,6 +120,7 @@ export default defineClientAppEnhance(({ app, router, siteData }) => {
   app.use( Datetimepicker)
   app.use( Field)
   app.use( Input)
+  app.use( Table)
 
 
   // MDIcons
