@@ -6,16 +6,16 @@
         <div class="ctable">
         <CTable responsive="lg">
         <CTableHead>
-            <CTableRow  class="sticky-row">
-            <CTableHeaderCell scope="col" class="sticky-col sticky-index">#</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
+            <CTableRow >
+            <CTableHeaderCell scope="col" class="sticky-index">#</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
+            <CTableHeaderCell scope="col" class="sticky-hdr">Heading</CTableHeaderCell>
             </CTableRow>
         </CTableHead>
         <CTableBody>
@@ -418,7 +418,9 @@ import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableData
   position: relative;
 }
 
-.table {
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
   margin-top: 0;
   display: table;
 }
@@ -426,9 +428,10 @@ import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableData
 td, th {
   vertical-align: bottom;
   text-align: left;
+  border: solid 1px rgba(0,0,0,.2);
 }
 
-.sticky-row {
+.sticky-hdr {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -453,12 +456,5 @@ td, th {
   background: yellow;
 }
 
-/*
-thead {
-	position: sticky;
-	top: 0;
-	background: white;
-}
-*/
 
 </style>
