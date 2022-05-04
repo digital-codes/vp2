@@ -23,6 +23,8 @@ module.exports = {
 	 head: [
 		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
+		// devtools
+		["script", { src: "http://localhost:8098" }],
 		// ...other tags
 	  ],
     locales: {
@@ -51,8 +53,8 @@ module.exports = {
 		    '/': {
 		        selectLanguageName: 'German',
 		        navbar: [
-		            { text: 'Home', link: '/index.html' },
-		            { text: 'About', link: '/about.html' },
+		            { text: 'Home', link: '/' },
+		            { text: 'About', link: '/about/' },
 		            ],
 		        sidebar: false,
 		        notFound : ["Nix gefunden ..."],
@@ -61,7 +63,7 @@ module.exports = {
 		    '/en/': {
 		        selectLanguageName: 'English',
 		        navbar: [
-		            { text: 'About', link: '/about.html' },
+		            { text: 'About', link: '/about/' },
 		            ],
 		            notFound : ["Sorry, we didn't find the page ..."],
 		            backToHome: "Back",
@@ -83,6 +85,7 @@ module.exports = {
                 Carousel: path.resolve(__dirname, './components/Carousel.vue'),
                 OrugaTest: path.resolve(__dirname, './components/OrugaTest.vue'),
                 OrugaTable: path.resolve(__dirname, './components/OrugaTable.vue'),
+                CoreTable: path.resolve(__dirname, './components/CoreTable.vue'),
                 Download: path.resolve(__dirname, './components/Download.vue'),
               },
 		}),

@@ -162,22 +162,23 @@ export default {
     },
     mounted() {
         // start fake update after initial delay
+        return // fakeupdate might cause issue when leaving page ...
         console.log("mounted. Starting fake update")
         setTimeout(() => {
             this.fakeUpdate()
         }, 5000);
     },
+        /*
     watch: {
         // just to demonstrate dynamic updates
-        /*
         mapLoaded(x)  {
             console.log("Loaded watched")
             setTimeout(() => {
                 this.fakeUpdate()
             }, 5000);
         },
-        */
     }
+        */
 }
 </script>
 

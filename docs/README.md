@@ -65,10 +65,15 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 ### Calendar
 <OrugaTest></OrugaTest>
 
-### Table
+### Oruga  Table
+Looks nice  with sticky header and index but 
+**Not working properly on page exit**
 
 <OrugaTable></OrugaTable>
 
+### Coreui  Table
+Not so nice, but working
+<CoreTable></CoreTable>
 
 
 ## Leaflet map

@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+  }
+  
+  caption {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: var(--cui-table-caption-color, rgba(44, 56, 74, 0.38));
+    text-align: left;
+  }
+  
+  th {
+    font-weight: 600;
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+  }
+  
+  thead,
+  tbody,
+  tfoot,
+  tr,
+  td,
+  th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+  }
+
+
+  .table {
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-bg: transparent;
+    --cui-table-border-color: #d8dbe0;
+    --cui-table-accent-bg: transparent;
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-striped-bg: rgba(0, 0, 21, 0.05);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(0, 0, 21, 0.1);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(0, 0, 21, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--cui-table-color);
+    vertical-align: top;
+    border-color: var(--cui-table-border-color);
+  }
+  .table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    color: var(--cui-table-color);
+    background-color: var(--cui-table-bg);
+    border-bottom-color: var(--cui-table-border-color);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--cui-table-accent-bg);
+  }
+  .table > tbody {
+    vertical-align: inherit;
+  }
+  .table > thead {
+    vertical-align: bottom;
+  }
+  
+  .caption-top {
+    caption-side: top;
+  }
+  
+  .table-sm > :not(caption) > * > * {
+    padding: 0.25rem 0.25rem;
+  }
+  
+  .table-bordered > :not(caption) > * {
+    border-width: 1px 0;
+  }
+  .table-bordered > :not(caption) > * > * {
+    border-width: 0 1px;
+  }
+  
+  .table-borderless > :not(caption) > * > * {
+    border-bottom-width: 0;
+  }
+  .table-borderless > :not(:first-child) {
+    border-top-width: 0;
+  }
+  
+  .table-striped > tbody > tr:nth-of-type(odd) > * {
+    --cui-table-accent-bg: var(--cui-table-striped-bg);
+    color: var(--cui-table-striped-color);
+  }
+  
+  .table-active {
+    --cui-table-accent-bg: var(--cui-table-active-bg);
+    color: var(--cui-table-active-color);
+  }
+  
+  .table-hover > tbody > tr:hover > * {
+    --cui-table-accent-bg: var(--cui-table-hover-bg);
+    color: var(--cui-table-hover-color);
+  }
+  
+  .table-primary {
+    --cui-table-bg: #d6d2f8;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(198, 196, 232, 0.995);
+    --cui-table-striped-bg: rgba(206, 203, 240, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(198, 196, 232, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(202, 199, 236, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-secondary {
+    --cui-table-bg: #ebedef;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(218, 220, 224, 0.995);
+    --cui-table-striped-bg: rgba(226, 229, 232, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(218, 220, 224, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(222, 225, 228, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-success {
+    --cui-table-bg: #d5f1de;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(198, 224, 208, 0.995);
+    --cui-table-striped-bg: rgba(205, 233, 215, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(198, 224, 208, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(201, 228, 212, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-danger {
+    --cui-table-bg: #fadddd;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(231, 206, 208, 0.995);
+    --cui-table-striped-bg: rgba(241, 214, 214, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(231, 206, 208, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(236, 210, 211, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-warning {
+    --cui-table-bg: #feefd0;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(235, 222, 196, 0.995);
+    --cui-table-striped-bg: rgba(244, 231, 202, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(235, 222, 196, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(240, 226, 199, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-info {
+    --cui-table-bg: #d6ebff;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(198, 219, 238, 0.995);
+    --cui-table-striped-bg: rgba(206, 227, 247, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(198, 219, 238, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(202, 223, 243, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-light {
+    --cui-table-bg: #fbfbfc;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(232, 233, 236, 0.995);
+    --cui-table-striped-bg: rgba(242, 242, 244, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(232, 233, 236, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(237, 238, 240, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-dark {
+    --cui-table-bg: #dcdfe3;
+    --cui-table-color: rgba(44, 56, 74, 0.95);
+    --cui-table-border-color: rgba(204, 208, 213, 0.995);
+    --cui-table-striped-bg: rgba(212, 215, 220, 0.9975);
+    --cui-table-striped-color: rgba(44, 56, 74, 0.95);
+    --cui-table-active-bg: rgba(204, 208, 213, 0.995);
+    --cui-table-active-color: rgba(44, 56, 74, 0.95);
+    --cui-table-hover-bg: rgba(208, 212, 217, 0.99625);
+    --cui-table-hover-color: rgba(44, 56, 74, 0.95);
+    color: var(--cui-table-color);
+    border-color: var(--cui-table-border-color);
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 575.98px) {
+    .table-responsive-sm {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .table-responsive-md {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .table-responsive-lg {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 1199.98px) {
+    .table-responsive-xl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 1399.98px) {
+    .table-responsive-xxl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+
+  /* aku */
+  /*
+  ctablerow {
+    display:block;
+  }
+
+  ctablehead {
+    font-weight: 600;
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+  }
+  
+  ctablebody,
+  ctablehead,
+  ctablerow
+  {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+  }
+  */
