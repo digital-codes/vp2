@@ -29,7 +29,8 @@
       <CCardText>Some quick example 
         text to build on the card title and make up the bulk of the card's content.
       </CCardText>
-      <CCardSubtitle>
+      <CCardSubtitle v-if="dataLoaded">
+        <!-- make sure to have this disabled until data loaded else "Blob" will fail during SSR -->
         <Download :download-data="rows"
             file-type="csv"
             file-name="Down"
@@ -46,7 +47,7 @@
 
 <script>
 
-import { CCard,CCardBody,CCardTitle ,CCardText} from '@coreui/vue'
+import { CCard,CCardBody,CCardTitle, CCardSubtitle, CCardText} from '@coreui/vue'
 import '../public/css/colors.css'
 import '../public/css/positions.css'
 import '../public/css/card.css'
@@ -63,8 +64,9 @@ import Download from './Download.vue'
 
  export default {
     components: {
-      CCard,CCardBody,CCardTitle ,CCardText, 
-      CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell
+      CCard,CCardBody,CCardTitle ,CCardSubtitle, CCardText, 
+      CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell,
+      Download,
     },
     props: {
       stickyIndex: {

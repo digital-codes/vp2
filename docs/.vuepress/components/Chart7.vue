@@ -176,6 +176,7 @@ export default {
     components: {
         VueEcharts, 
         CCard,CCardBody,CCardTitle, CCardSubtitle, CCardText,
+        Download
     },
     data ()  {
         return {

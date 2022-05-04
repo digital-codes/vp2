@@ -24,6 +24,7 @@ import '../public/css/colors.css'
 import '../public/css/positions.css'
 import '../public/css/button.css'
 
+// Blob (JSON processing) is Browser only!
 
 // copyfrom https://github.com/edisdev/download-json-data/blob/develop/src/components/Download.vue
 export default {
