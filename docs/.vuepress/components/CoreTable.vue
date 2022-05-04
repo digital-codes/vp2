@@ -2,12 +2,12 @@
   <CCard>
     <CCardBody>
       <CCardTitle>Card title</CCardTitle>
-        <!--
-        <div>
-        <CTable responsive="xl">
+        <!-- -->
+        <div class="ctable">
+        <CTable responsive="lg">
         <CTableHead>
-            <CTableRow>
-            <CTableHeaderCell scope="col">#</CTableHeaderCell>
+            <CTableRow  class="sticky-row">
+            <CTableHeaderCell scope="col" class="sticky-col sticky-index">#</CTableHeaderCell>
             <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
             <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
             <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
@@ -20,7 +20,7 @@
         </CTableHead>
         <CTableBody>
             <CTableRow>
-            <CTableHeaderCell scope="row">1</CTableHeaderCell>
+            <CTableHeaderCell scope="row" class="sticky-col">1</CTableHeaderCell>
             <CTableDataCell>Cell</CTableDataCell>
             <CTableDataCell>Cell</CTableDataCell>
             <CTableDataCell>Cell</CTableDataCell>
@@ -31,7 +31,7 @@
             <CTableDataCell>Cell</CTableDataCell>
             </CTableRow>
             <CTableRow>
-            <CTableHeaderCell scope="row">2</CTableHeaderCell>
+            <CTableHeaderCell scope="row" class="sticky-col">2</CTableHeaderCell>
             <CTableDataCell>Cell</CTableDataCell>
             <CTableDataCell>Cell</CTableDataCell>
             <CTableDataCell>Cell</CTableDataCell>
@@ -42,7 +42,73 @@
             <CTableDataCell>Cell</CTableDataCell>
             </CTableRow>
             <CTableRow>
-            <CTableHeaderCell scope="row">3</CTableHeaderCell>
+            <CTableHeaderCell scope="row" class="sticky-col">3</CTableHeaderCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            </CTableRow>
+            <CTableRow>
+            <CTableHeaderCell scope="row" class="sticky-col">4</CTableHeaderCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            </CTableRow>
+            <CTableRow>
+            <CTableHeaderCell scope="row" class="sticky-col">5</CTableHeaderCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            </CTableRow>
+            <CTableRow>
+            <CTableHeaderCell scope="row" class="sticky-col">6</CTableHeaderCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            </CTableRow>
+            <CTableRow>
+            <CTableHeaderCell scope="row" class="sticky-col">7</CTableHeaderCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            </CTableRow>
+            <CTableRow>
+            <CTableHeaderCell scope="row" class="sticky-col">8</CTableHeaderCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            <CTableDataCell>Cell</CTableDataCell>
+            </CTableRow>
+            <CTableRow>
+            <CTableHeaderCell scope="row" class="sticky-col">9</CTableHeaderCell>
             <CTableDataCell>Cell</CTableDataCell>
             <CTableDataCell>Cell</CTableDataCell>
             <CTableDataCell>Cell</CTableDataCell>
@@ -55,8 +121,8 @@
         </CTableBody>
         </CTable>
         </div>
-        -->
 
+        <!-- works too but needs more css
         <table class="table-responsive-sm  table-bordered" style="max-height:150px;">
         <thead>
             <tr>
@@ -166,7 +232,7 @@
             </tr>
         </tbody>
         </table>
-
+        -->
         
       <CCardText>Some quick example 
         text to build on the card title and make up the bulk of the card's content.
@@ -185,14 +251,13 @@ import '../public/css/card.css'
 import '../public/css/modals.css'
 import '../public/css/container.css'
 
-import { CTable } from '@coreui/vue'
-//import '../public/css/coreui.css'
-import '../public/css/positions.css'
-import '../public/css/tables.css'
+import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell } from '@coreui/vue'
+//import '../public/css/tables.css'
 
  export default {
     components: {
-      CCard,CCardBody,CCardTitle ,CCardText, CTable
+      CCard,CCardBody,CCardTitle ,CCardText, 
+      CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell
     },
     data() {
       return {
@@ -346,11 +411,54 @@ import '../public/css/tables.css'
 
 <style>
 
-.o-table__wrapper {
-  max-height: 300px;
+
+.ctable {
+  max-height:200px; 
+  overflow-y:auto;
+  position: relative;
 }
-.is-sticky-column-one {
-  background: #006724 !important;
-  color: white !important;
+
+.table {
+  margin-top: 0;
+  display: table;
 }
+
+td, th {
+  vertical-align: bottom;
+  text-align: left;
+}
+
+.sticky-row {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index:3;
+}
+
+.sticky-col {
+  position: -webkit-sticky;
+  position: sticky;
+  background: white;
+  left:0;
+  z-index: 4;
+}
+
+.sticky-index {
+  z-index: 5;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left:0;
+  background: yellow;
+}
+
+/*
+thead {
+	position: sticky;
+	top: 0;
+	background: white;
+}
+*/
+
 </style>
