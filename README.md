@@ -21,6 +21,7 @@ https://github.com/CarterLi/vue-component-base/issues/2
 carrousel throws error when moving away from page.
 Fix in node_modules/@coreui/vue/dist/index.es.js ~ line 1250
 
+```
 const isVisible$1 = (element) => {
     // Add this line
     if ((element || "") === "") return false
@@ -31,6 +32,7 @@ const isVisible$1 = (element) => {
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth));
 };
+```
 
 See also [PR](https://github.com/coreui/coreui-vue/issues/206)
 
