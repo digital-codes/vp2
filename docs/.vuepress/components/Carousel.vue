@@ -4,7 +4,7 @@
         <!-- automatic cycling throws error on leaving page 
         -- hmmm, disabling  intervall doesn't help ...
         -->
-        <CCarousel interval="false" controls>
+        <CCarousel :interval=false controls>
         <CCarouselItem>
             <img class="d-block w-100" src="/images/slide1.png" alt="slide 1"/>
         </CCarouselItem>
