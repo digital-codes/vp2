@@ -23,15 +23,20 @@ Fix in node_modules/@coreui/vue/dist/index.es.js ~ line 1250
 
 ```
 const isVisible$1 = (element) => {
-    // Add this line
-    if ((element || "") === "") return false
-    //
-    const rect = element.getBoundingClientRect();
-    return (rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth));
+    // check e is not null to prevent error when leaving page
+	// try/ catch is OK with typescript ...
+    try {
+        const rect = element.getBoundingClientRect();
+        return (rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth));
+    }
+    catch (e) {
+        return false;
+    }
 };
+
 ```
 
 See also [PR](https://github.com/coreui/coreui-vue/issues/206)

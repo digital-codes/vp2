@@ -83,7 +83,7 @@ export default {
             )
           )
           csv=csv.join("\n");
-          console.log(csv);
+          //console.log(csv);
           url = "data:text/csv;charset=utf-8,"+escape(csv)
           break
 

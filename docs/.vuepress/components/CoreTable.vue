@@ -128,10 +128,10 @@ import Download from './Download.vue'
             const maxLen = 100
             this.dataTruncated = this.rawData.length > maxLen
             this.rows = this.rawData.slice(0,maxLen)
-            console.log("Rows:",this.rows)
+            //console.log("Rows:",this.rows)
             // extract keys from item 0
             this.hdrs = Object.keys(this.rows[0])
-            console.log("Hdrs:",this.hdrs)
+            //console.log("Hdrs:",this.hdrs)
             // update loaded  state: chart will be mounted via v-if
             this.dataLoaded = true
           } else {
