@@ -3,11 +3,11 @@
     <CCardBody>
       <CCardTitle>Card title</CCardTitle>
         <!-- -->
+        <CAlert v-if="dataTruncated" color="warning">Data truncated. Use Download!</CAlert>
         <div v-if="dataLoaded" class="ctable">
-        <p v-if="dataTruncated">Data truncated. Use Download</p>
         <CTable class="dataTable" responsive="lg">
         <CTableHead v-if="stickyHeader">
-            <CTableRow>
+            <CTableRow class="hdrRow">
               <CTableHeaderCell v-for="(item, index) in hdrs" scope="col" :class="getHdrClass(index)">{{ item }}</CTableHeaderCell>
             </CTableRow>
         </CTableHead>
@@ -26,6 +26,7 @@
         </CTableBody>
         </CTable>
         </div>
+        <CAlert v-else color="info"> {{ message }}</CAlert>
         
       <CCardText>Some quick example 
         text to build on the card title and make up the bulk of the card's content.
@@ -57,6 +58,9 @@ import '../public/css/container.css'
 
 import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell } from '@coreui/vue'
 
+import {CAlert} from "@coreui/vue"
+import '../public/css/alert.css'
+
 import axios from 'axios'
 import { ref } from "vue"
 
@@ -67,6 +71,7 @@ import Download from './Download.vue'
     components: {
       CCard,CCardBody,CCardTitle ,CCardSubtitle, CCardText, 
       CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell,
+      CAlert, 
       Download,
     },
     props: {
@@ -82,12 +87,12 @@ import Download from './Download.vue'
     methods: {
       getHdrClass(i) {
         if (i == 0) {
-          if (this.stickyIndex && this.stickyHeader) return "tableCell sticky-index"
-          if (!this.stickyIndex && this.stickyHeader) return "tableCell sticky-hdr"
-          if (this.stickyIndex && !this.stickyHeader) return "tableCell sticky-col"
-          return "tableCell"
+          if (this.stickyIndex && this.stickyHeader) return "tableCell hdrCell sticky-index"
+          if (!this.stickyIndex && this.stickyHeader) return "tableCell hdrCell sticky-hdr"
+          if (this.stickyIndex && !this.stickyHeader) return "tableCell hdrCell sticky-col"
+          return "tableCellhdrCell "
         } else {
-          return this.stickyHeader? "tableCell sticky-hdr" : "tableCell"
+          return this.stickyHeader? "tableCell hdrCell sticky-hdr" : "tableCell hdrCell"
         }
       },
       getIdxClass() {
@@ -110,22 +115,32 @@ import Download from './Download.vue'
         const hdrs = ref([])
         const dataLoaded = ref(false)
         const dataTruncated = ref(false)
-        return { dataLoaded, dataTruncated, hdrs, rows, rawData }
+        const message = ref("Loading")
+        return { dataLoaded, dataTruncated, hdrs, rows, rawData, message }
     },
     async beforeMount() {
         // initialize data
         let url = "/data/table.json"
-        let r = await axios.get(url)
-        this.rawData = r.data
-        const maxLen = 100
-        this.dataTruncated = this.rawData.length > maxLen
-        this.rows = this.rawData.slice(0,maxLen)
-        console.log("Rows:",this.rows)
-        // extract keys from item 0
-        this.hdrs = Object.keys(this.rows[0])
-        console.log("Hdrs:",this.hdrs)
-        // update loaded  state: chart will be mounted via v-if
-        this.dataLoaded = true
+        try {
+          let r = await axios.get(url)
+          if (r.status == 200) {
+            this.rawData = r.data
+            const maxLen = 100
+            this.dataTruncated = this.rawData.length > maxLen
+            this.rows = this.rawData.slice(0,maxLen)
+            console.log("Rows:",this.rows)
+            // extract keys from item 0
+            this.hdrs = Object.keys(this.rows[0])
+            console.log("Hdrs:",this.hdrs)
+            // update loaded  state: chart will be mounted via v-if
+            this.dataLoaded = true
+          } else {
+            this.message = "Loading failed: " + r.status
+          }
+        } catch (e) {
+          console.log("Error",e.message)
+          this.message = e.message
+        }
         console.log("Loaded",this.dataLoaded)
     },
   }
@@ -138,6 +153,7 @@ import Download from './Download.vue'
   max-height:200px; 
   overflow-y:auto;
   position: relative;
+  border: solid 1px rgba(0,0,0,.1);
 }
 
 .dataTable {
@@ -147,6 +163,11 @@ import Download from './Download.vue'
   display: table;
   min-width: 100%;
 }
+.hdrRow {
+  background-color: gray;
+  transition: unset;
+}
+
 /* unset background */
 .tableRow {
   background-color: unset !important;
@@ -157,6 +178,13 @@ import Download from './Download.vue'
   vertical-align: bottom;
   text-align: left;
   border: solid 1px rgba(0,0,0,.2);
+  transition: unset;
+  padding: .2em .2em;
+}
+
+.hdrCell  {
+  border-bottom: solid 2px rgba(0,0,0,.4);
+  padding: .3em .2em;
 }
 
 .sticky-hdr {
