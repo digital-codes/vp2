@@ -4,21 +4,22 @@
       <CCardTitle>Card title</CCardTitle>
         <!-- -->
         <div v-if="dataLoaded" class="ctable">
-        <CTable responsive="lg">
+        <p v-if="dataTruncated">Data truncated. Use Download</p>
+        <CTable class="dataTable" responsive="lg">
         <CTableHead v-if="stickyHeader">
             <CTableRow>
               <CTableHeaderCell v-for="(item, index) in hdrs" scope="col" :class="getHdrClass(index)">{{ item }}</CTableHeaderCell>
             </CTableRow>
         </CTableHead>
         <CTableBody>
-            <CTableRow  v-for="(row) in rows" >
+            <CTableRow  v-for="(row) in rows" class="tableRow">
             <template v-for="(item, index) in row"> 
               <template v-if="isIdxPos(index)">
                 <CTableHeaderCell v-if="stickyIndex" scope="row" :class="getIdxClass()"> {{ item }} </CTableHeaderCell>
                 <CTableDataCell v-else > {{ item }}</CTableDataCell>
               </template>
               <template v-else>
-                <CTableDataCell> {{ item }}</CTableDataCell>
+                <CTableDataCell class="tableCell"> {{ item }}</CTableDataCell>
               </template>
             </template>
             </CTableRow>
@@ -31,11 +32,11 @@
       </CCardText>
       <CCardSubtitle v-if="dataLoaded">
         <!-- make sure to have this disabled until data loaded else "Blob" will fail during SSR -->
-        <Download :download-data="rows"
+        <Download :download-data="rawData"
             file-type="csv"
             file-name="Down"
             button-text="Download As CSV"/>
-        <Download :download-data="rows"
+        <Download :download-data="rawData"
             file-type="json"
             file-name="Down"
             button-text="Download As JSON"/>
@@ -81,16 +82,16 @@ import Download from './Download.vue'
     methods: {
       getHdrClass(i) {
         if (i == 0) {
-          if (this.stickyIndex && this.stickyHeader) return "sticky-index"
-          if (!this.stickyIndex && this.stickyHeader) return "sticky-hdr"
-          if (this.stickyIndex && !this.stickyHeader) return "sticky-col"
-          return ""
+          if (this.stickyIndex && this.stickyHeader) return "tableCell sticky-index"
+          if (!this.stickyIndex && this.stickyHeader) return "tableCell sticky-hdr"
+          if (this.stickyIndex && !this.stickyHeader) return "tableCell sticky-col"
+          return "tableCell"
         } else {
-          return this.stickyHeader? "sticky-hdr" : ""
+          return this.stickyHeader? "tableCell sticky-hdr" : "tableCell"
         }
       },
       getIdxClass() {
-        return this.stickyIndex ? "sticky-col" : ""
+        return this.stickyIndex ? "tableCell sticky-col" : "tableCell"
       },
       isIdxPos(i) {
         // Note: index may be non numerical
@@ -104,16 +105,21 @@ import Download from './Download.vue'
     },
      setup() {
        // initialize parms
+        const rawData = ref([])
         const rows = ref([])
         const hdrs = ref([])
         const dataLoaded = ref(false)
-        return { dataLoaded, hdrs, rows }
+        const dataTruncated = ref(false)
+        return { dataLoaded, dataTruncated, hdrs, rows, rawData }
     },
     async beforeMount() {
         // initialize data
         let url = "/data/table.json"
         let r = await axios.get(url)
-        this.rows = r.data
+        this.rawData = r.data
+        const maxLen = 100
+        this.dataTruncated = this.rawData.length > maxLen
+        this.rows = this.rawData.slice(0,maxLen)
         console.log("Rows:",this.rows)
         // extract keys from item 0
         this.hdrs = Object.keys(this.rows[0])
@@ -134,15 +140,20 @@ import Download from './Download.vue'
   position: relative;
 }
 
-table {
+.dataTable {
   border-collapse: separate;
   border-spacing: 2px;
   margin-top: 0;
   display: table;
   min-width: 100%;
 }
+/* unset background */
+.tableRow {
+  background-color: unset !important;
+  transition: unset;
+}
 
-td, th {
+.tableCell  {
   vertical-align: bottom;
   text-align: left;
   border: solid 1px rgba(0,0,0,.2);
@@ -170,7 +181,7 @@ td, th {
   position: sticky;
   top: 0;
   left:0;
-  background: yellow;
+  background: white;
 }
 
 

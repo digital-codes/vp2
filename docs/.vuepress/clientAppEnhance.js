@@ -1,6 +1,5 @@
 import { defineClientAppEnhance } from '@vuepress/client'
 
-// example. so far unused
 // import something from somthing
 
 // oruga datetimepicker
@@ -8,8 +7,9 @@ import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
 import './public/css/oruga-date.css'
 
 // oruga table
-import {  Table } from '@oruga-ui/oruga-next'
-import './public/css/oruga-table.css'
+// oruga table has issues ..
+//import {  Table } from '@oruga-ui/oruga-next'
+//import './public/css/oruga-table.css'
 
 
 // MDIcons
@@ -120,7 +120,8 @@ export default defineClientAppEnhance(({ app, router, siteData }) => {
   app.use( Datetimepicker)
   app.use( Field)
   app.use( Input)
-  app.use( Table)
+  // oruga table has issues ..
+  // app.use( Table)
 
 
   // MDIcons

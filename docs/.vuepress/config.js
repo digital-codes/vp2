@@ -24,7 +24,7 @@ module.exports = {
 		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
 		// devtools
-		["script", { src: "http://localhost:8098" }],
+		//["script", { src: "http://localhost:8098" }],
 		// ...other tags
 	  ],
     locales: {
