@@ -7,6 +7,117 @@
   <CIcon icon="cilCalendar" size="xxl"/>
   </div>
 
+  <CContainer>
+  <CCallout color="primary">
+    New to or unfamiliar with flexbox? Read this CSS Tricks flexbox guide for background, terminology, guidelines, and code snippets.
+  </CCallout>
+
+ <CCallout color="info">
+  <CContainer >
+    <CRow>
+      <CCol xs="1">
+      <CAvatar size="lg" src="/images/avatars/1.jpg"/>
+      </CCol>
+      <CCol style="background-color:lightgray;">
+    New to or unfamiliar with flexbox? Read this CSS Tricks flexbox guide for background, terminology, guidelines, and code snippets.
+    New to or unfamiliar with flexbox? Read this CSS Tricks flexbox guide for background, terminology, guidelines, and code snippets.
+    New to or unfamiliar with flexbox? Read this CSS Tricks flexbox guide for background, terminology, guidelines, and code snippets.
+      </CCol>
+    </CRow>
+  </CContainer>
+  </CCallout>
+
+  <CFormSelect 
+    @change="selected"
+    size="lg" multiple aria-label="Multiple select example">
+    <option>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </CFormSelect>
+
+
+
+  <CAccordion>
+  <CAccordionItem :item-key="1">
+    <CAccordionHeader>
+      Accordion Item #1
+    </CAccordionHeader>
+    <CAccordionBody>
+      <strong>This is the first item's accordion body.</strong> It is hidden by default,
+      until the collapse plugin adds the appropriate classes that we use to style each
+      element. These classes control the overall appearance, as well as the showing and
+      hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+      our default variables. It's also worth noting that just about any HTML can go within
+      the <code>.accordion-body</code>, though the transition does limit overflow.
+    </CAccordionBody>
+  </CAccordionItem>
+  <CAccordionItem :item-key="2">
+    <CAccordionHeader>
+      Accordion Item #2
+    </CAccordionHeader>
+    <CAccordionBody>
+      <strong>This is the second item's accordion body.</strong> It is hidden by default,
+      until the collapse plugin adds the appropriate classes that we use to style each
+      element. These classes control the overall appearance, as well as the showing and
+      hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+      our default variables. It's also worth noting that just about any HTML can go within
+      the <code>.accordion-body</code>, though the transition does limit overflow.
+    </CAccordionBody>
+  </CAccordionItem>
+  <CAccordionItem :item-key="3">
+    <CAccordionHeader>
+      Accordion Item #3
+    </CAccordionHeader>
+    <CAccordionBody>
+      <strong>This is the third item's accordion body.</strong> It is hidden by default,
+      until the collapse plugin adds the appropriate classes that we use to style each
+      element. These classes control the overall appearance, as well as the showing and
+      hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+      our default variables. It's also worth noting that just about any HTML can go within
+      the <code>.accordion-body</code>, though the transition does limit overflow.
+    </CAccordionBody>
+  </CAccordionItem>
+</CAccordion>
+
+  </CContainer>
+
+  <CContainer>
+    <CFormRange label="Example range" :min="0" :max="5" :step="0.5" value="3" id="customRange3"/> 
+
+<CFormCheck inline id="inlineCheckbox1" value="option1" label="1"/>
+<CFormCheck inline id="inlineCheckbox2" value="option2" label="2"/>
+<CFormCheck inline id="inlineCheckbox3" value="option3" label="3 (disabled)" disabled/>
+
+
+<CInputGroup class="mb-3">
+  <CInputGroupText id="basic-addon1">@</CInputGroupText>
+  <CFormInput placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+</CInputGroup>
+
+<CInputGroup class="mb-3">
+  <CFormInput placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+  <CInputGroupText id="basic-addon2">@example.com</CInputGroupText>
+</CInputGroup>
+<CFormLabel for="basic-url">Your vanity URL</CFormLabel>
+<CInputGroup class="mb-3">
+  <CInputGroupText id="basic-addon3">https://example.com/users/</CInputGroupText>
+  <CFormInput id="basic-url" aria-describedby="basic-addon3"/>
+</CInputGroup>
+<CInputGroup class="mb-3">
+  <CInputGroupText>$</CInputGroupText>
+  <CFormInput aria-label="Amount (to the nearest dollar)"/>
+  <CInputGroupText>.00</CInputGroupText>
+</CInputGroup>
+<CInputGroup class="mb-3">
+  <CFormInput placeholder="Username" aria-label="Username"/>
+  <CInputGroupText>@</CInputGroupText>
+  <CFormInput placeholder="Server" aria-label="Server"/>
+</CInputGroup>
+
+  </CContainer>
+
+
 
   <CContainer>
   <CRow class="row row-cols-1 row-cols-md-3 g-2 ">
@@ -282,6 +393,26 @@ import '../public/css/container.css'
 import '../public/css/charts.css'
 import "../public/css/coreui-chartjs.css"
 
+import { CCallout } from '@coreui/vue'
+import { CAvatar } from '@coreui/vue'
+import { CAccordion, CAccordionItem, CAccordionBody, CAccordionHeader } from '@coreui/vue'
+import '../public/css/callout.css'
+import '../public/css/avatar.css'
+import '../public/css/accordion.css'
+
+
+import { CFormRange,CFormCheck,CFormInput, CInputGroupText, CFormLabel, CInputGroup, CFormSelect } from '@coreui/vue'
+import '../public/css/range.css'
+import '../public/css/check.css'
+import '../public/css/ingroup.css'
+import '../public/css/select.css'
+import '../public/css/forms.css'
+import '../public/css/validation.css'
+
+//import '../public/css/coreui.css'
+
+
+
 // geo: works
 // we can be more specific
 //import * as ChartGeo from 'chartjs-chart-geo'
@@ -316,7 +447,10 @@ export default {
         CToast,CToaster,CToastHeader,CToastBody,
         CChart, CWidgetStatsB,CWidgetStatsE,
         ChoroplethChart, ChoroplethController,
-        // WordCloudController, WordElement,
+        CCallout,CAvatar,
+        CAccordion, CAccordionItem,CAccordionBody, CAccordionHeader,
+        CFormRange,CFormCheck, CFormInput,CInputGroup,CInputGroupText, 
+        CFormLabel,CFormSelect,
         //CIcon,
       },
       methods: {
@@ -325,7 +459,10 @@ export default {
             title: 'new toast',
             content: 'Lorem ipsum dolor cet emit'
           })
-        }
+        },
+        selected(e){
+          console.log("options",e.target.selectedOptions)
+        },
       },
       setup() {
         const dummy = [{properties: {name:"abc"}}]
