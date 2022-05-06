@@ -29,8 +29,19 @@
 
   <CFormSelect 
     @change="selected"
-    size="lg" multiple aria-label="Multiple select example">
-    <option>Open this select menu</option>
+    size="lg" aria-label="Single select example">
+    <option>Open single select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </CFormSelect>
+
+  <!-- multiple does not collapse ! -->
+  <CFormSelect 
+    @change="selected"
+    multiple
+    size="lg" aria-label="Multiple select example">
+    <option>Open multiple select menu</option>
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
