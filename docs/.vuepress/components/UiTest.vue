@@ -221,6 +221,8 @@
   </CCardBody>
   </CCard >
 
+  <!-- APache echarts wordcloud is much better than this one .. don't use anymore
+
   <CCard>
    <CCardBody>
    <CCardTitle>Word cloud</CCardTitle>
@@ -250,7 +252,7 @@
   />
   </CCardBody>
   </CCard >
-
+  -->
 
 </template>
 <script>
@@ -281,10 +283,12 @@ import '../public/css/charts.css'
 import "../public/css/coreui-chartjs.css"
 
 // geo: works
-import * as ChartGeo from 'chartjs-chart-geo'
+// we can be more specific
+//import * as ChartGeo from 'chartjs-chart-geo'
+import { ChoroplethChart, ChoroplethController, topojson }  from 'chartjs-chart-geo'
 
-// wordcloud
-import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
+// wordcloud. Use echarts instead
+//import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
 
 
 import { ref } from "vue"
@@ -311,7 +315,8 @@ export default {
         CCard,CCardImage,CCardBody,CCardTitle ,CCardText,
         CToast,CToaster,CToastHeader,CToastBody,
         CChart, CWidgetStatsB,CWidgetStatsE,
-        WordCloudController, WordElement,
+        ChoroplethChart, ChoroplethController,
+        // WordCloudController, WordElement,
         //CIcon,
       },
       methods: {
@@ -339,7 +344,8 @@ export default {
           console.log("Axios failed:",r.status)
         } else {
           console.log("Axios OK")
-          this.countries = ChartGeo.topojson.feature(data, data.objects.countries).features;
+          //this.countries = ChartGeo.topojson.feature(data, data.objects.countries).features;
+          this.countries = topojson.feature(data, data.objects.countries).features;
         }
         // update loaded  state: chart will be mounted via v-if
         this.mapLoaded = true
