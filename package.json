@@ -37,6 +37,7 @@
     "echarts-gl": "^2.0.9",
     "echarts-wordcloud": "^2.0.0",
     "esm": "^3.2.25",
+    "localforage": "^1.10.0",
     "markdown-it-footnote": "^3.0.3",
     "node-sass": "^7.0.1",
     "sass-loader": "^12.6.0",

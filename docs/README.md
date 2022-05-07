@@ -78,6 +78,8 @@ Unused ...
 With some extra effort almost as nice, and working
 <CoreTable></CoreTable>
 
+### Local table
+<LocalTable></LocalTable>
 
 ## Leaflet map
 <GeoMap>

@@ -86,6 +86,7 @@ module.exports = {
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
                 OrugaTable: path.resolve(__dirname, './components/OrugaTable.vue'),
                 CoreTable: path.resolve(__dirname, './components/CoreTable.vue'),
+                LocalTable: path.resolve(__dirname, './components/LocalTable.vue'),
                 Download: path.resolve(__dirname, './components/Download.vue'),
               },
 		}),
