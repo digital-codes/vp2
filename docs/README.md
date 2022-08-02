@@ -21,23 +21,25 @@ Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium dolo
 
 ## Cont
 
-### MDIcons
-<menu-icon />
-<calendar-icon class="icon-2x"/>
-
 ### CoreIcons
 <CIcon icon="cilCalendar" size="xl"/>
 <CIcon icon="cibGithub" size="xl"/>
-<CIcon icon="cibVueJs" size="xl"/>
-
 
 
 praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
 
+
+## Oruga
+
+### Calendar
+<OrugaDatePick></OrugaDatePick>
+
+
+
 # Images
 
 
-## Not zommable
+## Not zoomable
 
 ![Image](/images/img.png)
 
@@ -60,17 +62,13 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
   --homepage-width: 1160px;
 ```
 
+<!--
+
 ## Oruga
 
 ### Calendar
 <OrugaDatePick></OrugaDatePick>
 
-### Oruga  Table
-Looks nice  with sticky header and index but 
-**Not working properly on page exit**
-Unused ...
-<!--
-<OrugaTable></OrugaTable>
 -->
 
 ### Coreui  Table
@@ -78,8 +76,6 @@ Unused ...
 With some extra effort almost as nice, and working
 <CoreTable></CoreTable>
 
-### Local table
-<LocalTable></LocalTable>
 
 ## Leaflet map
 <GeoMap>

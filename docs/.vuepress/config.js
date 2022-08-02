@@ -1,26 +1,23 @@
-const { path } = require('@vuepress/utils')
-
-// config > 2.0.0.-beta39 (e.g. 41)
-const { defaultTheme } = require('@vuepress/theme-default')
-
+//const { defaultTheme } = require('vuepress')
+//const { defaultTheme } = require('@vuepress/theme-default')
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
-
+const { palettePlugin } = require('@vuepress/plugin-palette')
+const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
+const { path } = require ('@vuepress/utils')
+const { defineUserConfig } = require('vuepress')
 const { localTheme } = require('./theme')
 
-//const { sitemap } = require("vuepress-plugin-sitemap2");
+const { webpackBundler } = require('@vuepress/bundler-webpack')
 
-const { palettePlugin } = require('@vuepress/plugin-palette')
-
-const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 
 module.exports = {
-	// globals
 	dest: "./dist",
 	temp:"./temp",
 	cache:"./cache",
-    // site config
-	// for pwa
-	 head: [
+  lang: 'de-DE',
+  title: 'Hello, VuePress!',
+  description: 'This is my first VuePress site',
+  head: [
 		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
 		// devtools
@@ -44,33 +41,30 @@ module.exports = {
         },
     },
 
-	//theme: defaultTheme({
-        theme: localTheme({
-            // set config here
-		logo: 'https://vuejs.org/images/logo.png',
-		darkMode: false,
-		locales: {
-		    '/': {
-		        selectLanguageName: 'German',
-		        navbar: [
-		            { text: 'Home', link: '/' },
-		            { text: 'About', link: '/about/' },
-		            ],
-		        sidebar: false,
-		        notFound : ["Nix gefunden ..."],
-		        backToHome: "Heim",
-		    },
-		    '/en/': {
-		        selectLanguageName: 'English',
-		        navbar: [
-		            { text: 'About', link: '/about/' },
-		            ],
-		            notFound : ["Sorry, we didn't find the page ..."],
-		            backToHome: "Back",
-		        },
-		},
-	}),
-    plugins: [
+    theme: localTheme({
+      // default theme config
+      locales: {
+        '/': {
+            selectLanguageName: 'German',
+            navbar: [
+                { text: 'Home', link: '/' },
+                { text: 'About', link: '/about/' },
+                ],
+            sidebar: false,
+            notFound : ["Nix gefunden ..."],
+            backToHome: "Heim",
+        },
+        '/en/': {
+            selectLanguageName: 'English',
+            navbar: [
+                { text: 'About', link: '/about/' },
+                ],
+                notFound : ["Sorry, we didn't find the page ..."],
+                backToHome: "Back",
+            },
+    },
+  }),  
+  plugins: [
 		[
   		registerComponentsPlugin({
               components: {
@@ -84,41 +78,33 @@ module.exports = {
                 Chart7: path.resolve(__dirname, './components/Chart7.vue'),
                 Carousel: path.resolve(__dirname, './components/Carousel.vue'),
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
-                OrugaTable: path.resolve(__dirname, './components/OrugaTable.vue'),
                 CoreTable: path.resolve(__dirname, './components/CoreTable.vue'),
-                LocalTable: path.resolve(__dirname, './components/LocalTable.vue'),
                 Download: path.resolve(__dirname, './components/Download.vue'),
               },
 		}),
 		],
-		[
-			mediumZoomPlugin({
-				selector: 'img.zoomable',
-				// medium-zoom options here
-				// See: https://github.com/francoischalifour/medium-zoom#options
-				options: {
-				  margin: 16
-				}
-			  })
-		],
-		/*
-		[
-		sitemap({
-			// see https://vuepress-theme-hope.github.io/v2/sitemap/config.html#modifytimegetter
-			hostname: "https://vp2.akugel.de",
-			excludeUrls: ["/404.html"],
-			changefreq: "weekly",
-		  }),
-		]
-		*/
-		[
-			palettePlugin({
-				preset: 'sass',
-				// options
-			}),
-		  ],
+    [
+      palettePlugin({
+        // options
+      }),
     ],
-    extendsMarkdown: (md) => {
-        md.use(require("markdown-it-footnote"));
-    },
+    [
+      mediumZoomPlugin({
+        selector: 'img.zoomable',
+        // medium-zoom options here
+        // See: https://github.com/francoischalifour/medium-zoom#options
+        options: {
+          margin: 16
+        }
+        })
+    ],
+  ],
+  extendsMarkdown: (md) => {
+    md.use(require("markdown-it-footnote"));
+  },
+  // bundlet options ...
+  bundler: webpackBundler({
+    postcss: {},
+    vue: {},
+  }),
 }

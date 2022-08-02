@@ -3,41 +3,39 @@
     <CCardBody>
       <CCardTitle>Card title</CCardTitle>
         <!-- -->
-        <CAlert v-if="dataTruncated" color="warning">Data truncated. Use Download!</CAlert>
         <div v-if="dataLoaded" class="ctable">
-        <CTable class="dataTable" responsive="lg">
+        <CTable responsive="lg">
         <CTableHead v-if="stickyHeader">
-            <CTableRow class="hdrRow">
+            <CTableRow>
               <CTableHeaderCell v-for="(item, index) in hdrs" scope="col" :class="getHdrClass(index)">{{ item }}</CTableHeaderCell>
             </CTableRow>
         </CTableHead>
         <CTableBody>
-            <CTableRow  v-for="(row) in rows" class="tableRow">
+            <CTableRow  v-for="(row) in rows" >
             <template v-for="(item, index) in row"> 
               <template v-if="isIdxPos(index)">
                 <CTableHeaderCell v-if="stickyIndex" scope="row" :class="getIdxClass()"> {{ item }} </CTableHeaderCell>
                 <CTableDataCell v-else > {{ item }}</CTableDataCell>
               </template>
               <template v-else>
-                <CTableDataCell class="tableCell"> {{ item }}</CTableDataCell>
+                <CTableDataCell> {{ item }}</CTableDataCell>
               </template>
             </template>
             </CTableRow>
         </CTableBody>
         </CTable>
         </div>
-        <CAlert v-else color="info"> {{ message }}</CAlert>
         
       <CCardText>Some quick example 
         text to build on the card title and make up the bulk of the card's content.
       </CCardText>
       <CCardSubtitle v-if="dataLoaded">
         <!-- make sure to have this disabled until data loaded else "Blob" will fail during SSR -->
-        <Download :download-data="rawData"
+        <Download :download-data="rows"
             file-type="csv"
             file-name="Down"
             button-text="Download As CSV"/>
-        <Download :download-data="rawData"
+        <Download :download-data="rows"
             file-type="json"
             file-name="Down"
             button-text="Download As JSON"/>
@@ -58,9 +56,6 @@ import '../public/css/container.css'
 
 import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell } from '@coreui/vue'
 
-import {CAlert} from "@coreui/vue"
-import '../public/css/alert.css'
-
 import axios from 'axios'
 import { ref } from "vue"
 
@@ -71,7 +66,6 @@ import Download from './Download.vue'
     components: {
       CCard,CCardBody,CCardTitle ,CCardSubtitle, CCardText, 
       CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell,
-      CAlert, 
       Download,
     },
     props: {
@@ -87,16 +81,16 @@ import Download from './Download.vue'
     methods: {
       getHdrClass(i) {
         if (i == 0) {
-          if (this.stickyIndex && this.stickyHeader) return "tableCell hdrCell sticky-index"
-          if (!this.stickyIndex && this.stickyHeader) return "tableCell hdrCell sticky-hdr"
-          if (this.stickyIndex && !this.stickyHeader) return "tableCell hdrCell sticky-col"
-          return "tableCellhdrCell "
+          if (this.stickyIndex && this.stickyHeader) return "sticky-index"
+          if (!this.stickyIndex && this.stickyHeader) return "sticky-hdr"
+          if (this.stickyIndex && !this.stickyHeader) return "sticky-col"
+          return ""
         } else {
-          return this.stickyHeader? "tableCell hdrCell sticky-hdr" : "tableCell hdrCell"
+          return this.stickyHeader? "sticky-hdr" : ""
         }
       },
       getIdxClass() {
-        return this.stickyIndex ? "tableCell sticky-col" : "tableCell"
+        return this.stickyIndex ? "sticky-col" : ""
       },
       isIdxPos(i) {
         // Note: index may be non numerical
@@ -110,37 +104,22 @@ import Download from './Download.vue'
     },
      setup() {
        // initialize parms
-        const rawData = ref([])
         const rows = ref([])
         const hdrs = ref([])
         const dataLoaded = ref(false)
-        const dataTruncated = ref(false)
-        const message = ref("Loading")
-        return { dataLoaded, dataTruncated, hdrs, rows, rawData, message }
+        return { dataLoaded, hdrs, rows }
     },
     async beforeMount() {
         // initialize data
         let url = "/data/table.json"
-        try {
-          let r = await axios.get(url)
-          if (r.status == 200) {
-            this.rawData = r.data
-            const maxLen = 100
-            this.dataTruncated = this.rawData.length > maxLen
-            this.rows = this.rawData.slice(0,maxLen)
-            //console.log("Rows:",this.rows)
-            // extract keys from item 0
-            this.hdrs = Object.keys(this.rows[0])
-            //console.log("Hdrs:",this.hdrs)
-            // update loaded  state: chart will be mounted via v-if
-            this.dataLoaded = true
-          } else {
-            this.message = "Loading failed: " + r.status
-          }
-        } catch (e) {
-          console.log("Error",e.message)
-          this.message = e.message
-        }
+        let r = await axios.get(url)
+        this.rows = r.data
+        console.log("Rows:",this.rows)
+        // extract keys from item 0
+        this.hdrs = Object.keys(this.rows[0])
+        console.log("Hdrs:",this.hdrs)
+        // update loaded  state: chart will be mounted via v-if
+        this.dataLoaded = true
         console.log("Loaded",this.dataLoaded)
     },
   }
@@ -153,38 +132,20 @@ import Download from './Download.vue'
   max-height:200px; 
   overflow-y:auto;
   position: relative;
-  border: solid 1px rgba(0,0,0,.1);
 }
 
-.dataTable {
+table {
   border-collapse: separate;
   border-spacing: 2px;
   margin-top: 0;
   display: table;
   min-width: 100%;
 }
-.hdrRow {
-  background-color: gray;
-  transition: unset;
-}
 
-/* unset background */
-.tableRow {
-  background-color: unset !important;
-  transition: unset;
-}
-
-.tableCell  {
+td, th {
   vertical-align: bottom;
   text-align: left;
   border: solid 1px rgba(0,0,0,.2);
-  transition: unset;
-  padding: .2em .2em;
-}
-
-.hdrCell  {
-  border-bottom: solid 2px rgba(0,0,0,.4);
-  padding: .3em .2em;
 }
 
 .sticky-hdr {
@@ -209,7 +170,7 @@ import Download from './Download.vue'
   position: sticky;
   top: 0;
   left:0;
-  background: white;
+  background: yellow;
 }
 
 
