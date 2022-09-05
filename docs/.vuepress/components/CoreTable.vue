@@ -31,11 +31,11 @@
       </CCardText>
       <CCardSubtitle v-if="dataLoaded">
         <!-- make sure to have this disabled until data loaded else "Blob" will fail during SSR -->
-        <Download :download-data="rows"
+        <DownLoad :download-data="rows"
             file-type="csv"
             file-name="Down"
             button-text="Download As CSV"/>
-        <Download :download-data="rows"
+        <DownLoad :download-data="rows"
             file-type="json"
             file-name="Down"
             button-text="Download As JSON"/>
@@ -59,14 +59,14 @@ import { CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableData
 import axios from 'axios'
 import { ref } from "vue"
 
-import Download from './Download.vue'
+import DownLoad from './DownLoad.vue'
 
 
  export default {
     components: {
       CCard,CCardBody,CCardTitle ,CCardSubtitle, CCardText, 
       CTable, CTableBody, CTableHead, CTableRow, CTableHeaderCell, CTableDataCell,
-      Download,
+      DownLoad,
     },
     props: {
       stickyIndex: {

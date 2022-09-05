@@ -8,7 +8,6 @@ import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
 import './public/css/oruga-date.css'
 
 
-
 // coreicons
 // https://coreui.io/vue/docs/components/icon.html#cicon
 import { CIcon } from '@coreui/icons-vue';
@@ -100,9 +99,14 @@ const icons = {
 import './public/css/cicons.css'
 
 //import '@coreui/coreui/dist/css/coreui.min.css'
+import Layout from './theme/layouts/Layout.vue'
+
 
 
 export default defineClientConfig({
+  layouts: {
+    Layout,
+  },
   enhance({ app, router, siteData }) {
 	//app.use(somthing, {someOptions})
   // ...

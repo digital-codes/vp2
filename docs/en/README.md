@@ -28,4 +28,4 @@ Video2
 
 ## Carousel
 
-<Carousel></Carousel>
+<CarouSel></CarouSel>

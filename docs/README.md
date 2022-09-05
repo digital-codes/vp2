@@ -74,7 +74,11 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 ### Coreui  Table
 
 With some extra effort almost as nice, and working
-<CoreTable></CoreTable>
+
+<CoreTable 
+  stickyIndex="true"
+  stickyHeader="true"
+></CoreTable>
 
 
 ## Leaflet map
@@ -82,16 +86,35 @@ With some extra effort almost as nice, and working
 </GeoMap>
 
 ## Chart 1
-<Chart1></Chart1>
+<CharT1></CharT1>
+
+<!-- 
+Chart5 needs client-only due to architecture of echarts-gl
+-->
 
 ## Chart 5
-<Chart5></Chart5>
+<ClientOnly>
+<CharT5></CharT5>
+</ClientOnly>
+
 
 ## Chart 6
-<Chart6></Chart6>
+<CharT6></CharT6>
+
+
+<!-- 
+chart 7 need client-only due to usage of "window"
+in wordcloud
+-->
 
 ## Chart 7
-<Chart7></Chart7>
+<ClientOnly>
+<CharT7></CharT7>
+</ClientOnly>
+
+
+
+
 
 # Done
 nothing

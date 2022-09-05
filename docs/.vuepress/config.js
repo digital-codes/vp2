@@ -1,14 +1,37 @@
 //const { defaultTheme } = require('vuepress')
 //const { defaultTheme } = require('@vuepress/theme-default')
-const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
-const { palettePlugin } = require('@vuepress/plugin-palette')
-const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
-const { path } = require ('@vuepress/utils')
-const { defineUserConfig } = require('vuepress')
-const { localTheme } = require('./theme')
 
-const { webpackBundler } = require('@vuepress/bundler-webpack')
+// beta.51: require replaced by import
 
+//const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+
+//const { palettePlugin } = require('@vuepress/plugin-palette')
+import  { palettePlugin } from '@vuepress/plugin-palette'
+
+//const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
+
+//const { path } = require ('@vuepress/utils')
+import { path } from  '@vuepress/utils'
+//const { defineUserConfig } = require('vuepress')
+
+//const { localTheme } = require('./theme')
+import  { localTheme } from './theme'
+
+//const { webpackBundler } = require('@vuepress/bundler-webpack')
+import  { webpackBundler } from '@vuepress/bundler-webpack'
+
+import { viteBundler } from '@vuepress/bundler-vite'
+
+/*
+CommonJS modules can always be imported via the default export, for example using:
+import pkg from 'markdown-it-footnote';
+const { footnote } = pkg;
+
+*/
+import footnote from "markdown-it-footnote"
+const fn  = footnote
 
 module.exports = {
 	dest: "./dist",
@@ -68,18 +91,18 @@ module.exports = {
 		[
   		registerComponentsPlugin({
               components: {
+                CharT1: path.resolve(__dirname, './components/CharT1.vue'),
+                CharT5: path.resolve(__dirname, './components/CharT5.vue'),
+                CharT6: path.resolve(__dirname, './components/CharT6.vue'),
+                CharT7: path.resolve(__dirname, './components/CharT7.vue'),
                 UiTest: path.resolve(__dirname, './components/UiTest.vue'),
                 VideoCard: path.resolve(__dirname, './components/VideoCard.vue'),
                 GeoMap: path.resolve(__dirname, './components/GeoMap.vue'),
-                Loading: path.resolve(__dirname, './components/Loading.vue'),
-                Chart1: path.resolve(__dirname, './components/Chart1.vue'),
-                Chart5: path.resolve(__dirname, './components/Chart5.vue'),
-                Chart6: path.resolve(__dirname, './components/Chart6.vue'),
-                Chart7: path.resolve(__dirname, './components/Chart7.vue'),
-                Carousel: path.resolve(__dirname, './components/Carousel.vue'),
+                LoaDing: path.resolve(__dirname, './components/LoaDing.vue'),
+                CarouSel: path.resolve(__dirname, './components/CarouSel.vue'),
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
                 CoreTable: path.resolve(__dirname, './components/CoreTable.vue'),
-                Download: path.resolve(__dirname, './components/Download.vue'),
+                DownLoad: path.resolve(__dirname, './components/DownLoad.vue'),
               },
 		}),
 		],
@@ -100,11 +123,22 @@ module.exports = {
     ],
   ],
   extendsMarkdown: (md) => {
-    md.use(require("markdown-it-footnote"));
+    md.use(footnote) //require("markdown-it-footnote"));
   },
-  // bundlet options ...
+  // bundler options ...
+  /*
   bundler: webpackBundler({
     postcss: {},
     vue: {},
   }),
+  */
+ // SSR now work with vite default settings
+ /*
+  bundler: viteBundler({
+    viteOptions: {
+      type: "module",
+    },
+    vuePluginOptions: {},
+  }),
+  */
 }

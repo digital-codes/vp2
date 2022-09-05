@@ -37,7 +37,9 @@
           </l-map>
           -->
           </div>
-          <Loading v-else></Loading>
+            <LoaDing v-else 
+                message=Loading>
+            </LoaDing>
 
           <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
         </CCardBody>

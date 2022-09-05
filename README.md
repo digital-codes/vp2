@@ -1,26 +1,17 @@
 # vp2
 Vuepress2 Test
 
-for 2.0.0-beta-49
+for 2.0.0-beta-51
 
 
 ## Issues
 
-## Webpack bundling
+## Vite bundler now OK for SSR
 
-Webpack provides better production bundling than vite, though vite might
-be OK for development. Can be changed in "bundler" option at config.js
+default settings can be used
 
-<!--
-## Wrong vuepress
-after a fresh install, dev and build might not work. Potential reason is 
-wrong link für vuepress binary.
-Check directory node_module/.bin
-vuepress -> ../vuepress-webpack/bin/vuepress.js
+CLientOnly must be used for certain comonents (chart5 and chart7)
 
-vuepress must be linked to vuepress-webpack/bin/vuepress.js
-not to vuepress-vite/bin/vuepress.js
--->
 
 ### vue3-component-base
 
@@ -45,7 +36,34 @@ const isVisible$1 = (element) => {
 };
 ```
 
+or fix the sourcefile at coreui-vue/packages/coreui-vue/src/components/carousel/CCarousel.ts
+
+```
+
+const isVisible = (element: HTMLDivElement | undefined) => {
+  if (element == undefined) 
+    return false
+  else {
+    const rect = element.getBoundingClientRect()
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+  }
+}
+```
+
 See also [PR](https://github.com/coreui/coreui-vue/issues/206)
+
+
+### New issue with coreui
+Use of type "File" in coreui-vue/packages/coreui-vue/src/components/form/CFormInput.ts. This type exists only in browser environment! 
+
+Ad hoc solution: remove type from type list (around line 6433) in distribution or recompile library
+
+
 
 
 ## Leaflet

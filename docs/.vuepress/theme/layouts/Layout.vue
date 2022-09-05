@@ -1,14 +1,15 @@
 <script setup>
-import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+//import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
-import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
+//import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
 const page = usePageData()
 console.log("Page",page)
 const frontmatter = usePageFrontmatter()
 console.log("Front",frontmatter)
-const themeLocale = useThemeLocaleData()
-console.log("local",themeLocale)
+//const themeLocale = useThemeLocaleData()
+//console.log("local",themeLocale)
 
 
 </script>
