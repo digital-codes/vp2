@@ -11,6 +11,7 @@ console.log("Front",frontmatter)
 //const themeLocale = useThemeLocaleData()
 //console.log("local",themeLocale)
 
+// see https://v2.vuepress.vuejs.org/reference/default-theme/extending.html#layout-slots
 
 </script>
 

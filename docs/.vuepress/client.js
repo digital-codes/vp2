@@ -100,13 +100,17 @@ import './public/css/cicons.css'
 
 //import '@coreui/coreui/dist/css/coreui.min.css'
 import Layout from './theme/layouts/Layout.vue'
+import NotFound from './theme/layouts/NotFound.vue'
 
 
 
 export default defineClientConfig({
   layouts: {
     Layout,
-  },
+    NotFound,
+
+  }
+  ,
   enhance({ app, router, siteData }) {
 	//app.use(somthing, {someOptions})
   // ...
