@@ -14,6 +14,14 @@ const messages = themeLocale.value.notFound ?? ['Not Found']
 const getMsg = (): string =>
   messages[Math.floor(Math.random() * messages.length)]
 
+
+// ------ test ---------
+import { useThemeData } from '@vuepress/theme-default/client'
+const themeData  = useThemeData()
+console.log("TD:",themeData.value)
+console.log("TL:",themeLocale.value)
+
+
 </script>
 <template>
   <ParentLayout>

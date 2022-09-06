@@ -1,37 +1,23 @@
-//const { defaultTheme } = require('vuepress')
-//const { defaultTheme } = require('@vuepress/theme-default')
 
 // beta.51: require replaced by import
-
-//const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-
-//const { palettePlugin } = require('@vuepress/plugin-palette')
 import  { palettePlugin } from '@vuepress/plugin-palette'
-
-//const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
-
-//const { path } = require ('@vuepress/utils')
 import { path } from  '@vuepress/utils'
-//const { defineUserConfig } = require('vuepress')
-
-//const { localTheme } = require('./theme')
 import  { localTheme } from './theme'
 
-//const { webpackBundler } = require('@vuepress/bundler-webpack')
-import  { webpackBundler } from '@vuepress/bundler-webpack'
+import footnote from "markdown-it-footnote"
 
+// import bundlers, although not needed normally 
+import  { webpackBundler } from '@vuepress/bundler-webpack'
 import { viteBundler } from '@vuepress/bundler-vite'
 
 /*
 CommonJS modules can always be imported via the default export, for example using:
 import pkg from 'markdown-it-footnote';
 const { footnote } = pkg;
-
 */
-import footnote from "markdown-it-footnote"
-const fn  = footnote
+
 
 module.exports = {
 	dest: "./dist",
@@ -58,7 +44,7 @@ module.exports = {
         },
         '/en/': {
             lang: 'en-US',
-            title: 'VuePress',
+            title: 'VuePress US',
             description: 'Vue-powered Static Site Generator',
             selectLanguageName: 'English',
         },
