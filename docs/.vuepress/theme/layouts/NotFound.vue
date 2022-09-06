@@ -23,6 +23,7 @@ console.log("TL:",themeLocale.value)
 
 
 </script>
+
 <template>
   <ParentLayout>
     <template #page-content-top>
@@ -30,31 +31,75 @@ console.log("TL:",themeLocale.value)
         <blockquote>{{ getMsg() }}</blockquote>
         <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
     </template>
+    <template #page-bottom>
+      <div class="my-footer">This is my custom page footer</div>
+    </template>
   </ParentLayout>
 </template>
 
-<!--
-<template>
-  <div class="theme-container">
-    <main class="page">
-      <div class="theme-default-content">
-        <h1>404</h1>
-        <blockquote>{{ getMsg() }}</blockquote>
-        <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
-      </div>
-    </main>
-  </div>
-</template>
--->
 
-<style scoped>
+<style lang="css">
+.my-footer {
+  text-align: center;
+}
 
-theme-default-content {
+
+</style>
+
+<style lang="scss">
+/* import default variables from palette */
+@import '@vuepress/plugin-palette/palette';
+
+// override  some ...
+@import '../../styles/palette.scss';
+@import '../../styles/index.scss';
+
+
+</style>
+
+
+<style>
+
+/*
+vue adds a default message if no page content available.
+Add class content404 in 
+
+// src/components/Content.ts
+import { pagesComponents } from "@internal/pagesComponents";
+import { computed, defineComponent as defineComponent2, h } from "vue";
+var Content = defineComponent2({
+  name: "Content",
+  props: {
+    pageKey: {
+      type: String,
+      required: false,
+      default: ""
+    }
+  },
+  setup(props) {
+    const page = usePageData();
+    const pageComponent = computed(
+      () => pagesComponents[props.pageKey || page.value.key]
+    );
+    return () => pageComponent.value ? h(pageComponent.value) : h(
+      "div",
+      // AKU fixme
+      { class: 'content404', 
+      innerHTML: __VUEPRESS_DEV__ ? "Page does not exist. This is a fallback content." : "404 Not Found"
+      }
+    );
+  }
+});
+
+or in the distribution file, like 
+node_modules/@vuepress/client/dist/chunk-O5XLV5GU.js
+
+*/
+
+
+.content404 {
   display:none;
 }
 
-theme-default-content div {
-  display:none;
-}
 
 </style>
