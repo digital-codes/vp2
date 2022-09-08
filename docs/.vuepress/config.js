@@ -58,7 +58,12 @@ module.exports = {
             navbar: [
                 { text: 'Home', link: '/' },
                 { text: 'About', link: '/about/' },
-                ],
+                { text: 'UI', children: [
+                  { text: 'Simple', link: '/simple' },
+                  { text: 'Oruga', link: '/oruga' }
+                  ]
+                },
+            ],
             sidebar: false,
             notFound : ["Nix gefunden ..."],
             backToHome: "Heim",
@@ -89,6 +94,11 @@ module.exports = {
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
                 CoreTable: path.resolve(__dirname, './components/CoreTable.vue'),
                 DownLoad: path.resolve(__dirname, './components/DownLoad.vue'),
+                //
+                CardComp: path.resolve(__dirname, './components/CardComp.vue'),
+                MdCard: path.resolve(__dirname, './components/MdCard.vue'),
+                FlexContainer: path.resolve(__dirname, './components/FlexContainer.vue'),
+                CharT1S: path.resolve(__dirname, './components/CharT1Simple.vue'),
               },
 		}),
 		],
