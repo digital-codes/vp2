@@ -97,6 +97,7 @@ module.exports = {
                 //
                 CardComp: path.resolve(__dirname, './components/CardComp.vue'),
                 MdCard: path.resolve(__dirname, './components/MdCard.vue'),
+                SimpleTable: path.resolve(__dirname, './components/SimpleTable.vue'),
                 FlexContainer: path.resolve(__dirname, './components/FlexContainer.vue'),
                 CharT1S: path.resolve(__dirname, './components/CharT1Simple.vue'),
               },

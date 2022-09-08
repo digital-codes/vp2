@@ -88,14 +88,11 @@ it greenlighted before working on i"
 </FlexContainer>
 
 
-### Coreui  Table
+### Simple Table
 
-With some extra effort almost as nice, and working
+<SimpleTable>
+</SimpleTable>
 
-<CoreTable 
-  stickyIndex="true"
-  stickyHeader="true"
-></CoreTable>
 
 
 ## Leaflet map

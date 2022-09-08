@@ -27,6 +27,10 @@
 
 <style scoped>
 .card {
+    color: var(--c-text);
+    /*
+    color: #222;
+    */
     background-color: #f8f8f8;
     padding: 1rem;
     margin: .5rem;
@@ -35,6 +39,15 @@
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 0.25rem;
+}
+
+.dark .card {
+    /*
+    color: #fff;
+    */
+    background-color: #333;
+    box-shadow: 3px 3px 3px 3px #aaa;
+    border: 1px solid rgba(255,255,255,.2);
 }
 
 
