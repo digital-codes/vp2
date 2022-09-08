@@ -103,6 +103,24 @@ import Layout from './theme/layouts/Layout.vue'
 import NotFound from './theme/layouts/NotFound.vue'
 
 
+// fontawesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays as faSolidCal} from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays as faRegularCal} from '@fortawesome/free-regular-svg-icons'
+import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+
+
+library.add(faUserSecret)
+library.add(faSolidCal)
+library.add(faRegularCal)
+library.add(faFontAwesome)
+
+
+
+
 
 export default defineClientConfig({
   layouts: {
@@ -122,7 +140,11 @@ export default defineClientConfig({
 
   // coreicons
   app.provide('icons', icons)
-  app.component('CIcon', CIcon)  
+  app.component('CIcon', CIcon) 
+  
+  // fontawesome
+  app.component('font-awesome-icon', FontAwesomeIcon)
+
   },
   setup() {},
   rootComponents: [],

@@ -14,13 +14,13 @@
 
 <script>
 
-// import oruga in enhanceapp.js
+// import oruga in client.js
 /*
 import {  Datetimepicker, Field,   } from '@oruga-ui/oruga-next'
 import '../public/css/oruga.css'
 */
 
-// for coreicons:  or in enhanceApp
+// for coreicons:  or in client
 //import '../public/css/cicons.css'
 
   export default {

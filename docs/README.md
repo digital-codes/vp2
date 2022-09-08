@@ -21,6 +21,24 @@ Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium dolo
 
 ## Cont
 
+### FontAwesome Icons
+
+User select from [FA repo](https://github.com/FortAwesome/vue-fontawesome/tree/v6-readme-3x#installation)
+
+Size can be sm, md, lg, xl. There are more options see above
+
+SVG solid icons <font-awesome-icon icon="user-secret" size="md"/>
+or <font-awesome-icon :icon="['fas', 'user-secret']" />
+
+Two types of calenders: <font-awesome-icon icon="fa-solid fa-calendar-days" /> <font-awesome-icon icon="fa-regular fa-calendar-days" />
+
+<!-- Don't forget to bind the property with ":" (we forget all the time!) -->
+SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']"  size="xl"/>
+
+
+
+
+
 ### CoreIcons
 <CIcon icon="cilCalendar" size="xl"/>
 <CIcon icon="cibGithub" size="xl"/>
