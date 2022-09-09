@@ -96,8 +96,8 @@ it greenlighted before working on i"
 
 
 ## Leaflet map
-<GeoMap>
-</GeoMap>
+<GeoMapS>
+</GeoMapS>
 
 ## Chart 1
 <CharT1S></CharT1S>
@@ -108,12 +108,12 @@ Chart5 needs client-only due to architecture of echarts-gl
 
 ## Chart 5
 <ClientOnly>
-<CharT5></CharT5>
+<CharT5S></CharT5S>
 </ClientOnly>
 
 
 ## Chart 6
-<CharT6></CharT6>
+<CharT6S></CharT6S>
 
 
 <!-- 
@@ -123,7 +123,7 @@ in wordcloud
 
 ## Chart 7
 <ClientOnly>
-<CharT7></CharT7>
+<CharT7S></CharT7S>
 </ClientOnly>
 
 

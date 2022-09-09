@@ -27,11 +27,13 @@ import CardComp from './CardComp.vue'
   box-sizing: border-box;
 }
 
+
 .flex-container > div {
   background-color: #f1f1f1;
   /* value depends on margins and padding */
   flex: 30%;
   box-sizing: border-box;
+  margin: 0.5rem;
 }
 
 @media (max-width: 800px) {

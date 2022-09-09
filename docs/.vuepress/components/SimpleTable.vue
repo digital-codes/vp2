@@ -33,6 +33,7 @@
 
     <template #footer v-if="dataLoaded">
         <!-- make sure to have this disabled until data loaded else "Blob" will fail during SSR -->
+        <p>Download Options</p>
         <DownLoad :download-data="rows"
             file-type="csv"
             file-name="Down"

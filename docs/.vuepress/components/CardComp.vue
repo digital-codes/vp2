@@ -33,7 +33,7 @@
     */
     background-color: #f8f8f8;
     padding: 1rem;
-    margin: .5rem;
+    margin: .5rem 0 .5rem 0;
     box-shadow: -5px 5px 5px rgba(0,0,0,.2),-8px 8px 8px rgba(0,0,0,.4);
     box-shadow: 3px 3px 3px 3px #444;
     background-clip: border-box;
