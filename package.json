@@ -23,9 +23,6 @@
     "vuepress": "^2.0.0-beta.51"
   },
   "dependencies": {
-    "@coreui/icons": "^3.0.0-alpha.0",
-    "@coreui/icons-vue": "^2.0.0",
-    "@coreui/vue": "^4.3.1",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",

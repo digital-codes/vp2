@@ -1,5 +1,9 @@
 <template>
-    <CButton 
+<section>
+    <o-button tag="a" :download="`${fileName}.${fileType}`" :href="convertData">{{ `${fileName}.${fileType}` }}</o-button>
+  </section>
+  <!--
+      <CButton 
       component="a"
       class="down"
       role="button"
@@ -9,6 +13,7 @@
       > 
       {{ buttonText }}
     </CButton>
+    -->
   <!--
   <a :href="convertData"
      :download="`${fileName}.${fileType}`">
@@ -19,17 +24,11 @@
 
 <script>
 
-import { CButton } from '@coreui/vue'
-import '../public/css/colors.css'
-import '../public/css/positions.css'
-import '../public/css/button.css'
-
 // Blob (JSON processing) is Browser only!
 
 // copyfrom https://github.com/edisdev/download-json-data/blob/develop/src/components/Download.vue
 export default {
   components: {
-        CButton,
   },
   props: {
     fileName: {
@@ -53,6 +52,11 @@ export default {
     buttonText: {
       type: String,
       required: true
+    }
+  },
+  methods: {
+    loadData () {
+
     }
   },
   computed: {

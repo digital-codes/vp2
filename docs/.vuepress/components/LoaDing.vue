@@ -1,29 +1,24 @@
 <template>
 
-  <CCallout color="info">
-
-    <CSpinner/>
-
-    {{ message }}
-
-
-  </CCallout>
-
+<section>
+    <o-field label="Name">
+      <o-loading
+        :full-page="false"
+        :active="true"
+        :can-cancel="false"
+      >
+        {{ message }}
+      </o-loading>
+    </o-field>
+</section>
 
 </template>
 
 <script>
-import { CCallout } from '@coreui/vue'
-import { CSpinner } from '@coreui/vue'
-
-import '../public/css/colors.css'
-import '../public/css/callout.css'
-import '../public/css/spinner.css'
 
 export default {
     props: ["message"],
     components: {
-    CCallout,CSpinner
     },
 }
 

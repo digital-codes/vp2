@@ -5,98 +5,17 @@ import { defineClientConfig } from '@vuepress/client'
 
 // oruga datetimepicker
 import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
-import './public/css/oruga-date.css'
+//import './public/css/oruga-date.css'
+
+import '@oruga-ui/oruga-next/dist/oruga.css'
+
+import {  Button } from '@oruga-ui/oruga-next'
+import {  Loading } from '@oruga-ui/oruga-next'
+import {  Carousel } from '@oruga-ui/oruga-next'
+import {  Icon } from '@oruga-ui/oruga-next'
+import {  Notification } from '@oruga-ui/oruga-next'
 
 
-// coreicons
-// https://coreui.io/vue/docs/components/icon.html#cicon
-import { CIcon } from '@coreui/icons-vue';
-//import {  } from '@coreui/icons';
-import {
-  cilArrowBottom,
-  cilArrowRight,
-  cilArrowTop,
-  cilBan,
-  cilBasket,
-  cilBell,
-  cilCalculator,
-  cilCalendar,
-  cilList, 
-  cilShieldAlt, 
-  cibGithub,
-  cibVueJs,
-  cilSignalCellular3,
-  cilShareAlt,
-  cilSend,
-  cilSearch,
-  cilWifiSignal3,
-  cilPeople,
-  cilRss,
-  cilEnvelopeClosed,
-  cilAccountLogout,
-  cilAt,
-  cilContact,
-  cilGraph,
-  cilImage,
-  cilLifeRing,
-  cilLinkAlt,
-  cilListFilter,
-  cilTag,
-  cilTrash,
-  cilUser,
-  cibCreativeCommons,
-  cibCreativeCommonsBy,
-  cibIonic,
-  cibCoreuiC,
-  cibLinux,
-  cifDe,
-  cifUs,
-} from '@coreui/icons'
-
-const icons = {
-  cilArrowBottom,
-  cilArrowRight,
-  cilArrowTop,
-  cilBan,
-  cilBasket,
-  cilBell,
-  cilCalculator,
-  cilCalendar,
-  cilList, 
-  cilShieldAlt, 
-  cibGithub,
-  cibVueJs,
-  cilSignalCellular3,
-  cilShareAlt,
-  cilSend,
-  cilSearch,
-  cilWifiSignal3,
-  cilPeople,
-  cilSend,
-  cilSearch,
-  cilRss,
-  cilEnvelopeClosed,
-  cilAccountLogout,
-  cilAt,
-  cilContact,
-  cilGraph,
-  cilImage,
-  cilLifeRing,
-  cilLinkAlt,
-  cilListFilter,
-  cilTag,
-  cilTrash,
-  cilUser,
-  cibCreativeCommons,
-  cibCreativeCommonsBy,
-  cibIonic,
-  cibCoreuiC,
-  cibLinux,
-  cifDe,
-  cifUs,
-}
-// coreicons styles
-import './public/css/cicons.css'
 
 //import '@coreui/coreui/dist/css/coreui.min.css'
 import Layout from './theme/layouts/Layout.vue'
@@ -107,19 +26,53 @@ import NotFound from './theme/layouts/NotFound.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-import { faCalendarDays as faSolidCal} from '@fortawesome/free-solid-svg-icons'
+// most icons needed for oruga ...
+import {
+  faCheck,
+  faCheckCircle,
+  faInfoCircle,
+  faExclamationTriangle,
+  faExclamationCircle,
+  faArrowUp,
+  faAngleRight,
+  faAngleLeft,
+  faAngleDown,
+  faEye,
+  faUser,
+  faTimes,
+  faEyeSlash,
+  faCaretDown,
+  faCaretUp,
+  faUserSecret,
+  faCalendarDays as faSolidCal,
+} from "@fortawesome/free-solid-svg-icons";
+
 import { faCalendarDays as faRegularCal} from '@fortawesome/free-regular-svg-icons'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 
 
-library.add(faUserSecret)
-library.add(faSolidCal)
-library.add(faRegularCal)
-library.add(faFontAwesome)
-
-
-
+library.add(faCheck,
+  faCheckCircle,
+  faInfoCircle,
+  faExclamationTriangle,
+  faExclamationCircle,
+  faArrowUp,
+  faAngleRight,
+  faAngleLeft,
+  faAngleDown,
+  faEye,
+  faUser,
+  faTimes,
+  faEyeSlash,
+  faCaretDown,
+  faCaretUp,
+  faUserSecret,
+  faSolidCal,
+  faRegularCal,
+  faFontAwesome,
+)
+// import orugo to modify icons
+import Oruga from "@oruga-ui/oruga-next";
 
 
 export default defineClientConfig({
@@ -130,20 +83,25 @@ export default defineClientConfig({
   }
   ,
   enhance({ app, router, siteData }) {
-	//app.use(somthing, {someOptions})
-  // ...
+    //app.use(somthing, {someOptions})
+    // ...
 
-  // oruga
-  app.use( Datetimepicker)
-  app.use( Field)
-  app.use( Input)
+    // fontawesome. this name must also be used for oruga
+    app.component('font-awesome-icon', FontAwesomeIcon)
 
-  // coreicons
-  app.provide('icons', icons)
-  app.component('CIcon', CIcon) 
-  
-  // fontawesome
-  app.component('font-awesome-icon', FontAwesomeIcon)
+    // oruga
+    app.use(Oruga, {
+      iconComponent: "font-awesome-icon",
+      iconPack: "fas"
+    })
+    app.use( Datetimepicker)
+    app.use( Notification)
+    app.use( Field)
+    app.use( Input)
+    app.use( Loading)
+    app.use( Button)
+    app.use( Carousel)
+    app.use( Icon)
 
   },
   setup() {},

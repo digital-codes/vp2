@@ -37,16 +37,6 @@ SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']"  size="xl"/>
 
 
 
-
-
-### CoreIcons
-<CIcon icon="cilCalendar" size="xl"/>
-<CIcon icon="cibGithub" size="xl"/>
-
-
-praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-
-
 ## Oruga
 
 ### Calendar
@@ -89,22 +79,92 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
 
 -->
 
-### Coreui  Table
+## Simple Card
 
-With some extra effort almost as nice, and working
+<CardComp>
+    <template #header>
+        Here might be a page title
+    </template>
+    <template #default>
+        A paragraph for the main content.
+        And another one.
+        The master branch is a snapshot of the latest release. Submit your PR in the develop branch
+        Include screenshots or animated GIFs in your pull request whenever needed (if visual changes)
+        It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash it before merging
+        DO NOT commit the lib and dist folder, use it only for testing on your end
+        If adding new feature:
+        Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on i
+    </template>
+    <template #footer>
+        Here's some contact info
+    </template>
+</CardComp>
 
-<CoreTable 
-  stickyIndex="true"
-  stickyHeader="true"
-></CoreTable>
+## Markdown Card
+
+<MdCard
+  hdr="Here might be a page title"
+  ftr="Here's some contact info"
+  src="## A paragraph for the main content.
+\
+And another one.
+\
+The master branch is a snapshot of the latest release. Submit your PR in the develop branch
+Include screenshots or animated GIFs in your pull request whenever needed (if visual changes)
+It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash
+it before merging
+\
+DO NOT commit the lib and dist folder, use it only for testing on your end\
+\
+If adding new feature:
+\
+Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have
+it greenlighted before working on i"
+  >
+</MdCard>
+
+## Markdown Card no Footer
+
+<MdCard
+  hdr="Here might be a page title"
+  src="## A paragraph for the main content.
+\
+And another one.
+\
+The master branch is a snapshot of the latest release. Submit your PR in the develop branch
+Include screenshots or animated GIFs in your pull request whenever needed (if visual changes)
+It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash
+it before merging
+\
+DO NOT commit the lib and dist folder, use it only for testing on your end\
+\
+If adding new feature:
+\
+Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have
+it greenlighted before working on i"
+  >
+</MdCard>
+
+
+## Card Container
+
+<FlexContainer>
+</FlexContainer>
+
+
+### Simple Table
+
+<SimpleTable>
+</SimpleTable>
+
 
 
 ## Leaflet map
-<GeoMap>
-</GeoMap>
+<GeoMapS>
+</GeoMapS>
 
 ## Chart 1
-<CharT1></CharT1>
+<CharT1S></CharT1S>
 
 <!-- 
 Chart5 needs client-only due to architecture of echarts-gl
@@ -112,12 +172,12 @@ Chart5 needs client-only due to architecture of echarts-gl
 
 ## Chart 5
 <ClientOnly>
-<CharT5></CharT5>
+<CharT5S></CharT5S>
 </ClientOnly>
 
 
 ## Chart 6
-<CharT6></CharT6>
+<CharT6S></CharT6S>
 
 
 <!-- 
@@ -127,8 +187,9 @@ in wordcloud
 
 ## Chart 7
 <ClientOnly>
-<CharT7></CharT7>
+<CharT7S></CharT7S>
 </ClientOnly>
+
 
 
 

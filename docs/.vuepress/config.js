@@ -59,11 +59,13 @@ module.exports = {
             navbar: [
                 { text: 'Home', link: '/' },
                 { text: 'About', link: '/about/' },
+                /*
                 { text: 'UI', children: [
                   { text: 'Simple', link: '/simple' },
                   { text: 'Oruga', link: '/oruga' }
                   ]
                 },
+                */
             ],
             sidebar: false,
             notFound : ["Nix gefunden ..."],
@@ -83,17 +85,9 @@ module.exports = {
 		[
   		registerComponentsPlugin({
               components: {
-                CharT1: path.resolve(__dirname, './components/CharT1.vue'),
-                CharT5: path.resolve(__dirname, './components/CharT5.vue'),
-                CharT6: path.resolve(__dirname, './components/CharT6.vue'),
-                CharT7: path.resolve(__dirname, './components/CharT7.vue'),
-                UiTest: path.resolve(__dirname, './components/UiTest.vue'),
-                VideoCard: path.resolve(__dirname, './components/VideoCard.vue'),
-                GeoMap: path.resolve(__dirname, './components/GeoMap.vue'),
                 LoaDing: path.resolve(__dirname, './components/LoaDing.vue'),
                 CarouSel: path.resolve(__dirname, './components/CarouSel.vue'),
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
-                CoreTable: path.resolve(__dirname, './components/CoreTable.vue'),
                 DownLoad: path.resolve(__dirname, './components/DownLoad.vue'),
                 //
                 CardComp: path.resolve(__dirname, './components/CardComp.vue'),

@@ -47,31 +47,6 @@ defwefwfwfe
 
 sdwefewf
 
-## UI Test
-
-bla bla
-
-## UiTest
-
-
-<UiTest>
-</UiTest>
-
-<!--
-will need some time to load due to async setup and *Suspense*
-
-<Suspense>
-  <UiTest>
-  </UiTest>
-
-  <template #fallback >
-    <div>
-    <Loading message="Loading data, please wait ..." ></Loading>
-    </div>
-  </template>
-</Suspense>
--->
-
 
 123
 

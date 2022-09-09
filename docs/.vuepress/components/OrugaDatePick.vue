@@ -1,8 +1,7 @@
 <template>
   <section>
-    <!-- with coreui icons -->
     <o-field >
-    <CIcon icon="cilCalendar" size="xl" class="calIcon"/>
+    <font-awesome-icon icon="fa-regular fa-calendar-days" size="xl" pull="left"/>
       <o-datetimepicker rounded placeholder="Click to select..."
       :locale="locale" 
       :datepicker="{showWeekNumber}"
@@ -20,11 +19,7 @@ import {  Datetimepicker, Field,   } from '@oruga-ui/oruga-next'
 import '../public/css/oruga.css'
 */
 
-// for coreicons:  or in client
-//import '../public/css/cicons.css'
-
   export default {
-    //inject: ['icons'],
     data() {
       return {
         showWeekNumber: true,
