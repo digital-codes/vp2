@@ -7,7 +7,10 @@ import { defineClientConfig } from '@vuepress/client'
 import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
 //import './public/css/oruga-date.css'
 
-import '@oruga-ui/oruga-next/dist/oruga.css'
+import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
+
+//import './public/css/oruga-date.css'
+
 
 import {  Button } from '@oruga-ui/oruga-next'
 import {  Loading } from '@oruga-ui/oruga-next'
@@ -16,8 +19,6 @@ import {  Icon } from '@oruga-ui/oruga-next'
 import {  Notification } from '@oruga-ui/oruga-next'
 
 
-
-//import '@coreui/coreui/dist/css/coreui.min.css'
 import Layout from './theme/layouts/Layout.vue'
 import NotFound from './theme/layouts/NotFound.vue'
 
@@ -89,11 +90,13 @@ export default defineClientConfig({
     // fontawesome. this name must also be used for oruga
     app.component('font-awesome-icon', FontAwesomeIcon)
 
+    /* */
     // oruga
     app.use(Oruga, {
       iconComponent: "font-awesome-icon",
       iconPack: "fas"
     })
+    /* */
     app.use( Datetimepicker)
     app.use( Notification)
     app.use( Field)

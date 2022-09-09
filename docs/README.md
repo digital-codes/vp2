@@ -40,7 +40,10 @@ SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']"  size="xl"/>
 ## Oruga
 
 ### Calendar
-<OrugaDatePick></OrugaDatePick>
+
+<ClientOnly>
+  <OrugaDatePick></OrugaDatePick>
+</ClientOnly>
 
 
 

@@ -1,7 +1,7 @@
 <template>
   <section>
     <o-field >
-    <font-awesome-icon icon="fa-regular fa-calendar-days" size="xl" pull="left"/>
+      <font-awesome-icon class="calIcon" icon="fa-regular fa-calendar-days" size="xl" pull="left"/>
       <o-datetimepicker rounded placeholder="Click to select..."
       :locale="locale" 
       :datepicker="{showWeekNumber}"

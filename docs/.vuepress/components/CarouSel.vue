@@ -3,7 +3,11 @@
 
     <CardComp >
     <template #default>
-        <o-carousel :autoplay="true" :repeat="true" :interval=2500>
+        <o-carousel 
+          :autoplay="true" 
+          :repeat="true" 
+          :interval=2500
+        >
             <o-carousel-item>
             <section class="c-slide" >
                     <img class="c-image" src="/images/slide1.png" alt="slide 1"/>
