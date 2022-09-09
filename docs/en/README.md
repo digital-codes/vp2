@@ -24,7 +24,7 @@ Video2
 -->
 
 ## Video
-<VideoCard></VideoCard>
+<VideoCardS></VideoCardS>
 
 ## Carousel
 

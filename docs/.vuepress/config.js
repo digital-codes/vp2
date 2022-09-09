@@ -104,6 +104,7 @@ module.exports = {
                 CharT6S: path.resolve(__dirname, './components/CharT6Simple.vue'),
                 CharT7S: path.resolve(__dirname, './components/CharT7Simple.vue'),
                 GeoMapS: path.resolve(__dirname, './components/GeoMapSimple.vue'),
+                VideoCardS: path.resolve(__dirname, './components/VideoCardSimple.vue'),
               },
 		}),
 		],
