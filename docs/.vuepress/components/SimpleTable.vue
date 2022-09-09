@@ -6,7 +6,7 @@
 
     <template #default>
         <div v-if="dataLoaded" class="ctable">
-        <table responsive="lg">
+        <table>
         <thead v-if="stickyHeader">
             <tr>
               <td v-for="(item, index) in hdrs" scope="col" :class="getHdrClass(index)">{{ item }}</td>
@@ -137,6 +137,26 @@ table {
   margin-top: 0;
   display: table;
   min-width: 100%;
+}
+
+tr:nth-child(2n) {
+  background-color: #eee; /* var(--c-bg-light);*/
+}
+
+tr:nth-child(2n+1) {
+  background-color: #ddd; /* var(--c-bg-light);*/
+}
+
+ .dark tr:nth-child(2n) {
+  background-color: #444; /* var(--c-bg-light);*/
+}
+
+tr:nth-child(2n+1) {
+  background-color: #ddd; /* var(--c-bg-light);*/
+}
+
+ .dark tr:nth-child(2n+1) {
+  background-color: #333; /* var(--c-bg-light);*/
 }
 
 td, th {

@@ -27,11 +27,13 @@
 
 <style scoped>
 .card {
+    position:relaitive;
+    min-width: 0;
     color: var(--c-text);
     /*
     color: #222;
     */
-    background-color: #f8f8f8;
+    background-color: var(--c-bg-light); /* #f8f8f8;*/
     padding: 1rem;
     margin: .5rem 0 .5rem 0;
     box-shadow: -5px 5px 5px rgba(0,0,0,.2),-8px 8px 8px rgba(0,0,0,.4);
@@ -45,8 +47,8 @@
     /*
     color: #fff;
     */
-    background-color: #333;
-    box-shadow: 3px 3px 3px 3px #aaa;
+    background-color: var(--c-bg-light); /* #f333;*/
+    box-shadow: 3px 3px 3px 3px #000;
     border: 1px solid rgba(255,255,255,.2);
 }
 
@@ -78,6 +80,14 @@
 <style>
 .card img {
   width: 50px;
+}
+
+.card .chart {
+  background-color: rgba(255,255,255,.9);
+}
+
+.dark .card .chart {
+  background-color: rgba(255,255,255,.7);
 }
 
 </style>

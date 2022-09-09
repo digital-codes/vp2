@@ -32,6 +32,7 @@ module.exports = {
 		// devtools
 		//["script", { src: "http://localhost:8098" }],
 		// ...other tags
+    ["script", { src: "/js/tota11y.min.js"}],
 	  ],
     locales: {
         // The key is the path for the locale to be nested under.
