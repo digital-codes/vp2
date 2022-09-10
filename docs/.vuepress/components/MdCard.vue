@@ -1,4 +1,5 @@
 <script setup>
+import BtnComp from './BtnComp.vue'
 import CardComp from './CardComp.vue'
 import Markdown from 'vue3-markdown-it';
 
@@ -41,6 +42,14 @@ Provide convincing reason to add this feature. Ideally you should open a suggest
     </template>
 
     </CardComp>
+    <BtnComp 
+        tag="a" 
+        target="_blank"
+        href="https://cern.ch"
+    >Cern</BtnComp>
+
+    <BtnComp tag="btn">456</BtnComp>
+    
 </template>
 
 <style scoped>
