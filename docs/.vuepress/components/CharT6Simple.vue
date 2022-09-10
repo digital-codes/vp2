@@ -58,11 +58,15 @@ Later on, we can do further updates, example here with fakeUpdate()
 */
 
 const chartOptions  = {
+    textStyle: {
+        fontFamily:"Palanquin",
+    },
     title: {
-        text: 'World map',
-        subtext: 'Data from www.census.gov',
+        text: 'World map 136',
+        subtext: 'Data 1360 from www.census.gov',
         sublink: 'http://www.census.gov/popest/data/datasets.html',
-        left: 'right'
+        left: 'right',
+
     },
     tooltip: {
         trigger: 'item',

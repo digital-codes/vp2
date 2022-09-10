@@ -57,9 +57,12 @@ export default {
     data ()  {
         return {
             option: {
+                textStyle: {
+                    fontFamily:"Palanquin",
+                },
                 title: {
                     text: "3D Bar",
-                    left: "center"
+                    left: "center",
                 },
                 //colorBy: "data",
                 tooltip: {},

@@ -54,6 +54,13 @@ import { ref } from 'vue';
 import CardComp from './CardComp.vue'
 
 const chartOptions  = {
+    textStyle: {
+        fontFamily:"Palanquin",
+    },
+    title: {
+        text: "Wordcloud 123456",
+        left: "center",
+    },
     tooltip: {},
     series: [ {
         type: 'wordCloud',
@@ -76,7 +83,7 @@ const chartOptions  = {
         emphasis: {
             textStyle: {
                 shadowBlur: 10,
-                shadowColor: '#333'
+                shadowColor: '#333',
             }
         },
         data: []
@@ -105,7 +112,7 @@ const chartData =  [
         value: 4386
     },
     {
-        name: 'Jurassic World',
+        name: 'Jurassic326234 World',
         value: 4055
     },
     {

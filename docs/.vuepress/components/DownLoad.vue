@@ -1,25 +1,7 @@
 <template>
-<section>
+<section class="down" >
     <o-button tag="a" :download="`${fileName}.${fileType}`" :href="convertData">{{ `${fileName}.${fileType}` }}</o-button>
   </section>
-  <!--
-      <CButton 
-      component="a"
-      class="down"
-      role="button"
-      color="primary" 
-      :href="convertData"
-      :download="`${fileName}.${fileType}`"
-      > 
-      {{ buttonText }}
-    </CButton>
-    -->
-  <!--
-  <a :href="convertData"
-     :download="`${fileName}.${fileType}`">
-     {{ buttonText }}
-  </a>
-  -->
 </template>
 
 <script>
@@ -101,8 +83,14 @@ export default {
 </script>
 
 <style scoped>
-.down{
-  text-decoration: none !important;
+.down {
   margin:5px;
+  display: inline-block;
 }
+
+.down a {
+  text-decoration: none;
+
+}
+
 </style>

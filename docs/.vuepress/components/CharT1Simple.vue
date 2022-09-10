@@ -32,9 +32,12 @@ export default {
     data ()  {
         return {
         option: {
+            textStyle: {
+                fontFamily:"Palanquin",
+            },
             title: {
-                text: "Gauge",
-                left: "center"
+                text: "Gauge 1360",
+                left: "center",
             },
             series: [
                 {
