@@ -51,8 +51,7 @@ Provide convincing reason to add this feature. Ideally you should open a suggest
     <BtnComp tag="btn">456</BtnComp>
 
     <BtnComp 
-        tag="a" 
-        href="convertData"
+        tag="down" 
         download="down.csv"
     >down.csv</BtnComp>
 

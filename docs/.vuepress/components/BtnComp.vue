@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, computed } from 'vue'
+import { ref, reactive, computed } from 'vue'
 
 const props = defineProps({
   class: String,
@@ -22,7 +22,7 @@ const convertData = computed(() => {
   let blob
   let url
   let titles
-  console.log("Downloading")
+  console.log("Downloading -- ",downloadData)
   switch (fileType) {
     case 'json':
       contentType = 'application/json'
@@ -33,7 +33,7 @@ const convertData = computed(() => {
 
     case 'csv':
       //https://stackoverflow.com/questions/61927914/how-to-download-csv-file-from-json-data
-      if (downloadData || downloadData.length === 0) { 
+      if (!downloadData || downloadData.length === 0) { 
           console.log("data was empty");
           break
       }
@@ -51,6 +51,7 @@ const convertData = computed(() => {
     default:
       break
   }
+  console.log("URL: ", url)
   return url
 })
 
@@ -60,8 +61,17 @@ const convertData = computed(() => {
 <template>
   <span v-if="tag == 'a'" class="btn-wrap">
   <a 
-    :href="convertData" 
+    :href="href" 
     :target="target" 
+    :class="class"
+  >
+    <slot></slot>
+  </a> 
+  </span>
+
+  <span v-if="tag == 'down'" class="btn-wrap">
+  <a 
+    :href="convertData" 
     :download="download"
     :class="class"
   >
