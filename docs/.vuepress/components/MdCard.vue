@@ -49,7 +49,14 @@ Provide convincing reason to add this feature. Ideally you should open a suggest
     >Cern</BtnComp>
 
     <BtnComp tag="btn">456</BtnComp>
-    
+
+    <BtnComp 
+        tag="a" 
+        href="convertData"
+        download="down.csv"
+    >down.csv</BtnComp>
+
+
 </template>
 
 <style scoped>

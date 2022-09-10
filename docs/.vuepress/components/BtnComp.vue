@@ -1,4 +1,6 @@
 <script setup>
+import { reactive, computed } from 'vue'
+
 const props = defineProps({
   class: String,
   tag: String,
@@ -11,16 +13,57 @@ function click() {
   console.log("Click")
 }
 
+const downloadData = reactive([{"key": 1}, {"key": 2}])
+const fileType = "csv"
+
+const convertData = computed(() => {
+  let contentType = ''
+  let dData = ''
+  let blob
+  let url
+  let titles
+  console.log("Downloading")
+  switch (fileType) {
+    case 'json':
+      contentType = 'application/json'
+      dData = JSON.stringify(downloadData, null, 2)
+      blob = new Blob([dData], { type: contentType })
+      url = window.URL.createObjectURL(blob)
+      break
+
+    case 'csv':
+      //https://stackoverflow.com/questions/61927914/how-to-download-csv-file-from-json-data
+      if (downloadData || downloadData.length === 0) { 
+          console.log("data was empty");
+          break
+      }
+      let csv = [Object.keys(downloadData[0]).slice(0).join(",")];
+      downloadData.forEach(
+        item => csv.push(
+          Object.values(item).map(val => isNaN(val) ? '"'+val+'"':val).join(",")
+        )
+      )
+      csv=csv.join("\n");
+      console.log(csv);
+      url = "data:text/csv;charset=utf-8,"+escape(csv)
+      break
+
+    default:
+      break
+  }
+  return url
+})
+
+
 </script>
 
 <template>
   <span v-if="tag == 'a'" class="btn-wrap">
   <a 
-    :href="href" 
+    :href="convertData" 
     :target="target" 
     :download="download"
-    style="text-decoration: none;"
-    class="btn"
+    :class="class"
   >
     <slot></slot>
   </a> 
@@ -29,7 +72,7 @@ function click() {
   <span v-if="tag == 'btn'" class="btn-wrap">
   <button  
     @click="click" 
-    class="btn"
+    :class="class"
   >
     <slot></slot>
   </button> 
