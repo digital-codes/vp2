@@ -3,6 +3,10 @@ import { defineClientConfig } from '@vuepress/client'
 // example. so far unused
 // import something from somthing
 
+// additonal fonts
+import './public/css/fonts.css'
+
+
 // oruga datetimepicker
 import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
 //import './public/css/oruga-date.css'
@@ -10,6 +14,7 @@ import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
 import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
 
 //import './public/css/oruga-date.css'
+
 
 
 import {  Button } from '@oruga-ui/oruga-next'

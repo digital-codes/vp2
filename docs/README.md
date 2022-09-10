@@ -19,7 +19,63 @@ Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium dolo
 
 [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
 
-## Cont
+## Fonts
+
+Style defs from Google, e.g. 
+
+optionally replace google url with local url e.g. 
+
+src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUvnpYzZGrXi0.woff2) format('woff2');
+=>
+
+> src: url(/fonts/palanquin400.woff2) format('woff2'), url(/fonts/palanquin400.ttf) format('ttf');
+
+
+```
+
+/* latin-ext */
+@font-face {
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUvnpYzZGrXi0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+/* latin-ext */
+@font-face {
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUnlJ90n1fBFg7ceXwcf1tN_LA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUrn9YzZGrXi0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUyn5YzZGrXi0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
+```
+
+## Numbers and Umlauts
+
+1234567890 öäüÖÄÜß  @€ ^° ?
+
 
 ### FontAwesome Icons
 

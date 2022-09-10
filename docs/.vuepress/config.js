@@ -29,7 +29,26 @@ module.exports = {
   head: [
 		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
-		// devtools
+    // fonts, if not loaded via scss/css
+    /*
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@200;400;600&display=swap" rel="stylesheet"> 
+    or 
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@200;400;600&display=swap');
+    </style> 
+    or use font faces in index.scss
+
+    CSS rules to specify families
+    font-family: 'Palanquin', sans-serif;
+    */
+    /*
+    ["link", {rel:"preconnect",href:"https://fonts.googleapis.com"}],
+    ["link", {rel:"preconnect",href:"https://fonts.gstatic.com"}],
+    ["link", {rel:"stylesheet",href:"https://fonts.googleapis.com/css2?family=Palanquin:wght@200;400;600&display=swap"}],
+    */
+    // devtools
 		//["script", { src: "http://localhost:8098" }],
 		// ...other tags
     ["script", { src: "/js/tota11y.min.js"}],
