@@ -82,3 +82,103 @@ Solution: change node_modules/leaflet/dist/leaflet.css as suggested =>
 		}
 	}
 ```
+
+## Colors
+
+https://toolness.github.io/accessible-color-matrix/
+
+
+ffffff e0e0e0e c0c0c0 808080 202020 000000
+               c0c020        202000
+               20c0c0        002020
+               20c020        002000
+               2020c0        000020
+
+
+
+
+
+colors bright/medium/dark:
+
+yellow: f0f010/a0a010/-
+green: 
+
+bright/dark:
+yellow c0c020,202000
+turkis; 20c0c0,002020
+green: 20C020,002000
+
+blue: 2020C0, 000080
+
+
+blues
+    white
+    #FFFFFF
+
+    light
+    #B3EFFF
+
+    bright
+    #00CFFF
+
+    medium
+    #046B99
+
+    dark
+    #1C304A
+
+    black
+    #000000
+
+
+greens
+B3FFEF
+00FFCF
+04996B
+1C4A30
+
+
+yellow with text dark or black
+bright: F0F010
+medium: a0a010
+
+reds:  medium with black text, white/light text on dark/black bg, bright text on balck
+ 
+bright: f01010
+medium: a01010
+
+
+greys:
+    white
+    #FFFFFF
+    light
+    #E0E0E0
+    bright
+    #C0C0C0
+    medium
+    #808080
+    dark
+    #202020
+    black
+    #000000
+
+bg black: text to medium
+dark bg: text to bright
+medium bg: black
+bright++ bg; dark +
+
+dark/bright:
+yellow c0c020,2020200
+turkis; 20c0c0,002020
+green: 20C020,002000
+blue: only white/black vs all other
+
+Blue/grey:
+    #E0E0E0
+    #2020C0
+    #000080
+    #202020
+
+all light+/dark+
+
+
