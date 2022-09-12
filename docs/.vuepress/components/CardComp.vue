@@ -27,29 +27,20 @@
 
 <style scoped>
 .card {
-    position:relaitive;
+    position:relative;
     min-width: 0;
     color: var(--c-text);
-    /*
-    color: #222;
-    */
     background-color: var(--c-bg-light); /* #f8f8f8;*/
     padding: 1rem;
     margin: .5rem 0 .5rem 0;
-    box-shadow: -5px 5px 5px rgba(0,0,0,.2),-8px 8px 8px rgba(0,0,0,.4);
-    box-shadow: 3px 3px 3px 3px #444;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.2),8px 8px 8px rgba(0,0,0,.4);
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.2);
+    border: 1px solid var(--c-border); /*rgba(0,0,0,.2);*/
     border-radius: 0.25rem;
 }
 
 .dark .card {
-    /*
-    color: #fff;
-    */
-    background-color: var(--c-bg-light); /* #f333;*/
-    box-shadow: 3px 3px 3px 3px #000;
-    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 5px 5px 5px rgba(0,0,0,.6),8px 8px 8px rgba(0,0,0,1);
 }
 
 
@@ -71,23 +62,29 @@
     font-size: 80%;
 }
 
-.img {
-  width: 30px;
-}
 
 </style>
 
 <style>
+/* global image style */
+
 .card img {
   width: 50px;
 }
 
+/* global chart styles */
 .card .chart {
-  background-color: rgba(255,255,255,.9);
+  background-color: var(--c-bg-fix);
 }
-
+/*
 .dark .card .chart {
   background-color: rgba(255,255,255,.7);
+}
+*/
+
+/* global code styles */
+code {
+  color: var(--c-color) !important;
 }
 
 </style>

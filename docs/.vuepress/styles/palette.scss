@@ -1,0 +1,15 @@
+// global blockquote 
+
+blockquote {
+    color: var(--code-color) !important;
+    background-color: var(--code-bg-color);
+    border-left: 0.2rem solid var(--c-border-light-fix);
+}
+
+.meta-item-info {
+    color: var(--c-info) !important;
+}
+
+code {
+    color: var(--code-color) !important;
+}

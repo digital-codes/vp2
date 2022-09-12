@@ -98,7 +98,7 @@ const convertData = computed(() => {
   display: inline-block;
   margin: .5rem;
   padding: .2rem .8rem .2rem .8rem;
-  border: solid 1px #444;
+  border: solid 1px var(--c-border);
   border-radius: 3px;
   background-color: var(--c-bg-lighter);
 }
@@ -110,7 +110,7 @@ const convertData = computed(() => {
 */
 
 .btn-wrap > a {
-  color: var(--c-text);
+  color: var(--c-brand);
   font-size: 1rem;
   line-height: 1.2rem;
   padding: 0;
@@ -119,14 +119,8 @@ const convertData = computed(() => {
   cursor:pointer;
 }
 
-/*
-.dark .btn-wrap > a {
-  background-color: unset;
-}
-*/
-
 .btn-wrap > button {
-  color: var(--c-text);
+  color: var(--c-brand);
   font-size: 1rem;
   line-height: 1.2rem;
   padding: 0;
@@ -142,11 +136,3 @@ const convertData = computed(() => {
 
 </style>
 
-<style>
-
-
-.dark .btn {
-  background-color: rgba(255,255,255,.7);
-}
-
-</style>

@@ -83,13 +83,15 @@ User select from [FA repo](https://github.com/FortAwesome/vue-fontawesome/tree/v
 
 Size can be sm, md, lg, xl. There are more options see above
 
-SVG solid icons <font-awesome-icon icon="user-secret" size="md"/>
+SVG solid icons <font-awesome-icon icon="user-secret" size="4x"/>
 or <font-awesome-icon :icon="['fas', 'user-secret']" />
 
 Two types of calenders: <font-awesome-icon icon="fa-solid fa-calendar-days" /> <font-awesome-icon icon="fa-regular fa-calendar-days" />
 
 <!-- Don't forget to bind the property with ":" (we forget all the time!) -->
 SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']"  size="xl"/>
+
+SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']" color="#f00" size="sm"/>
 
 
 
@@ -190,12 +192,19 @@ it greenlighted before working on i"
 \
 And another one.
 \
-The master branch is a snapshot of the latest release. Submit your PR in the develop branch
-Include screenshots or animated GIFs in your pull request whenever needed (if visual changes)
-It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash
-it before merging
+If adding new feature:
 \
-DO NOT commit the lib and dist folder, use it only for testing on your end\
+Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have
+it greenlighted before working on i"
+  >
+</MdCard>
+
+## Markdown Card no Footer
+
+<MdCard
+  hdr="Here might be a page title"
+  src="## Image card.
+![img](/images/img.png)
 \
 If adding new feature:
 \
@@ -203,6 +212,7 @@ Provide convincing reason to add this feature. Ideally you should open a suggest
 it greenlighted before working on i"
   >
 </MdCard>
+
 
 
 ## Card Container

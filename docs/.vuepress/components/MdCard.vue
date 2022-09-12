@@ -34,7 +34,7 @@ Provide convincing reason to add this feature. Ideally you should open a suggest
     </template>
 
     <template #default>
-       <Markdown :source="src" class="mdContent"  html="true" />
+       <Markdown :source="src" class="mdContent"  :html=true />
     </template>
 
     <template #footer>
