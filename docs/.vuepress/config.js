@@ -51,7 +51,8 @@ module.exports = {
     // devtools
 		//["script", { src: "http://localhost:8098" }],
 		// ...other tags
-    ["script", { src: "/js/tota11y.min.js"}],
+    // accessibility
+    //["script", { src: "/js/tota11y.min.js"}],
 	  ],
     locales: {
         // The key is the path for the locale to be nested under.
@@ -72,7 +73,9 @@ module.exports = {
 
     theme: localTheme({
       // default theme config
-      locales: {
+      logo: "images/img.png",
+      logoDark: "images/img.png",
+          locales: {
         '/': {
             selectLanguageName: 'German',
             navbar: [
@@ -104,6 +107,7 @@ module.exports = {
 		[
   		registerComponentsPlugin({
               components: {
+                FaIcon: path.resolve(__dirname, './components/FaIcon.vue'),
                 LoaDing: path.resolve(__dirname, './components/LoaDing.vue'),
                 CarouSel: path.resolve(__dirname, './components/CarouSel.vue'),
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),

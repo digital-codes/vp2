@@ -80,13 +80,19 @@ ffffff e0e0e0e c0c0c0 808080 202020 000000
   --c-border: #eaecef;
   --c-border-dark: #dfe2e5;
 */
+
+--c-white: #fff;
+--c-black: #000;
+
 --c-brand: #007800;
+--c-brand-fix: #007800;
 --c-brand-light: var(--c-brand);
 
 --c-info: #0000c0;
 
 // background colors
 --c-bg: #e8e8e8;
+--c-bg2: #f0f0f0;
 --c-bg-fix: #e8e8e8; /* doesn't change on dark mode */
 --c-bg-light: var(--c-bg);
 --c-bg-lighter: var(--c-bg);
@@ -187,6 +193,7 @@ html.dark {
     
     // background colors
     --c-bg: #404040;
+    --c-bg2: #303030;
     --c-bg-light: var(--c-bg);
     --c-bg-lighter: var(--c-bg);
     --c-bg-navbar: var(--c-bg);

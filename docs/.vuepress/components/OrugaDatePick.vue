@@ -13,11 +13,12 @@
 
 <script>
 
-// import oruga in client.js
-/*
-import {  Datetimepicker, Field,   } from '@oruga-ui/oruga-next'
-import '../public/css/oruga.css'
-*/
+// oruga datetimepicker
+//import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
+import {  ODatetimepicker, OField, OInput,  } from '@oruga-ui/oruga-next'
+import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
+// or import oruga in client.js
+
 
   export default {
     data() {
@@ -27,7 +28,7 @@ import '../public/css/oruga.css'
         hourFormat: "24", // Browser locale
         locale: "de-DE" // Browser locale
       }
-    }
+    },
   }
 </script>
 

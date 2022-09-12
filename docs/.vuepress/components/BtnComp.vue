@@ -1,18 +1,7 @@
 <script setup>
+// testing 
+/* 
 import { ref, reactive, computed } from 'vue'
-
-const props = defineProps({
-  class: String,
-  tag: String,
-  href: String,
-  target: String,
-  download: String,
-})
-
-function click() {
-  console.log("Click")
-}
-
 const downloadData = reactive([{"key": 1}, {"key": 2}])
 const fileType = "csv"
 
@@ -54,6 +43,21 @@ const convertData = computed(() => {
   console.log("URL: ", url)
   return url
 })
+*/
+
+function click() {
+  console.log("Click")
+}
+
+
+
+const props = defineProps({
+  class: String,
+  tag: String,
+  href: String,
+  target: String,
+  download: String,
+})
 
 
 </script>
@@ -71,7 +75,7 @@ const convertData = computed(() => {
 
   <span v-if="tag == 'down'" class="btn-wrap">
   <a 
-    :href="convertData" 
+    :href="href" 
     :download="download"
     :class="class"
   >
@@ -100,14 +104,9 @@ const convertData = computed(() => {
   padding: .2rem .8rem .2rem .8rem;
   border: solid 1px var(--c-border);
   border-radius: 3px;
-  background-color: var(--c-bg-lighter);
+  background-color: var(--c-bg);
 }
 
-/*
-.dark .btn-wrap {
-  background-color: var(--c-bg-lighter);
-}
-*/
 
 .btn-wrap > a {
   color: var(--c-brand);

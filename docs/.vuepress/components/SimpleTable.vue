@@ -122,7 +122,7 @@ import DownLoad from './DownLoad.vue'
   }
 </script>
 
-<style>
+<style scoped>
 
 
 .ctable {
@@ -140,43 +140,33 @@ table {
 }
 
 tr:nth-child(2n) {
-  background-color: #eee; /* var(--c-bg-light);*/
+  background-color: var(--c-bg); 
 }
 
 tr:nth-child(2n+1) {
-  background-color: #ddd; /* var(--c-bg-light);*/
-}
-
- .dark tr:nth-child(2n) {
-  background-color: #444; /* var(--c-bg-light);*/
-}
-
-tr:nth-child(2n+1) {
-  background-color: #ddd; /* var(--c-bg-light);*/
-}
-
- .dark tr:nth-child(2n+1) {
-  background-color: #333; /* var(--c-bg-light);*/
+  background-color: var(--c-bg2);  
 }
 
 td, th {
   vertical-align: bottom;
   text-align: left;
-  border: solid 1px rgba(0,0,0,.2);
+  border: solid 1px var(--c-border);
 }
 
 .sticky-hdr {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background: white;
+  background: var(--c-white);
+  color: var(--c-black);
   z-index:3;
 }
 
 .sticky-col {
   position: -webkit-sticky;
   position: sticky;
-  background: white;
+  background: var(--c-white);
+  color: var(--c-black);
   left:0;
   z-index: 4;
 }
@@ -187,8 +177,8 @@ td, th {
   position: sticky;
   top: 0;
   left:0;
-  background: yellow;
+  background: var(--c-white);
+  color: var(--c-brand-fix);
 }
-
 
 </style>

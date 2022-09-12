@@ -1,16 +1,26 @@
 <template>
+  <BtnComp 
+    tag="down" 
+    :download="`${fileName}.${fileType}`" :href="convertData">
+    {{ `${fileName}.${fileType}` }}
+  </BtnComp>
+<!--
 <section class="down" >
     <o-button tag="a" :download="`${fileName}.${fileType}`" :href="convertData">{{ `${fileName}.${fileType}` }}</o-button>
   </section>
+-->
+
 </template>
 
 <script>
+import BtnComp from './BtnComp.vue'
 
 // Blob (JSON processing) is Browser only!
 
 // copyfrom https://github.com/edisdev/download-json-data/blob/develop/src/components/Download.vue
 export default {
   components: {
+    BtnComp,
   },
   props: {
     fileName: {

@@ -43,15 +43,24 @@
 <script>
 
 import CardComp from './CardComp.vue'
-import { useProgrammatic } from '@oruga-ui/oruga-next'
 
+import {  OButton } from '@oruga-ui/oruga-next'
+import {  OCarousel, OCarouselItem } from '@oruga-ui/oruga-next'
+import {  OIcon } from '@oruga-ui/oruga-next'
+import {  ONotification } from '@oruga-ui/oruga-next'
+import { useProgrammatic } from '@oruga-ui/oruga-next'
+import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
+/*
+import Oruga from "@oruga-ui/oruga-next";
+*/
 
     export default {
       components: {
-        CardComp,
+        CardComp, OButton, OCarousel, OCarouselItem,
       },
       methods: {
         simple() {
+          console.log(this.oruga)
           this.oruga.notification.open({
             message:'Something happened',
             closable: true,

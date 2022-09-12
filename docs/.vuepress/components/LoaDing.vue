@@ -1,25 +1,35 @@
+<script setup>
+const props = defineProps({
+  size: String,
+  icon: String,
+})
+
+
+</script>
+
 <template>
 
-<section>
-    <o-field label="Name">
-      <o-loading
-        :full-page="false"
-        :active="true"
-        :can-cancel="false"
-      >
-        {{ message }}
-      </o-loading>
-    </o-field>
-</section>
+<span 
+  class="loading"
+  >
+  <slot></slot>
+  <font-awesome-icon v-if="icon == 'arrow'" icon="fa-solid fa-rotate" class="spinner" spin :size="size" ></font-awesome-icon> 
+  <font-awesome-icon v-if="icon == 'gear'" icon="fa-solid fa-gear" class="spinner" spin :size="size" ></font-awesome-icon> 
+  <font-awesome-icon v-if="icon == 'spinner'" icon="fa-solid fa-spinner" class="spinner" spin :size="size" ></font-awesome-icon> 
+
+  </span>
 
 </template>
 
-<script>
+<style scoped>
+.loading {
 
-export default {
-    props: ["message"],
-    components: {
-    },
 }
 
-</script>
+.spinner {
+  margin-left: 1rem;
+  color: var(--c-info);
+
+}
+
+</style>

@@ -83,16 +83,31 @@ User select from [FA repo](https://github.com/FortAwesome/vue-fontawesome/tree/v
 
 Size can be sm, md, lg, xl. There are more options see above
 
-SVG solid icons <font-awesome-icon icon="user-secret" size="4x"/>
-or <font-awesome-icon :icon="['fas', 'user-secret']" />
 
-Two types of calenders: <font-awesome-icon icon="fa-solid fa-calendar-days" /> <font-awesome-icon icon="fa-regular fa-calendar-days" />
+Loading Spinner
 
-<!-- Don't forget to bind the property with ":" (we forget all the time!) -->
-SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']"  size="xl"/>
+<LoaDing size="2x" icon="arrow">123</LoaDing>
 
-SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']" color="#f00" size="sm"/>
+Loading Spinner
 
+<LoaDing size="4x" icon="gear">123</LoaDing>
+
+Loading Spinner
+
+<LoaDing size="2x" icon="spinner">123</LoaDing>
+<LoaDing size="2x" icon="spinner">123</LoaDing>
+
+
+Icon components
+
+<FaIcon icon="user-secret" type="solid"/>
+<FaIcon icon="github" type="brands" size="4x" mode="action"/>
+<FaIcon icon="linkedin" type="brands"/>
+<FaIcon icon="linux" type="brands" size="2x" mode="info"/>
+<FaIcon icon="calendar-days" type="solid"/>
+<FaIcon icon="calendar-days" type="regular"/>
+
+> Direct loading of font-awesome-icon icon works just once in build mode => Use FaIcon component
 
 
 ## Oruga
@@ -104,6 +119,7 @@ SVG brand icons <font-awesome-icon :icon="['fab', 'font-awesome']" color="#f00" 
 </ClientOnly>
 
 
+<FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
 
 # Images
 
