@@ -33,16 +33,11 @@
     background-color: var(--c-bg-light); /* #f8f8f8;*/
     padding: 1rem;
     margin: .5rem 0 .5rem 0;
-    box-shadow: 5px 5px 5px rgba(0,0,0,.2),8px 8px 8px rgba(0,0,0,.4);
+    box-shadow: var(--c-card-shadow);
     background-clip: border-box;
     border: 1px solid var(--c-border); /*rgba(0,0,0,.2);*/
     border-radius: 0.25rem;
 }
-
-.dark .card {
-    box-shadow: 5px 5px 5px rgba(0,0,0,.6),8px 8px 8px rgba(0,0,0,1);
-}
-
 
 .card .hdr {
     text-align: center;
@@ -61,6 +56,7 @@
     text-align: center;
     padding-top: 10px;
     font-size: 80%;
+    border-top: solid 1px var(--c-border);
 }
 
 

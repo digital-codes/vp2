@@ -105,8 +105,8 @@ const props = defineProps({
   border: solid 1px var(--c-border);
   border-radius: 3px;
   background-color: var(--c-bg);
+  box-shadow: var(--c-btn-shadow);
 }
-
 
 .btn-wrap > a {
   color: var(--c-brand);
