@@ -143,7 +143,7 @@ module.exports = {
     ],
   ],
   extendsMarkdown: (md) => {
-    md.use(footnote) //require("markdown-it-footnote"));
+    md.use(footnote)
   },
   // bundler options ...
   /*

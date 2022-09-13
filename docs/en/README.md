@@ -26,6 +26,17 @@ Video2
 ## Video
 <VideoCardS></VideoCardS>
 
-## Carousel
+
+## Oruga
+
+### Calendar
+
+<ClientOnly>
+  <OrugaDatePick></OrugaDatePick>
+</ClientOnly>
+
+
+
+### Carousel
 
 <CarouSel></CarouSel>

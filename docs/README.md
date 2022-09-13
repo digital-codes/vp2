@@ -33,40 +33,13 @@ src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUvnpYzZGrX
 
 ```
 
-/* latin-ext */
-@font-face {
-  font-family: 'Palanquin';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUvnpYzZGrXi0.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-/* latin-ext */
+/* latin */
 @font-face {
   font-family: 'Palanquin';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUnlJ90n1fBFg7ceXwcf1tN_LA.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Palanquin';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUrn9YzZGrXi0.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Palanquin';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUyn5YzZGrXi0.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 
@@ -108,15 +81,6 @@ Icon components
 <FaIcon icon="calendar-days" type="regular"/>
 
 > Direct loading of font-awesome-icon icon works just once in build mode => Use FaIcon component
-
-
-## Oruga
-
-### Calendar
-
-<ClientOnly>
-  <OrugaDatePick></OrugaDatePick>
-</ClientOnly>
 
 
 <FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
@@ -215,9 +179,26 @@ it greenlighted before working on i"
   >
 </MdCard>
 
-## Markdown Card no Footer
+## Markdown Card with Image
+
+### Normal 
 
 <MdCard
+  hdr="Here might be a page title"
+  src="## Image card.
+![img](/images/img.png)
+\
+If adding new feature:
+\
+Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have
+it greenlighted before working on i"
+  >
+</MdCard>
+
+### Zoomable 
+
+<MdCard
+  zoom=true
   hdr="Here might be a page title"
   src="## Image card.
 ![img](/images/img.png)
@@ -239,7 +220,7 @@ it greenlighted before working on i"
 
 ### Simple Table
 
-<SimpleTable>
+<SimpleTable :stickyHeader="true" :stickyIndex="true" >
 </SimpleTable>
 
 
