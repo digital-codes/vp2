@@ -198,7 +198,7 @@ it greenlighted before working on i"
 ### Zoomable 
 
 <MdCard
-  zoom=true
+  :zoom=true
   hdr="Here might be a page title"
   src="## Image card.
 ![img](/images/img.png)

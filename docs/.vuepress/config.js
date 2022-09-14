@@ -18,6 +18,7 @@ import pkg from 'markdown-it-footnote';
 const { footnote } = pkg;
 */
 
+import { visualizer } from "rollup-plugin-visualizer";
 
 module.exports = {
 	dest: "./dist",
@@ -153,12 +154,12 @@ module.exports = {
   }),
   */
  // SSR now work with vite default settings
- /*
+ /* */
   bundler: viteBundler({
     viteOptions: {
-      type: "module",
+      plugins: [visualizer()],
     },
     vuePluginOptions: {},
   }),
-  */
+  /* */
 }

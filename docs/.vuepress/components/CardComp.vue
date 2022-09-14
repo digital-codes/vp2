@@ -18,7 +18,7 @@
     </div>
   </main>
   <footer class="ftr">
-    <div>
+    <div class="ftr-content">
     <slot name="footer"></slot>
     </div>
   </footer>
@@ -54,11 +54,13 @@
 
 .card .ftr {
     text-align: center;
-    padding-top: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
     font-size: 80%;
+    /*
     border-top: solid 1px var(--c-border);
+    */
 }
-
 
 </style>
 

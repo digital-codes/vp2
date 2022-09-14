@@ -108,6 +108,10 @@ const props = defineProps({
   box-shadow: var(--c-btn-shadow);
 }
 
+.btn-wrap:hover {
+  transform: scale(1.1);
+}
+
 .btn-wrap > a {
   color: var(--c-brand);
   font-size: 1rem;
