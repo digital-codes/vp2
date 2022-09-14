@@ -15,12 +15,15 @@
 
 // oruga datetimepicker
 //import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
-import {  ODatetimepicker, OField, OInput,  } from '@oruga-ui/oruga-next'
+import {  ODatetimepicker, OField, OInput } from '@oruga-ui/oruga-next'
 import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
 // or import oruga in client.js
 
 
   export default {
+    components: {
+      ODatetimepicker, OField, OInput
+    },
     data() {
       return {
         showWeekNumber: true,

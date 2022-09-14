@@ -83,7 +83,8 @@ library.add(faCheck,
   faLinux
 )
 
-// import orugo to modify icons
+// import oruga, will not work otherwise.
+// icons can be configured later
 import Oruga from "@oruga-ui/oruga-next";
 
 
@@ -101,13 +102,8 @@ export default defineClientConfig({
     // fontawesome. this name must also be used for oruga
     app.component('font-awesome-icon', FontAwesomeIcon)
 
-    /* */
     // oruga
-
-    app.use(Oruga, {
-      iconComponent: "font-awesome-icon",
-      iconPack: "fas"
-    })
+    app.use(Oruga)
 
   },
   setup() {},

@@ -6,7 +6,10 @@
   <OrugaDatePick></OrugaDatePick>
 </ClientOnly>
 
+## Notifcation
 
+<OrugaNotify>
+</OrugaNotify>
 
 ## Carousel
 

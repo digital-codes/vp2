@@ -112,6 +112,7 @@ module.exports = {
                 LoaDing: path.resolve(__dirname, './components/LoaDing.vue'),
                 CarouSel: path.resolve(__dirname, './components/CarouSel.vue'),
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
+                OrugaNotify: path.resolve(__dirname, './components/OrugaNotify.vue'),
                 DownLoad: path.resolve(__dirname, './components/DownLoad.vue'),
                 //
                 CardComp: path.resolve(__dirname, './components/CardComp.vue'),
@@ -158,6 +159,11 @@ module.exports = {
   bundler: viteBundler({
     viteOptions: {
       plugins: [visualizer()],
+      build: {
+        chunkSizeWarningLimit: 1200,
+        reportCompressedSize: true,
+        minify: true,
+      },
     },
     vuePluginOptions: {},
   }),
