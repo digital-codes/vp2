@@ -224,8 +224,9 @@ it greenlighted before working on i"
 </SimpleTable>
 
 ## Deck Chart
-
-<BikeDeck></BikeDeck>
+<ClientOnly>
+  <BikeDeck></BikeDeck>
+</ClientOnly>
 
 ## Leaflet map
 <GeoMapS>

@@ -5,7 +5,7 @@
     </template>
 
     <template #default>
-        <div  class="chart" ref="deck" >
+        <div class="chart" ref="deck" >
             <canvas class="cv" ref="cv">
             </canvas>
         </div>

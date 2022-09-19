@@ -149,14 +149,14 @@ module.exports = {
     md.use(footnote)
   },
   // bundler options ...
-  /*
+  /* */
   bundler: webpackBundler({
     postcss: {},
     vue: {},
   }),
-  */
+  /* */
  // SSR now work with vite default settings
- /* */
+ /* 
   bundler: viteBundler({
     viteOptions: {
       plugins: [visualizer()],
@@ -168,5 +168,5 @@ module.exports = {
     },
     vuePluginOptions: {},
   }),
-  /* */
+   */
 }
