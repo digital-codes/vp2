@@ -223,7 +223,9 @@ it greenlighted before working on i"
 <SimpleTable :stickyHeader="true" :stickyIndex="true" >
 </SimpleTable>
 
+## Deck Chart
 
+<BikeDeck></BikeDeck>
 
 ## Leaflet map
 <GeoMapS>

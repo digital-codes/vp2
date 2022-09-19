@@ -5,7 +5,7 @@
     </template>
 
     <template #default>
-        <vue-echarts :option="option"  class="chart" ref="chart1" />
+        <vue-echarts :option="option"  class="chart" ref="chart" />
     </template>
 
     <template #footer>
@@ -91,6 +91,10 @@ export default {
             ]
             }
         }
+    },
+    setup() {
+        const chart = ref(null)
+        return { chart }
     },
 }
 </script>
