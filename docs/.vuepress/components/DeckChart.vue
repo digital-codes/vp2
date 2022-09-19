@@ -28,8 +28,8 @@ import { defineComponent } from 'vue'
 
 import { Deck } from '@deck.gl/core';
 import { TripsLayer } from '@deck.gl/geo-layers';
-import { ScatterplotLayer } from '@deck.gl/layers';
-import { PolygonLayer } from '@deck.gl/layers';
+//import { ScatterplotLayer } from '@deck.gl/layers';
+//import { PolygonLayer } from '@deck.gl/layers';
 import { BitmapLayer } from '@deck.gl/layers';
 import { TileLayer } from '@deck.gl/geo-layers';
 import { TextLayer } from '@deck.gl/layers';
