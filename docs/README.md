@@ -57,6 +57,20 @@ User select from [FA repo](https://github.com/FortAwesome/vue-fontawesome/tree/v
 Size can be sm, md, lg, xl. There are more options see above
 
 
+#### Icon components
+
+<FaIcon icon="user-secret" type="solid"/>
+<FaIcon icon="github" type="brands" size="4x" mode="action"/>
+<FaIcon icon="linkedin" type="brands"/>
+<FaIcon icon="linux" type="brands" size="2x" mode="info"/>
+<FaIcon icon="calendar-days" type="solid"/>
+<FaIcon icon="calendar-days" type="regular"/>
+
+> Direct loading of font-awesome-icon icon works just once in build mode => Use FaIcon component
+
+<FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
+
+
 Loading Spinner
 
 <LoaDing size="2x" icon="arrow">123</LoaDing>
@@ -70,20 +84,14 @@ Loading Spinner
 <LoaDing size="2x" icon="spinner">123</LoaDing>
 <LoaDing size="2x" icon="spinner">123</LoaDing>
 
+#### Direct load
+one: <font-awesome-icon :icon="['fas', 'user-secret']" />
+two: <font-awesome-icon :icon="['fab', 'twitter']" />
+three: <font-awesome-icon :icon="['fas', 'gear']" spin />
+four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
 
-Icon components
+followed by component: <FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
 
-<FaIcon icon="user-secret" type="solid"/>
-<FaIcon icon="github" type="brands" size="4x" mode="action"/>
-<FaIcon icon="linkedin" type="brands"/>
-<FaIcon icon="linux" type="brands" size="2x" mode="info"/>
-<FaIcon icon="calendar-days" type="solid"/>
-<FaIcon icon="calendar-days" type="regular"/>
-
-> Direct loading of font-awesome-icon icon works just once in build mode => Use FaIcon component
-
-
-<FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
 
 # Images
 
