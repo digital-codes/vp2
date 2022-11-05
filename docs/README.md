@@ -237,8 +237,10 @@ it greenlighted before working on i"
 </ClientOnly>
 
 ## Leaflet map
+<ClientOnly>
 <GeoMapS>
 </GeoMapS>
+</ClientOnly>
 
 ## Chart 1
 <CharT1S></CharT1S>

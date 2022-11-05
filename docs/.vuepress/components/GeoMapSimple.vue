@@ -19,7 +19,6 @@
               :url="url"
               :attribution="attribution"
             />
-
       <l-marker :lat-lng="withPopup">
         <l-popup>
             I am a popup
@@ -31,17 +30,21 @@
         </l-tooltip>
       </l-marker>
 
-
           </l-map>
           <!--
           <l-map style="height:50vh">
               <l-geo-json :geojson="geojson" :options="geojsonOptions" />
           </l-map>
           -->
+
           </div>
-            <LoaDing v-else 
-                message=Loading>
+          <div v-else>
+            <LoaDing 
+                icon="spinner"
+                size="xl"
+            >
             </LoaDing>
+          </div>
 
     </template>
 
@@ -109,15 +112,16 @@ const latLng = function (x,y) {return {lat:x,lon:y}}
       },
       async beforeMount() {
           // initialize map in before mount
-          console.log("Before  mount")
+          console.log("Before mount")
           // load map data
           const url = "data/pois.json"
           const r = await axios.get(url)
           this.withPopup = r.data.pop
           this.withTooltip = r.data.tool
           //
-          this.mapLoaded = true
-          console.log("Loaded",this.mapLoaded)
+          // this.mapLoaded = true
+          setTimeout(this.enableMap,2000)
+          console.log("Map Loaded",this.mapLoaded)
       },
 
       methods: {
@@ -129,7 +133,12 @@ const latLng = function (x,y) {return {lat:x,lon:y}}
         },
         innerClick() {
           alert("Click!");
-        }
+        },
+        enableMap() {
+          console.log("Enable map")
+          this.mapLoaded = true
+          console.log("Map Loaded",this.mapLoaded)
+        },
       }
   }
   </script>
