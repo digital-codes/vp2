@@ -1,5 +1,5 @@
 {
-  "name": "vp2b51",
+  "name": "vp2b53",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,16 +12,16 @@
   "license": "ISC",
   "devDependencies": {
     "@vue-leaflet/vue-leaflet": "^0.6.1",
-    "@vuepress/bundler-webpack": "^2.0.0-beta.51",
-    "@vuepress/plugin-back-to-top": "^2.0.0-beta.51",
-    "@vuepress/plugin-container": "^2.0.0-beta.51",
-    "@vuepress/plugin-external-link-icon": "^2.0.0-beta.51",
-    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.51",
-    "@vuepress/plugin-palette": "^2.0.0-beta.51",
-    "@vuepress/plugin-pwa": "^2.0.0-beta.51",
-    "@vuepress/plugin-register-components": "^2.0.0-beta.51",
+    "@vuepress/bundler-webpack": "^2.0.0-beta.53",
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.53",
+    "@vuepress/plugin-container": "^2.0.0-beta.53",
+    "@vuepress/plugin-external-link-icon": "^2.0.0-beta.53",
+    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.53",
+    "@vuepress/plugin-palette": "^2.0.0-beta.53",
+    "@vuepress/plugin-pwa": "^2.0.0-beta.53",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.53",
     "rollup-plugin-visualizer": "^5.8.1",
-    "vuepress": "^2.0.0-beta.51"
+    "vuepress": "^2.0.0-beta.53"
   },
   "dependencies": {
     "@deck.gl/core": "^8.8.11",
@@ -36,7 +36,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "@oruga-ui/oruga-next": "^0.5.6",
     "@types/marked": "^4.0.7",
-    "@vuepress/cli": "^2.0.0-beta.51",
+    "@vuepress/cli": "^2.0.0-beta.53",
     "axios": "^0.27.2",
     "css-loader": "^6.7.1",
     "deck.gl-leaflet": "^1.2.1",
