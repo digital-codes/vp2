@@ -6,6 +6,10 @@
   <OrugaDatePick></OrugaDatePick>
 </ClientOnly>
 
+## Upload
+
+<OrugaUpload/>
+
 ## Notifcation
 
 <OrugaNotify>

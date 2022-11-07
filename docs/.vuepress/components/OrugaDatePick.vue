@@ -29,6 +29,18 @@
     inline></o-datetimepicker>
   </section>
 
+
+  <section>
+    <p>Calendar events</p>
+    <o-datepicker
+      inline
+      :events="events"
+      indicators="dots"
+      v-model="chkEvent"
+    >
+    </o-datepicker>
+  </section>
+
 </template>
 
 <script>
@@ -39,7 +51,7 @@ import {  ODatetimepicker, OField, OInput, OButton } from '@oruga-ui/oruga-next'
 import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
 // or import oruga in client.js
 
-import { ref } from "vue"
+import { ref, computed } from "vue"
 
   export default {
     components: {
@@ -47,6 +59,7 @@ import { ref } from "vue"
     },
     data() {
       return {
+        chkEvent:new Date(),
         theDate:new Date(),
         showWeekNumber: true,
         enableSeconds: false,
@@ -57,14 +70,67 @@ import { ref } from "vue"
     watch: {
       theDate() {
         console.log("Pick:",this.theDate)
-        console.log("Pkr:",this.picker)
+      },
+      chkEvent(){
+        console.log("evt",this.chkEvent)
+        /*
+        this.events.forEach(element => {
+          console.log(element.date)
+        });
+        */
+        const found = this.events.find(item => item.date.getTime() == this.chkEvent.getTime());
+        if (found) {
+          console.log("Found")
+          alert("Event found")
+        }
       },
     },
     methods: {
     },
     setup() {
       const picker = ref()
-      return { picker }
+      const events = ref([
+        {date: new Date(2022, 10 + Math.floor(Math.random() * 2), 2)},
+        {date: new Date(2022, 10 + Math.floor(Math.random() * 2), 6)},
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 6),
+          type: 'info',
+        },
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 8),
+          type: 'danger',
+        },
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 10),
+          type: 'success',
+        },
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 10),
+          type: 'link',
+        },
+        {date: new Date(2022, 10 + Math.floor(Math.random() * 2), 12)},
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 12),
+          type: 'warning',
+        },
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 16),
+          type: 'danger',
+        },
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 29),
+          type: 'success',
+        },
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 29),
+          type: 'warning',
+        },
+        {
+          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 29),
+          type: 'info',
+        },
+      ])
+      return { picker, events }
     }
   }
 </script>
