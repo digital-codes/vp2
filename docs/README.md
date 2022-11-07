@@ -23,7 +23,7 @@ Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium dolo
 
 Style defs from Google, e.g. 
 
-optionally replace google url with local url e.g. 
+Replace google url ! (Abmahngefahr wg DSGVO) with local url e.g. 
 
 src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUvnpYzZGrXi0.woff2) format('woff2');
 =>

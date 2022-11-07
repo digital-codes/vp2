@@ -35,6 +35,7 @@ module.exports = {
 		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
     // fonts, if not loaded via scss/css
+    // don't load from external gogle due to GDPR "abmahngefahr"
     /*
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

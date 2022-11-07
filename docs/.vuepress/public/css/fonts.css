@@ -1,5 +1,7 @@
 /*  fonts */
 
+/* Don't load from Google etc external (GDPR violation) */
+
 /* latin-ext */
 @font-face {
   font-family: 'Palanquin';
