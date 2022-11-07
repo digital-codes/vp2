@@ -10,7 +10,7 @@
 
     <template #default>
         <vue-echarts 
-            :option="options" class="chart" autoresize ref="chart7" 
+            :option="options" class="chart" autoresize ref="chart"  aria-role="meter"
         />
     </template>
 
@@ -54,6 +54,10 @@ import { ref } from 'vue';
 import CardComp from './CardComp.vue'
 
 const chartOptions  = {
+    aria: {
+        enabled: true,
+        show: true
+    },
     textStyle: {
         fontFamily:"Palanquin",
     },
@@ -213,12 +217,12 @@ export default {
         setTimeout(this.setDav,1000)
     },
     setup() {
-        const chart7 = ref(null)
+        const chart = ref(null)
         const options = ref(chartOptions)
         options.value.series[0].data = chartData
         const dataLoaded = ref(false)
         const downData = ref([])
-        return { chart7, options, dataLoaded, downData }
+        return { chart, options, dataLoaded, downData }
     },
 }
 </script>

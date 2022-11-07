@@ -6,10 +6,14 @@
     </template>
 
     <template #default>
-          <div>
+          <div
+            aria-label="Video with poster image"
+            aria-description="Some strange video as example"
+          >
               <video style="width:100%;resize:both;"
                 controls preload='none'
-                poster="https://media.w3.org/2010/05/sintel/poster.png">
+                poster="https://media.w3.org/2010/05/sintel/poster.png"
+              >
                 <source id='mp4'
                   src="https://media.w3.org/2010/05/sintel/trailer.mp4"
                   type='video/mp4'>

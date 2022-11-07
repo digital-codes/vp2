@@ -5,7 +5,7 @@
     </template>
 
     <template #default>
-        <vue-echarts :option="option"  class="chart" ref="chart1" />
+        <vue-echarts :option="option"  class="chart" ref="chart" aria-role="meter"/>
     </template>
 
 <!--
@@ -57,6 +57,10 @@ export default {
     data ()  {
         return {
             option: {
+                aria: {
+                    enabled: true,
+                    show: true
+                },
                 textStyle: {
                     fontFamily:"Palanquin",
                 },

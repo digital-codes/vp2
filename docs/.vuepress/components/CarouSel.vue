@@ -4,6 +4,8 @@
     <CardComp >
     <template #default>
         <o-carousel 
+          aria-label="Carousel"
+          aria-description="Carousel with 3 slides"
           :autoplay="true" 
           :repeat="true" 
           :interval=2500

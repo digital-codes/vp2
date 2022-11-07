@@ -6,10 +6,11 @@
 
     <template #default>
         <vue-echarts v-if="mapLoaded" 
-            :option="options" class="chart" autoresize ref="chart6" 
+            :option="options" class="chart" autoresize ref="chart"  aria-role="meter" 
         />
         <LoaDing v-else 
-            message=Loading>
+            :size="xl"
+            :icon="spinner">
         </LoaDing>
     </template>
 
@@ -58,6 +59,10 @@ Later on, we can do further updates, example here with fakeUpdate()
 */
 
 const chartOptions  = {
+    aria: {
+        enabled: true,
+        show: true
+    },
     textStyle: {
         fontFamily:"Palanquin",
     },
@@ -149,10 +154,10 @@ export default {
         echarts.registerMap('USA', {geoJSON: map})
         console.log("Registered")
         */
-        const chart6 = ref(null)
+        const chart = ref(null)
         const options = ref(chartOptions)
         const mapLoaded = ref(false)
-        return { chart6, options, echarts, mapLoaded }
+        return { chart, options, echarts, mapLoaded }
     },
     async beforeMount() {
         // initialize map in before mount

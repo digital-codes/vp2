@@ -6,7 +6,11 @@
     </template>
 
     <template #default>
-          <div v-if="mapLoaded" class="chart">
+          <div v-if="mapLoaded" 
+            class="chart"
+            aria-label="Map"
+            aria-description="Geographic map with popups"
+          >
           
           <l-map 
               :zoom="zoom"
