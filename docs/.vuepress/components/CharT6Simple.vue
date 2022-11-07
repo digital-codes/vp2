@@ -9,8 +9,8 @@
             :option="options" class="chart" autoresize ref="chart"  aria-role="meter" 
         />
         <LoaDing v-else 
-            :size="xl"
-            :icon="spinner">
+            size="xl"
+            icon="spinner">
         </LoaDing>
     </template>
 
