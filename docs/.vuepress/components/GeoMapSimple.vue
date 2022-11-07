@@ -161,6 +161,12 @@ navbar is 20, sidebar is 10. stay below!
   z-index: 6;
 }
 
+.leaflet-control-attribution a, 
+.leaflet-control-attribution a:hover {
+  color:unset;
+  text-decoration: none;
+}
+
 
 </style>
 
