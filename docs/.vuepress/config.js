@@ -12,6 +12,10 @@ import footnote from "markdown-it-footnote"
 import  { webpackBundler } from '@vuepress/bundler-webpack'
 import { viteBundler } from '@vuepress/bundler-vite'
 
+
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
+
+
 /*
 CommonJS modules can always be imported via the default export, for example using:
 import pkg from 'markdown-it-footnote';
@@ -144,6 +148,12 @@ module.exports = {
         }
         })
     ],
+    [
+      sitemapPlugin({
+        // your options
+        hostname:"vp2.akugel.de",
+      }),
+    ]
   ],
   extendsMarkdown: (md) => {
     md.use(footnote)
