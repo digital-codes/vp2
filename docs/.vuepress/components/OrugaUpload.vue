@@ -4,8 +4,11 @@
       <o-upload v-model="dropFiles"  multiple drag-drop>
         <section class="ex-center">
           <p>
+            <font-awesome-icon icon="fa-upload" size="xl" pull="left" @click="$refs.picker.toggle()"/>
+            <!--
             <o-icon icon="upload" size="is-large">
             </o-icon>
+            -->
           </p>
           <p>Drop your files here or click to upload</p>
         </section>
@@ -50,7 +53,7 @@ export default defineComponent({
 }
 
 .upload {
-  background-color: #ccf;
+  background-color: #226;
 }
 
 </style>

@@ -19,7 +19,7 @@ import Navbar from '@theme/Navbar.vue'
 
 <template>
   <div
-    class="theme-container"
+    class="theme-container not-found"
   >
     <slot name="navbar">
       <Navbar>
@@ -55,18 +55,33 @@ import Navbar from '@theme/Navbar.vue'
   text-align: center;
 }
 
+div .not-found .toggle-sidebar-button {
+  display: none;
+}
+
+@media (max-width: 419px) {
+  div .not-found .navbar {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 959px) {
+  div .not-found .navbar {
+    padding-left: 2rem;
+  }
+}
 
 </style>
 
 <style lang="scss">
 /* import default variables from palette */
-@import '@vuepress/plugin-palette/palette';
+//@import '@vuepress/plugin-palette/palette';
 
 // override  some ...
 @import '../../styles/palette.scss';
 @import '../../styles/index.scss';
 
 
-</style>
 
+</style>
 

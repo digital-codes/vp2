@@ -33,7 +33,7 @@ import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 
 <style lang="scss">
 /* import default variables from palette */
-@import '@vuepress/plugin-palette/palette';
+//@import '@vuepress/plugin-palette/palette';
 
 // override  some ...
 @import '../../styles/palette.scss';

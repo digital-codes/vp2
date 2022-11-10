@@ -48,6 +48,7 @@ import {
   faRotate,
   faArrowsRotate,
   faCalendarDays as faSolidCal,
+  faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faCalendarDays as faRegularCal} from '@fortawesome/free-regular-svg-icons'
@@ -80,7 +81,8 @@ library.add(faCheck,
   faGithub,
   faTwitter,
   faLinkedin,
-  faLinux
+  faLinux,
+  faUpload,
 )
 
 // import oruga, will not work otherwise.
