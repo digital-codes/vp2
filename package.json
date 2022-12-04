@@ -35,7 +35,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.1",
-    "@oruga-ui/oruga-next": "^0.5.8",
+    "@oruga-ui/oruga-next": "^0.5.9",
     "@types/marked": "^4.0.7",
     "@vuepress/cli": "^2.0.0-beta.53",
     "axios": "^0.27.2",
