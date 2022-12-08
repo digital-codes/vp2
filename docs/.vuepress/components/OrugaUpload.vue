@@ -49,7 +49,10 @@ export default defineComponent({
 }
 
 .upload {
-  background-color: #226;
+  background-color: #cce;
+}
+.dark .upload {
+  background-color: #446;
 }
 
 </style>
