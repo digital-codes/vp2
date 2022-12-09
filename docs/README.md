@@ -59,6 +59,22 @@ Size can be sm, md, lg, xl. There are more options see above
 
 #### Icon components
 
+Direct:
+
+**Seems to work with latest version**
+
+<font-awesome-icon :icon="['fas', 'user-secret']" />
+<font-awesome-icon :icon="['fab', 'github']" color="red" size="4x"/>
+<font-awesome-icon :icon="['fab', 'linkedin']" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
+<font-awesome-icon :icon="['fas', 'calendar-days']" />
+<font-awesome-icon :icon="['far', 'calendar-days']" size="xs" color="red" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" color="green"/>
+
+
+Component:
 <FaIcon icon="user-secret" type="solid"/>
 <FaIcon icon="github" type="brands" size="4x" mode="action"/>
 <FaIcon icon="linkedin" type="brands"/>
@@ -86,7 +102,6 @@ Loading Spinner
 
 #### Direct load
 
-**Seems to work with latest version**
 
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
