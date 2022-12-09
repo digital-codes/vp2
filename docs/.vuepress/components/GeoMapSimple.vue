@@ -87,7 +87,7 @@ const latLng = function (x,y) {return {lat:x,lon:y}}
         // new
         zoom: 13,
         center: latLng(48.9984, 8.402),
-        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
         attribution:
           '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
         //withPopup: latLng(48.995, 8.4),
