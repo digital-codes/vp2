@@ -91,12 +91,6 @@ import Oruga from "@oruga-ui/oruga-next";
 
 
 export default defineClientConfig({
-  layouts: {
-    Layout,
-    NotFound,
-
-  }
-  ,
   enhance({ app, router, siteData }) {
     //app.use(somthing, {someOptions})
     // ...
@@ -110,5 +104,10 @@ export default defineClientConfig({
   },
   setup() {},
   rootComponents: [],
+  layouts: {
+    Layout,
+    NotFound,
+
+  },
 })
 

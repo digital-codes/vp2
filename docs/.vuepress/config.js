@@ -1,16 +1,17 @@
+import { defineUserConfig } from 'vuepress'
 
 // beta.51: require replaced by import
+import { path } from  '@vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import  { palettePlugin } from '@vuepress/plugin-palette'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
-import { path } from  '@vuepress/utils'
 import  { localTheme } from './theme'
 
 import footnote from "markdown-it-footnote"
 
 // import bundlers, although not needed normally 
-import  { webpackBundler } from '@vuepress/bundler-webpack'
-import { viteBundler } from '@vuepress/bundler-vite'
+//import { viteBundler } from '@vuepress/bundler-vite'
+// import { visualizer } from "rollup-plugin-visualizer";
 
 
 import { sitemapPlugin } from "vuepress-plugin-sitemap2";
@@ -22,9 +23,8 @@ import pkg from 'markdown-it-footnote';
 const { footnote } = pkg;
 */
 
-import { visualizer } from "rollup-plugin-visualizer";
 
-module.exports = {
+export default defineUserConfig({
 	dest: "./dist",
 	temp:"./temp",
 	cache:"./cache",
@@ -109,6 +109,9 @@ module.exports = {
             },
     },
   }),  
+  extendsMarkdown: (md) => {
+    md.use(footnote)
+  },
   plugins: [
 		[
   		registerComponentsPlugin({
@@ -157,9 +160,6 @@ module.exports = {
       }),
     ]
   ],
-  extendsMarkdown: (md) => {
-    md.use(footnote)
-  },
   // bundler options ...
   /* 
   bundler: webpackBundler({
@@ -168,7 +168,8 @@ module.exports = {
   }),
    */
  // SSR now work with vite default settings
- /* */
+ /* 
+
   bundler: viteBundler({
     viteOptions: {
       plugins: [visualizer()],
@@ -180,5 +181,6 @@ module.exports = {
     },
     vuePluginOptions: {},
   }),
-  /* */
-}
+   */
+})
+

@@ -33,6 +33,9 @@ import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
+    components: {
+      OField, OUpload, OButton,
+    },
     setup() {
         const dropFiles = ref([])
         const deleteDropFile = (index) => {

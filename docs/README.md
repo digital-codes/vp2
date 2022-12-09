@@ -85,10 +85,17 @@ Loading Spinner
 <LoaDing size="2x" icon="spinner">123</LoaDing>
 
 #### Direct load
+
+**Seems to work with latest version**
+
+one: <font-awesome-icon :icon="['fas', 'user-secret']" />
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
 two: <font-awesome-icon :icon="['fab', 'twitter']" />
 three: <font-awesome-icon :icon="['fas', 'gear']" spin />
+three: <font-awesome-icon :icon="['fas', 'gear']" spin />
 four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
+four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
+five: <font-awesome-icon :icon="['fab', 'twitter']" color="green" size="4x"/>
 
 followed by component: <FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
 

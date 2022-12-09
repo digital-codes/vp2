@@ -52,8 +52,9 @@ import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
 // or import oruga in client.js
 
 import { ref, computed } from "vue"
+import { defineComponent } from 'vue'
 
-  export default {
+export default defineComponent({
     components: {
       ODatetimepicker, OField, OInput, OButton
     },
@@ -132,7 +133,7 @@ import { ref, computed } from "vue"
       ])
       return { picker, events }
     }
-  }
+  })
 </script>
 
 <style scoped>
