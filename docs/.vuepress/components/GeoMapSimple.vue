@@ -1,62 +1,49 @@
 
 <template>
-    <CardComp >
+  <CardComp>
     <template #header>
-        Card title
+      Card title
     </template>
 
     <template #default>
-          <div v-if="mapLoaded" 
-            class="chart"
-            aria-label="Map"
-            aria-description="Geographic map with popups"
-          >
-          
-          <l-map 
-              :zoom="zoom"
-              :center="center"
-          >
+      <div v-if="mapLoaded" class="chart" aria-label="Map" aria-description="Geographic map with popups">
 
-            <l-geo-json :geojson="geojson" :options="geojsonOptions" />
+        <l-map :zoom="zoom" :center="center" :minZoom="3" :maxZoom="18" :zoomAnimation="true" ref="map">
 
-            <l-tile-layer
-              :url="url"
-              :attribution="attribution"
-            />
-      <l-marker :lat-lng="withPopup">
-        <l-popup>
-            I am a popup
-        </l-popup>
-      </l-marker>
-      <l-marker :lat-lng="withTooltip">
-        <l-tooltip :options="{ permanent: true, interactive: true }">
-            I am a tooltip
-        </l-tooltip>
-      </l-marker>
+          <l-geo-json :geojson="geojson" :options="geojsonOptions" />
 
-          </l-map>
-          <!--
+          <l-tile-layer :url="url" :attribution="attribution" layer-type="base" name="OpenStreetMap" />
+          <l-marker :lat-lng="withPopup">
+            <l-popup>
+              I am a popup
+            </l-popup>
+          </l-marker>
+          <l-marker :lat-lng="withTooltip">
+            <l-tooltip :options="{ permanent: true, interactive: true }">
+              I am a tooltip
+            </l-tooltip>
+          </l-marker>
+
+        </l-map>
+        <!--
           <l-map style="height:50vh">
               <l-geo-json :geojson="geojson" :options="geojsonOptions" />
           </l-map>
           -->
 
-          </div>
-          <div v-else>
-            <LoaDing 
-                icon="spinner"
-                size="xl"
-            >
-            </LoaDing>
-          </div>
+      </div>
+      <div v-else>
+        <LoaDing icon="spinner" size="xl">
+        </LoaDing>
+      </div>
 
     </template>
 
     <template #footer>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+      Some quick example text to build on the card title and make up the bulk of the card's content.
     </template>
 
-    </CardComp >
+  </CardComp>
 
 
 </template>
@@ -77,75 +64,80 @@ import "leaflet/dist/leaflet.css"
 import { LMap, LGeoJson } from "@vue-leaflet/vue-leaflet";
 import { LTileLayer, LMarker, LPopup, LTooltip } from "@vue-leaflet/vue-leaflet";
 
+// needed since 1.9.3 ??
+import * as L from "leaflet"
+
+
 // importing from leaflet breaks build SSR! replace latLng function
 //import { latLng } from "leaflet";
 
-const latLng = function (x,y) {return {lat:x,lon:y}}
+const latLng = function (x, y) { return { lat: x, lon: y } }
 
-    export default {
-      data:() => ({
-        // new
-        zoom: 13,
-        center: latLng(48.9984, 8.402),
-        url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-        attribution:
-          '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-        //withPopup: latLng(48.995, 8.4),
-        //withTooltip: latLng(49., 8.42),
-        currentZoom: 11.5,
-        currentCenter: latLng(48.9984, 8.402),
-      }),
-      components: {
-        CardComp,
-        LMap, LGeoJson,
-        LTileLayer, LMarker, LPopup, LTooltip
-      },
-      setup() {
-        // load data in asyn  beforeMount ..
-        const mapLoaded = ref(false)
-        const geojson = ref({
-          type: "FeatureCollection",
-          features: [
-          // ...
-          ],
-        })
-        const geojsonOptions = ref({})
-        const withPopup = ref(null)
-        const withTooltip = ref(null)
-        return { axios, withPopup, withTooltip , geojson, geojsonOptions, mapLoaded }
-      },
-      async beforeMount() {
-          // initialize map in before mount
-          console.log("Before mount")
-          // load map data
-          const url = "data/pois.json"
-          const r = await axios.get(url)
-          this.withPopup = r.data.pop
-          this.withTooltip = r.data.tool
-          //
-          // this.mapLoaded = true
-          setTimeout(this.enableMap,2000)
-          console.log("Map Loaded",this.mapLoaded)
-      },
+export default {
+  data: () => ({
+    // new
+    zoom: 13,
+    center: latLng(48.9984, 8.402),
+    url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    attribution:
+      '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    //withPopup: latLng(48.995, 8.4),
+    //withTooltip: latLng(49., 8.42),
+    currentZoom: 11.5,
+    currentCenter: latLng(48.9984, 8.402),
+  }),
+  components: {
+    CardComp,
+    LMap, LGeoJson,
+    LTileLayer, LMarker, LPopup, LTooltip
+  },
+  setup() {
+    // load data in asyn  beforeMount ..
+    const mapLoaded = ref(false)
+    const geojson = ref({
+      type: "FeatureCollection",
+      features: [
+        // ...
+      ],
+    })
+    const geojsonOptions = ref({})
+    const withPopup = ref(null)
+    const withTooltip = ref(null)
+    const map = ref()
+    return { axios, withPopup, withTooltip, geojson, geojsonOptions, mapLoaded, map }
+  },
+  async beforeMount() {
+    // initialize map in before mount
+    console.log("Before mount")
+    // load map data
+    const url = "data/pois.json"
+    const r = await axios.get(url)
+    this.withPopup = r.data.pop
+    this.withTooltip = r.data.tool
+    //
+    // this.mapLoaded = true
+    setTimeout(this.enableMap, 2000)
+    console.log("Map Loaded", this.mapLoaded)
+  },
 
-      methods: {
-        zoomUpdate(zoom) {
-          this.currentZoom = zoom;
-        },
-        centerUpdate(center) {
-          this.currentCenter = center;
-        },
-        innerClick() {
-          alert("Click!");
-        },
-        enableMap() {
-          console.log("Enable map")
-          this.mapLoaded = true
-          console.log("Map Loaded",this.mapLoaded)
-        },
-      }
+  methods: {
+    zoomUpdate(zoom) {
+      this.currentZoom = zoom;
+    },
+    centerUpdate(center) {
+      this.currentCenter = center;
+    },
+    innerClick() {
+      alert("Click!");
+    },
+    enableMap() {
+      console.log("Enable map")
+      this.mapLoaded = true
+      console.log("Map Loaded", this.mapLoaded)
+    },
   }
-  </script>
+}
+</script>
 
 <style>
 /* 
@@ -156,29 +148,28 @@ navbar is 20, sidebar is 10. stay below!
 .leaflet-pane {
   z-index: 5;
 }
+
 /* control above pane */
-.leaflet-bottom, .leaflet-top {
+.leaflet-bottom,
+.leaflet-top {
   z-index: 6;
 }
 
-.leaflet-control-attribution a, 
+.leaflet-control-attribution a,
 .leaflet-control-attribution a:hover {
-  color:unset;
+  color: unset;
   text-decoration: none;
 }
-
-
 </style>
 
 <style scoped>
 .chart {
-    height:400px;
+  height: 400px;
 }
 
 @media (max-width: 575.98px) {
-.chart {
-    height:250px;
-    }
+  .chart {
+    height: 250px;
+  }
 }
-
 </style>

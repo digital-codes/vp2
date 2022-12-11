@@ -11,10 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vue-leaflet/vue-leaflet": "^0.6.1",
+    "@vue-leaflet/vue-leaflet": "^0.7.0",
     "@vuepress/cli": "2.0.0-beta.58",
     "@vuepress/plugin-pwa": "2.0.0-beta.58",
     "@vuepress/plugin-register-components": "2.0.0-beta.58",
+    "leaflet": "^1.9.3",
     "vuepress": "2.0.0-beta.58",
     "vuepress-plugin-sitemap2": "^2.0.0-beta.99"
   },
@@ -37,7 +38,6 @@
     "echarts-gl": "^2.0.9",
     "echarts-wordcloud": "^2.1.0",
     "esm": "^3.2.25",
-    "leaflet": "^1.8.0",
     "marked": "^4.2.4",
     "node-sass": "^8.0.0",
     "sass-loader": "^13.2.0",
