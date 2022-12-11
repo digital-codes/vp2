@@ -1,7 +1,10 @@
 # vp2
 Vuepress2 Test
 
-for 2.0.0-beta-51
+for 2.0.0-beta-56
+
+## Live Demo
+https://vp2.akugel.de/
 
 
 ## Issues
