@@ -1,7 +1,12 @@
 # vp2
 Vuepress2 Test
 
-for 2.0.0-beta-56
+for 2.0.0-beta-58
+
+Note: don't use ^ on vuepress version in package.json ....
+
+For now, don't upgrade leaflet beyond 1.8.0 !
+
 
 ## Live Demo
 https://vp2.akugel.de/
