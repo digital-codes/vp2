@@ -59,20 +59,6 @@ Size can be sm, md, lg, xl. There are more options see above
 
 #### Icon components
 
-Direct:
-
-**Seems to work with latest version**
-
-<font-awesome-icon :icon="['fas', 'user-secret']" />
-<font-awesome-icon :icon="['fab', 'github']" color="red" size="4x"/>
-<font-awesome-icon :icon="['fab', 'linkedin']" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
-<font-awesome-icon :icon="['fas', 'calendar-days']" />
-<font-awesome-icon :icon="['far', 'calendar-days']" size="xs" color="red" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" color="green"/>
-
 
 Component:
 <FaIcon icon="user-secret" type="solid"/>
@@ -101,18 +87,38 @@ Loading Spinner
 <LoaDing size="2x" icon="spinner">123</LoaDing>
 
 #### Direct load
+**Stil does not work (2022-12-10) (only first icon is generated ...). Don't use**
+
+<!--
+<font-awesome-icon :icon="['fas', 'user-secret']" />
+<font-awesome-icon :icon="['fab', 'github']" color="red" size="4x"/>
+<font-awesome-icon :icon="['fab', 'linkedin']" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
+<font-awesome-icon :icon="['fas', 'calendar-days']" />
+<font-awesome-icon :icon="['far', 'calendar-days']" size="xs" color="red" />
+<font-awesome-icon :icon="['fab', 'linux']" size="2x" color="green"/>
+
 
 
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
+
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
+
 two: <font-awesome-icon :icon="['fab', 'twitter']" />
-three: <font-awesome-icon :icon="['fas', 'gear']" spin />
-three: <font-awesome-icon :icon="['fas', 'gear']" spin />
-four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
-four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
-five: <font-awesome-icon :icon="['fab', 'twitter']" color="green" size="4x"/>
 
-followed by component: <FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
+three: <font-awesome-icon :icon="['fas', 'gear']" spin />
+three: <font-awesome-icon :icon="['fas', 'gear']" spin />
+four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
+four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
+
+five: <font-awesome-icon :icon="['fab', 'twitter']" color="green" size="4x"/>
+-->
+
+followed by component: 
+
+<FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
 
 
 # Images
