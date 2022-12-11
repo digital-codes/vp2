@@ -87,34 +87,33 @@ Loading Spinner
 <LoaDing size="2x" icon="spinner">123</LoaDing>
 
 #### Direct load
-**Stil does not work (2022-12-10) (only first icon is generated ...). Don't use**
-
-<!--
-<font-awesome-icon :icon="['fas', 'user-secret']" />
-<font-awesome-icon :icon="['fab', 'github']" color="red" size="4x"/>
-<font-awesome-icon :icon="['fab', 'linkedin']" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" />
-<font-awesome-icon :icon="['fas', 'calendar-days']" />
-<font-awesome-icon :icon="['far', 'calendar-days']" size="xs" color="red" />
-<font-awesome-icon :icon="['fab', 'linux']" size="2x" color="green"/>
+**Direct icon use in markdown works in dev mode (surprisingly) but for build we have to use the IconComponent or wrap in some html tag like span or div**
 
 
-
+<span>
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
-
+</span>
+<span>
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
-
+</span>
+<span>
 two: <font-awesome-icon :icon="['fab', 'twitter']" />
-
+</span>
+<span>
 three: <font-awesome-icon :icon="['fas', 'gear']" spin />
+</span>
+<span>
 three: <font-awesome-icon :icon="['fas', 'gear']" spin />
+</span>
+<span>
 four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
+</span>
+<span>
 four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
-
+</span>
+<span>
 five: <font-awesome-icon :icon="['fab', 'twitter']" color="green" size="4x"/>
--->
+</span>
 
 followed by component: 
 
