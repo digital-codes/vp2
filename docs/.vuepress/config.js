@@ -87,6 +87,7 @@ export default defineUserConfig({
             navbar: [
                 { text: 'Home', link: '/' },
                 { text: 'About', link: '/about/' },
+                { text: 'News', link: '/news/' },
                 /*
                 { text: 'UI', children: [
                   { text: 'Simple', link: '/simple' },
@@ -135,6 +136,9 @@ export default defineUserConfig({
                 CharT7S: path.resolve(__dirname, './components/CharT7Simple.vue'),
                 GeoMapS: path.resolve(__dirname, './components/GeoMapSimple.vue'),
                 VideoCardS: path.resolve(__dirname, './components/VideoCardSimple.vue'),
+                //
+                NewsItem: path.resolve(__dirname, './components/NewsItem.vue'),
+
               },
 		}),
 		],
