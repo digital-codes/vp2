@@ -18,5 +18,5 @@ pageClass: zoomable
   <NewsItem/>
 </ClientOnly>
 
-# End of newsletter
+
 

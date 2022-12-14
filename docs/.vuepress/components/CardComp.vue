@@ -71,6 +71,7 @@
   width: 50px;
 }
 
+
 /* global chart styles */
 .card .chart {
   background-color: var(--c-bg-fix);
