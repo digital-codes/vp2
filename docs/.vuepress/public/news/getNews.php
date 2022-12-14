@@ -17,6 +17,20 @@ function findByIndex($ni)
     return $ni["id"] == $currentIndex;
 }
 
+// polyfill array_is_list php < 8.1
+if (!function_exists("array_is_list")) {
+    function array_is_list(array $array): bool {
+        $expectedKey = 0;
+        foreach ($array as $i => $_) {
+            if ($i !== $expectedKey) { return false; }
+            $expectedKey++;
+        }
+        return true;
+    }
+
+}
+
+
 
 $meth = $_SERVER["REQUEST_METHOD"];
 switch ($meth) {
