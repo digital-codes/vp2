@@ -1,9 +1,18 @@
 <script setup>
 // https://vuejs.org/guide/components/slots.html#named-slots
+import { ref } from "vue"
+
+const marker = ref(false)
+
 </script>
 
 <template>
 <div class="card">
+  <div v-if="marker" class="marker">
+    <div class="marker-time">
+      2020
+    </div>
+  </div>
   <header class="hdr">
     <div>
     <slot name="header">
@@ -37,6 +46,27 @@
     background-clip: border-box;
     border: 1px solid var(--c-border); /*rgba(0,0,0,.2);*/
     border-radius: 0.25rem;
+}
+
+.card .marker {
+  position:absolute;
+  top:-10%;
+  left: .5rem;
+  height:120%;
+  width: 2rem;
+  background:red;
+}
+
+.card .marker-time {
+  height: 2rem;
+  /*width: 6rem;*/
+  border: solid 2px green;
+  background:blue;
+  border-radius: 100px;
+  position: absolute;
+  top: 45%;
+  color:white;
+  padding:1rem;
 }
 
 .card .hdr {
