@@ -25,9 +25,6 @@ Style defs from Google, e.g.
 
 Replace google url ! (Abmahngefahr wg DSGVO) with local url e.g. 
 
-src: url(https://fonts.gstatic.com/s/palanquin/v13/9XUilJ90n1fBFg7ceXwUvnpYzZGrXi0.woff2) format('woff2');
-=>
-
 > src: url(/fonts/palanquin400.woff2) format('woff2'), url(/fonts/palanquin400.ttf) format('ttf');
 
 
