@@ -24,3 +24,14 @@ fd
 
 fwefwef
 
+<!--
+
+## Image Compare
+
+<ImageCompare
+  img1="/images/mitPlatanen.jpg"
+  img2="/images/ohnePlatanen.jpg"
+  >
+  </ImageCompare>
+-->
+
