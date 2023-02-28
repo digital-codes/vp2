@@ -6,6 +6,12 @@
   <OrugaDatePick></OrugaDatePick>
 </ClientOnly>
 
+## Vue Calendar
+
+<ClientOnly>
+  <VueDatePick></VueDatePick>
+</ClientOnly>
+
 ## Upload
 
 <OrugaUpload/>

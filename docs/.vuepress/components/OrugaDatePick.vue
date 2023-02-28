@@ -2,7 +2,7 @@
   <section>
     <o-field label="Date select">
       <font-awesome-icon class="calIcon" icon="fa-regular fa-calendar-days" size="xl" pull="left" @click="$refs.picker.toggle()"/>
-      <o-datetimepicker rounded placeholder="Click to select..."
+      <o-datetimepicker class="datepick" rounded placeholder="Click to select..."
       :locale="locale" 
       :datepicker="{showWeekNumber}"
       :timepicker="{ enableSeconds, hourFormat }"
@@ -152,5 +152,14 @@ export default defineComponent({
   .o-dpck__table__cell--unselectable {
     color: unset;
   }
+
+  .o-dpck {
+  min-width:300px;
+}
+
+.o-drop .o-dpck__dropdown {
+  min-width:200px;
+}
+
 
 </style>

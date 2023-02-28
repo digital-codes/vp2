@@ -138,6 +138,8 @@ export default defineUserConfig({
                 VideoCardS: path.resolve(__dirname, './components/VideoCardSimple.vue'),
                 //
                 NewsItem: path.resolve(__dirname, './components/NewsItem.vue'),
+                //
+                VueDatePick: path.resolve(__dirname, './components/VueDatePick.vue'),
 
               },
 		}),
