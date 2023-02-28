@@ -7,6 +7,7 @@
     ref="pkr"
     :locale="localeString" :cancelText="cancelString" :selectText="selectString"
     :format-locale="localeObject" :format="formatString" 
+    teleport-center 
   >
     <template #input-icon>
         <font-awesome-icon class="input-slot-image" 
