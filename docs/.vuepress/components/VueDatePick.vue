@@ -8,15 +8,19 @@
     :locale="localeString" :cancelText="cancelString" :selectText="selectString"
     :format-locale="localeObject" :format="formatString" 
     teleport-center 
+    calendar-cell-class-name="calCell"
+    menu-class-name="calMenu"
+    input-class-name="calInput"
+    :dark="calDark"
   >
     <template #input-icon>
-        <font-awesome-icon class="input-slot-image" 
+        <font-awesome-icon class="calIconInput" 
         icon="fa-regular fa-calendar-days" size="xl" 
         pull="right" 
         />
      </template>
      <template #calendar-icon>
-        <font-awesome-icon class="slot-icon" icon="fa-regular fa-calendar-days" size="xl" />
+        <font-awesome-icon class="calIconSlot" icon="fa-regular fa-calendar-days" size="xl" />
      </template>
   </VueDatePicker>
 </template>
@@ -28,14 +32,27 @@
   import { enUS } from 'date-fns/locale';
   // -----
   import { ref, computed, watch, onBeforeMount } from "vue"
-  import { usePageLang } from '@vuepress/client'
+  import { usePageData, usePageLang } from '@vuepress/client'
+  import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+  //import { useDarkMode } from '@vuepress/client'
+  //import { useDarkMode } from '@vuepress/plugin-theme-data/client'
 
   const theDate = ref(new Date())
   const pkr = ref(null)
 
   const lang = ref("en")
+  const calDark = ref(false)
+
 
   onBeforeMount(async () => {
+    console.log("page data: ",usePageData())
+    console.log("theme local data: ",useThemeLocaleData())
+    /*
+    if (!themeLocale.value.colorModeSwitch) {
+      console.log(themeLocale.value.colorMode)
+    }
+    */
+    
     const pageLang = usePageLang()._value.toLowerCase()
     console.log(usePageLang()._value)
     if (pageLang.startsWith("de")) {
@@ -68,12 +85,71 @@
 
 </script>
 
+<style scoped lang="scss">
 
-<style scoped>
-.calIcon {
-  margin-right: 5px;
+.dark {
+  .dp__theme_light {
+    --dp-background-color: #002;
+    --dp-text-color: #ffffff;
+    --dp-hover-color: #484848;
+    --dp-hover-text-color: #ffffff;
+    --dp-hover-icon-color: #959595;
+    --dp-primary-color: #005cb2;
+    --dp-primary-text-color: #ffffff;
+    --dp-secondary-color: #a9a9a9;
+    --dp-border-color: #2d2d2d;
+    --dp-menu-border-color: #2d2d2d;
+    --dp-border-color-hover: #aaaeb7;
+    --dp-disabled-color: #737373;
+    --dp-scroll-bar-background: #212121;
+    --dp-scroll-bar-color: #484848;
+    --dp-success-color: #00701a;
+    --dp-success-color-disabled: #428f59;
+    --dp-icon-color: #959595;
+    --dp-danger-color: #e53935;
+    --dp-highlight-color: rgba(0, 92, 178, 0.2);
+  }
+}
+
+.dp__theme_light {
+   --dp-background-color: #fcc;
+   --dp-text-color: #212121;
+   --dp-hover-color: #f3f3f3;
+   --dp-hover-text-color: #212121;
+   --dp-hover-icon-color: #959595;
+   --dp-primary-color: #1976d2;
+   --dp-primary-text-color: #f8f5f5;
+   --dp-secondary-color: #c0c4cc;
+   --dp-border-color: #ddd;
+   --dp-menu-border-color: #ddd;
+   --dp-border-color-hover: #aaaeb7;
+   --dp-disabled-color: #f6f6f6;
+   --dp-scroll-bar-background: #f3f3f3;
+   --dp-scroll-bar-color: #959595;
+   --dp-success-color: #76d275;
+   --dp-success-color-disabled: #a3d9b1;
+   --dp-icon-color: #959595;
+   --dp-danger-color: #ff6f60;
+   --dp-highlight-color: rgba(25, 118, 210, 0.1);
 }
 
 
+</style>
+
+<style>
+/*
+.calCell {
+  color: #00f;
+ 
+}
+.calInput {
+  color: #0f0;
+  font-size:3rem;
+  
+}
+.calMenu {
+  color: #f00;
+}
+*/
 </style>
 
