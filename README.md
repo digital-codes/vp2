@@ -1,7 +1,7 @@
 # vp2
 Vuepress2 Test
 
-for 2.0.0-beta-58
+for 2.0.0-beta-61
 
 Note: don't use ^ on vuepress version in package.json ....
 
