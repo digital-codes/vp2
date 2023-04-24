@@ -1,6 +1,11 @@
 # vp2
 Vuepress2 Test
 
+
+Just a couple of things I try with vue press next. 
+
+Dont't expect documentatiin. 
+
 for 2.0.0-beta-61
 
 Note: don't use ^ on vuepress version in package.json ....
