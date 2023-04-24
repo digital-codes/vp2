@@ -1,8 +1,8 @@
 # vp2
 Vuepress2 Test
 
-
-Just a couple of things I try with vue press next. 
+**
+Just a couple of things I try with vue press next**
 
 Dont't expect documentatiin. 
 
