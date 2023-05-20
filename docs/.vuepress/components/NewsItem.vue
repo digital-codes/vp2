@@ -79,15 +79,16 @@ export default defineComponent( {
       const news = r.data
       console.log("News:",news)
       if ((news == undefined) || (news.length == 0)){
-        this.volume = this.lang == "de"?
+        this.volume = this.lang == "en"?
           "Volume not available":
           "Diese Ausgabe ist leider nicht verfügbar."
-          this.msg = this.lang == "de"?
+          this.msg = this.lang == "en"?
           "URL parameters like \"?id=123\" expected":
           "URL Parameters erwartet wie \"?id=123\""
         return;
       } else {
-        this.volume = "Ausgabe " + news[0].id
+        this.volume = this.lang == "en" ? "Volume ":"Ausgabe "
+        this.volume += String(news[0].id)
         this.date = news[0].date
         this.news = news[0].items;
       }
@@ -109,9 +110,11 @@ export default defineComponent( {
   setup(props) {
       const lang = ref("en")
       const pageLang = usePageLang()._value.toLowerCase()
+      console.log("Page Locale:",pageLang)
       if (pageLang.startsWith("de")) {
         lang.value = "de"
       }
+      console.log("Lang:",lang.value)
       const volume = ref()
       const msg = ref()
       const date = ref()
