@@ -24,3 +24,7 @@
 ## Carousel
 
 <CarouSel></CarouSel>
+
+## PagedCarousel
+
+<CarouSel2></CarouSel2>

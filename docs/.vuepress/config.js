@@ -120,6 +120,7 @@ export default defineUserConfig({
                 FaIcon: path.resolve(__dirname, './components/FaIcon.vue'),
                 LoaDing: path.resolve(__dirname, './components/LoaDing.vue'),
                 CarouSel: path.resolve(__dirname, './components/CarouSel.vue'),
+                CarouSel2: path.resolve(__dirname, './components/CarouSel2.vue'),
                 OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
                 OrugaNotify: path.resolve(__dirname, './components/OrugaNotify.vue'),
                 OrugaUpload: path.resolve(__dirname, './components/OrugaUpload.vue'),
