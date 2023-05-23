@@ -20,6 +20,33 @@ https://vp2.akugel.de/
 
 ## Issues
 
+### Build error on medium zoom refresh
+
+Works in dev mode
+
+Fails on build:
+
+> [Vue warn]: injection "Symbol(mediumZoom)" not found.
+[Vue warn]: Unhandled error during execution of setup function 
+  at <CarouSel2>
+✖ Rendering 8 pages - failed in 363ms
+Error: useMediumZoom() is called without provider.
+    at useMediumZoom (file:///home/kugel/temp/js/vp2/temp/.server/assets/CarouSel2-3246f29d.mjs:20:11)
+    at setup (file:///home/kugel/temp/js/vp2/temp/.server/assets/CarouSel2-3246f29d.mjs:52:18)
+    at _sfc_main.setup (file:///home/kugel/temp/js/vp2/temp/.server/assets/CarouSel2-3246f29d.mjs:151:23)
+    at callWithErrorHandling (/home/kugel/temp/js/vp2/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:156:18)
+    at setupStatefulComponent (/home/kugel/temp/js/vp2/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:7190:25)
+    at setupComponent (/home/kugel/temp/js/vp2/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:7151:36)
+    at renderComponentVNode (/home/kugel/temp/js/vp2/node_modules/@vue/server-renderer/dist/server-renderer.cjs.prod.js:354:15)
+    at renderVNode (/home/kugel/temp/js/vp2/node_modules/@vue/server-renderer/dist/server-renderer.cjs.prod.js:483:14)
+    at renderComponentSubTree (/home/kugel/temp/js/vp2/node_modules/@vue/server-renderer/dist/server-renderer.cjs.prod.js:438:7)
+    at /home/kugel/temp/js/vp2/node_modules/@vue/server-renderer/dist/server-renderer.cjs.prod.js:369:25
+[kugel@tux2 vp2]$ npm run docs:build
+
+
+
+
+
 ## Vite bundler now OK for SSR
 
 default settings can be used
