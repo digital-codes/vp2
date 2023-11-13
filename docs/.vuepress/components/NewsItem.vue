@@ -13,6 +13,7 @@
         :zoom=true
         :img="item.img"
         :imgAlt="getLocale(item.alt)"
+        purify=true
         ></MdCard>
     </div>
   </div>

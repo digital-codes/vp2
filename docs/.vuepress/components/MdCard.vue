@@ -7,7 +7,7 @@ import { computed } from 'vue'
  
 import { marked } from "marked" 
 
-// Set options
+// Set options. not needed for version 10 (looks like)
 marked.use({
     // see https://marked.js.org/using_advanced
     /*
@@ -17,6 +17,11 @@ marked.use({
   */
 });
 
+// raw dompurify does not work with vuepress
+// import * as DOMPurify from 'dompurify';
+
+// Isomorphic-dompurify ... Import the entire module:
+import DOMPurify from 'isomorphic-dompurify';
 
 const props = defineProps({
   hdr: String,
@@ -25,12 +30,20 @@ const props = defineProps({
   img: String,
   imgAlt: String,
   zoom: Boolean,
+  purify: {
+    // normally, we only purify dynamic content (from axios)
+    type: Boolean,
+    default: false
+}
 })
 
 const mdText = computed(() => {
     let t = marked.parse(props.src)
     if (props.zoom)
         t = t.replace("<img ","<img class=\"mdimage zoomable\" ")
+    if (props.purify) {
+        t = DOMPurify.sanitize(t);
+    }
     return t
 })
 
