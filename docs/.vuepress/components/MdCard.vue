@@ -7,6 +7,17 @@ import { computed } from 'vue'
  
 import { marked } from "marked" 
 
+// Set options
+marked.use({
+    // see https://marked.js.org/using_advanced
+    /*
+  async: true,
+  pedantic: false,
+  gfm: true,
+  */
+});
+
+
 const props = defineProps({
   hdr: String,
   ftr: String,
