@@ -48,7 +48,9 @@
 // oruga datetimepicker
 //import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
 import {  ODatetimepicker, OField, OInput, OButton } from '@oruga-ui/oruga-next'
-import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
+// newer oruga >= 0.8.0 uses theme-oruga instead:
+// import Oruga theme styling
+//import '@oruga-ui/theme-oruga/dist/oruga.css'
 // or import oruga in client.js
 
 import { ref, computed } from "vue"

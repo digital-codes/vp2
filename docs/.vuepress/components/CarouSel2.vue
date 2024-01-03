@@ -12,12 +12,12 @@
       @change="imgChanged"
       >
         <template #default="props">
-          <o-pagination-button
+          <o-button
             :page="props.page"
             :id="`page${props.page.number}`"
           >
             {{ labels[props.page.number-1] }}
-          </o-pagination-button>
+          </o-button>
         </template>
         <!-- 
         <template #previous="props">
@@ -64,9 +64,13 @@
 
 <script>
 
-import {  OPagination, OPaginationButton } from '@oruga-ui/oruga-next'
-import { useProgrammatic } from '@oruga-ui/oruga-next'
-import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
+import {  OPagination, OButton } from '@oruga-ui/oruga-next'
+// programmatic changed from 0.8.0
+//import { useProgrammatic } from '@oruga-ui/oruga-next'
+import { useOruga } from '@oruga-ui/oruga-next'
+// newer oruga >= 0.8.0 uses theme-oruga instead:
+// import Oruga theme styling
+//import '@oruga-ui/theme-oruga/dist/oruga.css'
 
 /*
 import Oruga from "@oruga-ui/oruga-next";
@@ -79,16 +83,11 @@ import { nextTick } from 'vue'
 import { useMediumZoom } from '@vuepress/plugin-medium-zoom/client'
 
 
-const faIconConfig = {
-  iconComponent: "font-awesome-icon",
-  iconPack: "fas"
-}
-
 export default defineComponent( {
   components: {
-    OPagination, OPaginationButton,
+    OPagination, OButton,
   },
-  props: ["lang"],
+  props: ["lang","page"],
   methods: {
     async zrefresh() {
       await nextTick()
@@ -103,22 +102,10 @@ export default defineComponent( {
     }
   },
   setup (props) {
-    const docsIcon = ref(undefined)
     const zoom = useMediumZoom()
-    const { oruga } = useProgrammatic()
-    onBeforeMount(() => {
-        docsIcon.value = oruga.config.getOptions().iconComponent
-        oruga.config.setOptions(faIconConfig)
-    })
-
-    onBeforeUnmount(() => {
-        oruga.config.setOptions({
-            iconComponent: docsIcon.value,
-        })
-    })      
     const current = ref(1) 
     const labels = ["Gates","Code","Data"]
-    return { oruga, current, labels, zoom, docsIcon }
+    return { current, labels, zoom, props }
   }
 })
 </script>

@@ -1,15 +1,16 @@
 # Oruga Items
 
-## Calendar
-
-<ClientOnly>
-  <OrugaDatePick></OrugaDatePick>
-</ClientOnly>
-
 ## Vue Calendar
 
 <ClientOnly>
   <VueDatePick></VueDatePick>
+</ClientOnly>
+
+<!-- 
+## Oruga Calendar
+
+<ClientOnly>
+  <OrugaDatePick></OrugaDatePick>
 </ClientOnly>
 
 ## Upload
@@ -25,6 +26,7 @@
 
 <CarouSel></CarouSel>
 
+--> 
 ## PagedCarousel
 
 Needs *ClientOnly* wrapper 
@@ -32,3 +34,4 @@ Needs *ClientOnly* wrapper
 <ClientOnly>
 <CarouSel2></CarouSel2>
 </ClientOnly>
+-->

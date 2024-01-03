@@ -16,6 +16,11 @@ import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
 //import './public/css/oruga-date.css'
 */
 
+// newer oruga >= 0.8.0 uses theme-oruga instead:
+// import Oruga theme styling
+// import '@oruga-ui/theme-oruga/dist/oruga.css'
+
+
 import Layout from './theme/layouts/Layout.vue'
 import NotFound from './theme/layouts/NotFound.vue'
 
@@ -40,6 +45,8 @@ import {
   faUser,
   faTimes,
   faEyeSlash,
+  faChevronLeft,
+  faChevronRight,
   faCaretDown,
   faCaretUp,
   faUserSecret,
@@ -69,6 +76,8 @@ library.add(faCheck,
   faTimes,
   faEyeSlash,
   faCaretDown,
+  faChevronLeft,
+  faChevronRight,
   faCaretUp,
   faUserSecret,
   faSolidCal,
@@ -88,6 +97,8 @@ library.add(faCheck,
 // import oruga, will not work otherwise.
 // icons can be configured later
 import Oruga from "@oruga-ui/oruga-next";
+// import Oruga theme styling
+import '@oruga-ui/theme-oruga/dist/oruga.css'
 
 
 export default defineClientConfig({
@@ -99,7 +110,11 @@ export default defineClientConfig({
     app.component('font-awesome-icon', FontAwesomeIcon)
 
     // oruga
-    app.use(Oruga)
+    // also set icons here
+    app.use(Oruga, {
+      iconPack:"fas",
+      iconComponent:"font-awesome-icon",
+    })
 
   },
   setup() {},
