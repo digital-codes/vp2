@@ -29,7 +29,7 @@
 import {  OField, OUpload, OButton } from '@oruga-ui/oruga-next'
 // newer oruga >= 0.8.0 uses theme-oruga instead:
 // import Oruga theme styling
-import '@oruga-ui/theme-oruga/dist/oruga.css'
+//import '@oruga-ui/theme-oruga/dist/oruga.css'
 
 import { defineComponent, ref } from 'vue'
 

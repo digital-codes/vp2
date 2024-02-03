@@ -9,6 +9,14 @@ for 2.0.0-beta-61
 
 Note: don't use ^ on vuepress version in package.json ....
 
+Use vp-upgrade to upgrade:
+https://github.com/vuepress/vp-update
+
+> npx vp-update
+
+
+
+
 For now, don't upgrade leaflet beyond 1.8.0 !
 .. Issues might be solved with leaflet 1.9.3
 To be confirmed for more complex use cases

@@ -6,6 +6,18 @@
   <VueDatePick></VueDatePick>
 </ClientOnly>
 
+
+## Oruga Notifcation
+
+<OrugaNotify>
+</OrugaNotify>
+
+
+## Oruga Upload
+
+<OrugaUpload/>
+
+
 <!-- 
 ## Oruga Calendar
 
@@ -13,20 +25,13 @@
   <OrugaDatePick></OrugaDatePick>
 </ClientOnly>
 
-## Upload
-
-<OrugaUpload/>
-
-## Notifcation
-
-<OrugaNotify>
-</OrugaNotify>
-
 ## Carousel
 
 <CarouSel></CarouSel>
 
 --> 
+<!-- 
+
 ## PagedCarousel
 
 Needs *ClientOnly* wrapper 
