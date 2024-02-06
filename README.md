@@ -14,6 +14,13 @@ https://github.com/vuepress/vp-update
 
 > npx vp-update
 
+hmmm, not working for rc0 to rc2
+
+
+pre oruga o.8.2?
+    "@oruga-ui/oruga-next": "file:../oruga/packages/oruga-next/",
+    "@oruga-ui/theme-oruga": "^0.2.1",
+
 
 
 
