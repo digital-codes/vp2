@@ -14,7 +14,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 // import { visualizer } from "rollup-plugin-visualizer";
 
 
-//import { sitemapPlugin } from "vuepress-plugin-sitemap2";
+import { sitemapPlugin } from "@vuepress/plugin-sitemap";
 
 
 /*
@@ -161,14 +161,14 @@ export default defineUserConfig({
         }
         })
     ],
-    /*
+    /* */
     [
       sitemapPlugin({
         // your options
         hostname:"vp2.akugel.de",
       }),
     ]
-    */
+    /* */
   ],
   // bundler options ...
   /* 

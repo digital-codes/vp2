@@ -3,22 +3,17 @@ import { defineClientConfig } from 'vuepress/client'
 // example. so far unused
 // import something from somthing
 
+// import oruga, will not work otherwise.
+// icons can be configured later
+import Oruga from "@oruga-ui/oruga-next";
+// import Oruga theme styling
+// minimal or full ...
+// import '@oruga-ui/theme-oruga/dist/oruga.css'
+import '@oruga-ui/theme-oruga/dist/oruga-full.css'
+
+
 // additonal fonts
 import './public/css/fonts.css'
-
-/*
-// oruga datetimepicker
-import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
-//import './public/css/oruga-date.css'
-
-import '@oruga-ui/oruga-next/dist/oruga-full.min.css'
-
-//import './public/css/oruga-date.css'
-*/
-
-// newer oruga >= 0.8.0 uses theme-oruga instead:
-// import Oruga theme styling
-// import '@oruga-ui/theme-oruga/dist/oruga.css'
 
 
 import Layout from './theme/layouts/Layout.vue'
@@ -93,14 +88,6 @@ library.add(faCheck,
   faLinux,
   faUpload,
 )
-
-// import oruga, will not work otherwise.
-// icons can be configured later
-import Oruga from "@oruga-ui/oruga-next";
-// import Oruga theme styling
-// minimal or full ...
-// import '@oruga-ui/theme-oruga/dist/oruga.css'
-import '@oruga-ui/theme-oruga/dist/oruga-full.css'
 
 
 export default defineClientConfig({
