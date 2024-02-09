@@ -19,6 +19,7 @@
 
 
 <!-- 
+--> 
 ## Oruga Calendar
 
 <ClientOnly>
@@ -29,9 +30,8 @@
 
 <CarouSel></CarouSel>
 
---> 
-<!-- 
 
+<!-- 
 ## PagedCarousel
 
 Needs *ClientOnly* wrapper 

@@ -6,15 +6,15 @@ import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import  { palettePlugin } from '@vuepress/plugin-palette'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import  { localTheme } from './theme'
+import { defaultTheme } from '@vuepress/theme-default'
 
 import footnote from "markdown-it-footnote"
 
-// import bundlers, although not needed normally 
-//import { viteBundler } from '@vuepress/bundler-vite'
+import { viteBundler } from '@vuepress/bundler-vite'
 // import { visualizer } from "rollup-plugin-visualizer";
 
 
-import { sitemapPlugin } from "vuepress-plugin-sitemap2";
+//import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
 
 /*
@@ -77,6 +77,8 @@ export default defineUserConfig({
         },
     },
 
+    //theme: defaultTheme(),
+    /* */
     theme: localTheme({
       // default theme config
       logo: "images/img.png",
@@ -88,13 +90,11 @@ export default defineUserConfig({
                 { text: 'Home', link: '/' },
                 { text: 'About', link: '/about/' },
                 { text: 'News', link: '/news/' },
-                /*
-                { text: 'UI', children: [
-                  { text: 'Simple', link: '/simple' },
-                  { text: 'Oruga', link: '/oruga' }
-                  ]
-                },
-                */
+                //{ text: 'UI', children: [
+                //  { text: 'Simple', link: '/simple' },
+                //  { text: 'Oruga', link: '/oruga' }
+                //  ]
+                //},
             ],
             sidebar: false,
             notFound : ["Nix gefunden ..."],
@@ -110,6 +110,7 @@ export default defineUserConfig({
             },
     },
   }),  
+  /* */
   extendsMarkdown: (md) => {
     md.use(footnote)
   },
@@ -160,12 +161,14 @@ export default defineUserConfig({
         }
         })
     ],
+    /*
     [
       sitemapPlugin({
         // your options
         hostname:"vp2.akugel.de",
       }),
     ]
+    */
   ],
   // bundler options ...
   /* 
@@ -175,9 +178,11 @@ export default defineUserConfig({
   }),
    */
  // SSR now work with vite default settings
- /* 
+ /* */
 
-  bundler: viteBundler({
+  bundler: viteBundler(
+    /*
+    {
     viteOptions: {
       plugins: [visualizer()],
       build: {
@@ -187,7 +192,9 @@ export default defineUserConfig({
       },
     },
     vuePluginOptions: {},
-  }),
-   */
+  }
+  */
+  ),
+  /* */
 })
 

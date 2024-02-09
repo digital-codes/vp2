@@ -1,4 +1,4 @@
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 
 // example. so far unused
 // import something from somthing
@@ -98,7 +98,9 @@ library.add(faCheck,
 // icons can be configured later
 import Oruga from "@oruga-ui/oruga-next";
 // import Oruga theme styling
-import '@oruga-ui/theme-oruga/dist/oruga.css'
+// minimal or full ...
+// import '@oruga-ui/theme-oruga/dist/oruga.css'
+import '@oruga-ui/theme-oruga/dist/oruga-full.css'
 
 
 export default defineClientConfig({
