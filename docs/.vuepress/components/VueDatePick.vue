@@ -2,7 +2,7 @@
   <!-- 
   <font-awesome-icon class="calIcon" icon="fa-regular fa-calendar-days" size="xl" pull="left" @click="$refs.picker.toggle()"/>
   -->
-  <VueDatePicker
+  <VueDatePicker v-if="showCal"
     v-model="theDate" 
     ref="pkr"
     :locale="localeString" :cancelText="cancelString" :selectText="selectString"
@@ -32,8 +32,8 @@
   import { enUS } from 'date-fns/locale';
   // -----
   import { ref, computed, watch, onBeforeMount } from "vue"
-  import { usePageData, usePageLang } from '@vuepress/client'
-  import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
+  import { usePageData, usePageLang } from 'vuepress/client'
+  // import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
   //import { useDarkMode } from '@vuepress/client'
   //import { useDarkMode } from '@vuepress/plugin-theme-data/client'
 
@@ -43,23 +43,44 @@
   const lang = ref("en")
   const calDark = ref(false)
 
+  const pageLang = usePageLang()._value.toLowerCase()
+  console.log(pageLang)
+  if (pageLang.startsWith("de")) {
+    lang.value = "de"
+  }
+  console.log("Lang:",lang.value)
 
-  onBeforeMount(async () => {
-    console.log("page data: ",usePageData())
-    console.log("theme local data: ",useThemeLocaleData())
-    /*
-    if (!themeLocale.value.colorModeSwitch) {
-      console.log(themeLocale.value.colorMode)
-    }
-    */
-    
-    const pageLang = usePageLang()._value.toLowerCase()
-    console.log(usePageLang()._value)
+  const showCal = ref(false)
+  const showReady = () => {showCal.value = true}
+  setTimeout(showReady,1000)
+
+  /*
+  usePageLang().then((l) => {
+    const pageLang = l_value.toLowerCase()
+    console.log(pageLang)
     if (pageLang.startsWith("de")) {
       lang.value = "de"
     }
     console.log("Lang:",lang.value)
   })
+*/
+
+
+  /*
+  onBeforeMount(async () => {
+    const pageData = await usePageData()
+    console.log("page data: ",pageData._value)
+
+    const pageLang_ = await usePageLang()
+    console.log("Lang:",pageLang_)
+    const pageLang = pageLang_._value.toLowerCase()
+    console.log(pageLang_,pageLang)
+    if (pageLang.startsWith("de")) {
+      lang.value = "de"
+    }
+    console.log("Lang:",lang.value)
+  })
+  */
 
   watch (
     theDate, (d1,d0) => {
@@ -68,7 +89,7 @@
   )
 
   const localeObject = computed(() => {
-    return lang.value == "de"?de:null
+    return lang.value == "de"?de:enUS
   })
   const localeString = computed(() => {
     return lang.value == "de"?"de":"en"

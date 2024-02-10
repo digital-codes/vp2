@@ -15,8 +15,9 @@
       >
         <template #default="props">
           <o-button
-          :label="props.number"
-          @click="props.click"
+            :page="props.number"
+            :disabled="props.isCurrent"
+            @click="props.click"
           >
             {{ labels[props.number-1] }}
           </o-button>
