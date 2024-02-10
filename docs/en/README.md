@@ -31,12 +31,13 @@
 <CarouSel></CarouSel>
 
 
-<!-- 
 ## PagedCarousel
 
 Needs *ClientOnly* wrapper 
 
 <ClientOnly>
-<CarouSel2></CarouSel2>
+<CarouSel2 ></CarouSel2>
 </ClientOnly>
+
+<!-- 
 -->

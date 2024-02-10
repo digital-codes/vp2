@@ -19,7 +19,8 @@
             {{ labels[props.page.number-1] }}
           </o-button>
         </template>
-        <!-- 
+
+      <!-- 
         <template #previous="props">
           <o-pagination-button
             :page="props.page"
@@ -87,7 +88,7 @@ export default defineComponent( {
   components: {
     OPagination, OButton,
   },
-  props: ["lang","page"],
+  props: ["page"],
   methods: {
     async zrefresh() {
       await nextTick()
