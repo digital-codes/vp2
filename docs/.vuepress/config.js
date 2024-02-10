@@ -88,8 +88,8 @@ export default defineUserConfig({
         selectLanguageName: 'German',
         navbar: [
           { text: 'Home', link: '/' },
-          { text: 'About', link: '/about/' },
-          { text: 'News', link: '/news/' },
+          { text: 'About', link: '/about' },
+          { text: 'News', link: '/news' },
           //{ text: 'UI', children: [
           //  { text: 'Simple', link: '/simple' },
           //  { text: 'Oruga', link: '/oruga' }
@@ -103,7 +103,7 @@ export default defineUserConfig({
       '/en/': {
         selectLanguageName: 'English',
         navbar: [
-          { text: 'About', link: '/about/' },
+          { text: 'About', link: '/about' },
         ],
         notFound: ["Sorry, we didn't find the page ..."],
         backToHome: "Back",
@@ -172,17 +172,19 @@ export default defineUserConfig({
   ],
   // bundler options ...
   // SSR now work with vite default settings
-  bundler: viteBundler({
+  bundler: viteBundler(
+    /*
+    {
     viteOptions: {
-      /*
              plugins: [visualizer()],
              build: {
                chunkSizeWarningLimit: 1200,
                reportCompressedSize: true,
                minify: true,
              },
-      */
     },
-  }),
+  }
+  */
+ ),
 })
 

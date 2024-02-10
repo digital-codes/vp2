@@ -1,7 +1,9 @@
 <template>
     <div>
       <section class="pagination">
-      <o-pagination :total="3" v-model:current="current" 
+      <o-pagination 
+      :total="3" 
+      v-model:current="current" 
       :per-page="1"
       :range-before="1"
       :range-after="1"
@@ -13,10 +15,10 @@
       >
         <template #default="props">
           <o-button
-            :page="props.page"
-            :id="`page${props.page.number}`"
+          :label="props.number"
+          @click="props.click"
           >
-            {{ labels[props.page.number-1] }}
+            {{ labels[props.number-1] }}
           </o-button>
         </template>
 
@@ -67,15 +69,11 @@
 
 import {  OPagination, OButton } from '@oruga-ui/oruga-next'
 // programmatic changed from 0.8.0
-//import { useProgrammatic } from '@oruga-ui/oruga-next'
 import { useOruga } from '@oruga-ui/oruga-next'
 // newer oruga >= 0.8.0 uses theme-oruga instead:
 // import Oruga theme styling
 //import '@oruga-ui/theme-oruga/dist/oruga.css'
 
-/*
-import Oruga from "@oruga-ui/oruga-next";
-*/
 import { defineComponent, ref, onBeforeMount, onBeforeUnmount } from 'vue'
 
 // zoom dynmic images
@@ -88,7 +86,6 @@ export default defineComponent( {
   components: {
     OPagination, OButton,
   },
-  props: ["page"],
   methods: {
     async zrefresh() {
       await nextTick()
@@ -102,11 +99,11 @@ export default defineComponent( {
       }
     }
   },
-  setup (props) {
+  setup () {
     const zoom = useMediumZoom()
     const current = ref(1) 
     const labels = ["Gates","Code","Data"]
-    return { current, labels, zoom, props }
+    return { current, labels, zoom }
   }
 })
 </script>

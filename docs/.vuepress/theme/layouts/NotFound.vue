@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useRouteLocale } from '@vuepress/client'
-import { useThemeLocaleData } from '@vuepress/theme-default/client'
+
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client' 
+
+
 
 const routeLocale = useRouteLocale()
 
