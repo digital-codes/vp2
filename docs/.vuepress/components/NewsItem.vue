@@ -2,7 +2,7 @@
 <template>
   <div class="newsletter">
     <div class="date">
-      <h2>{{ volume }}</h2>
+      <h2>Newsletter {{ volume }}</h2>
       <p v-if="!dataLoaded">{{ msg }}</p>
     </div>
     <div class="newsitem" v-for="(item,index) in news" key="index">
@@ -74,7 +74,7 @@ export default defineComponent( {
     }
     const NI = getId()
     var url = baseUrl + String(NI); //newsId
-    console.log("Axios from ",url);
+    console.log("ID: ",NI,"Axios from ",url);
     try {
       let r = await axios.get(url)
       const news = r.data
