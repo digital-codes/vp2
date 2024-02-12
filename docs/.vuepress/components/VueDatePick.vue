@@ -34,7 +34,6 @@
   import { ref, computed, watch, onBeforeMount } from "vue"
   import { usePageData, usePageLang } from 'vuepress/client'
   // import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
-  //import { useDarkMode } from '@vuepress/client'
   //import { useDarkMode } from '@vuepress/plugin-theme-data/client'
 
   const theDate = ref(new Date())

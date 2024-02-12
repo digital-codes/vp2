@@ -1,7 +1,7 @@
 import { defineUserConfig } from 'vuepress'
 
 // beta.51: require replaced by import
-import { path } from '@vuepress/utils'
+import { path } from 'vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { palettePlugin } from '@vuepress/plugin-palette'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'

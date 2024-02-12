@@ -24,7 +24,7 @@
 import axios from 'axios'
 import { defineComponent, ref, onBeforeMount, onBeforeUnmount } from 'vue'
 
-import { usePageData, usePageLang } from '@vuepress/client'
+import { usePageData, usePageLang } from 'vuepress/client'
 
 // fetch search params from url
 // https://www.sitepoint.com/get-url-parameters-with-javascript/

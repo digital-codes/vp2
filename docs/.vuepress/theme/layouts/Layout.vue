@@ -2,7 +2,7 @@
 //import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 
-//import { usePageData, usePageFrontmatter } from '@vuepress/client'
+//import { usePageData, usePageFrontmatter } from 'vuepress/client'
 //import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
 //const page = usePageData()
 //console.log("Page",page.filePathRelative)
