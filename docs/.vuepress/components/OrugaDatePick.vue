@@ -1,18 +1,60 @@
+
+
 <template>
-  <section>
+<section>
+    <o-field expanded>
+      <o-button
+            icon-left="fa-calendar-days"
+            type="primary"
+            @click="active2 = !active2" />
+        <o-datepicker
+            v-model:active="active2"
+            expanded
+            v-model="selected"
+            placeholder="Select a date" />
+    </o-field>
+</section>
+
+<section>
+    <o-field label="Select datetime">
+      <font-awesome-icon class="calIcon" 
+      icon="fa-regular fa-calendar-days" 
+      size="xl" pull="left" 
+      @click="active3 = !active3"
+      />
+        <o-datetimepicker
+          v-model:active="active3"
+            v-model="selected"
+            rounded
+            placeholder="Click to select..."
+            icon="fa-calendar-days"
+            :locale="locale"
+            :datepicker="{ showWeekNumber }"
+            :timepicker="{ enableSeconds, hourFormat }" />
+    </o-field>
+    <p><b>Selected:</b> {{ selected }}</p>
+</section>
+
+
+
+<section>
     <o-field label="Date select">
-      <font-awesome-icon class="calIcon" icon="fa-regular fa-calendar-days" size="xl" pull="left" @click="$refs.picker.toggle()"/>
+      <font-awesome-icon class="calIcon" 
+      icon="fa-regular fa-calendar-days" 
+      size="xl" pull="left" 
+      @click="toggle()"/>
       <o-datetimepicker class="datepick" rounded placeholder="Click to select..."
       :locale="locale" 
       :datepicker="{showWeekNumber}"
       :timepicker="{ enableSeconds, hourFormat }"
       v-model="theDate"
+      v-model:active="active"
       ref="picker"
       >
         <template #footer>
         <div class="buttons-footer">
           Select date then click here 
-          <o-button variant="primary" @click="$refs.picker.toggle()">
+          <o-button variant="primary" @click="toggle()">
             <font-awesome-icon class="calIcon" icon="fa-solid fa-check" size="xl" pull="left"/>
             <span>OK</span>
           </o-button>
@@ -89,51 +131,61 @@ export default defineComponent({
       },
     },
     methods: {
+    toggle() {
+      console.log("toggle",this.picker,this.picker.active)
+      //this.picker.active = !this.picker.active
+      this.active = !this.active
+    }
     },
     setup() {
+      const active = ref(false);
+      const active2 = ref(false);
+      const active3 = ref(false);
       const picker = ref()
+      const selected = ref("")
+      const selected_date = ref("")
       const events = ref([
-        {date: new Date(2022, 10 + Math.floor(Math.random() * 2), 2)},
-        {date: new Date(2022, 10 + Math.floor(Math.random() * 2), 6)},
+        {date: new Date(2024, 10 + Math.floor(Math.random() * 2), 2)},
+        {date: new Date(2024, 10 + Math.floor(Math.random() * 2), 6)},
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 6),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 6),
           type: 'info',
         },
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 8),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 8),
           type: 'danger',
         },
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 10),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 10),
           type: 'success',
         },
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 10),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 10),
           type: 'link',
         },
-        {date: new Date(2022, 10 + Math.floor(Math.random() * 2), 12)},
+        {date: new Date(2024, 10 + Math.floor(Math.random() * 2), 12)},
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 12),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 12),
           type: 'warning',
         },
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 16),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 16),
           type: 'danger',
         },
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 29),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 29),
           type: 'success',
         },
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 29),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 29),
           type: 'warning',
         },
         {
-          date: new Date(2022, 10 + Math.floor(Math.random() * 2), 29),
+          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 29),
           type: 'info',
         },
       ])
-      return { picker, events }
+      return { picker, active, active2, active3, events, selected }
     }
   })
 </script>

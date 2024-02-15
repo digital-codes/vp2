@@ -24,7 +24,7 @@
 import axios from 'axios'
 import { defineComponent, ref, onBeforeMount, onBeforeUnmount } from 'vue'
 
-import { usePageData, usePageLang } from 'vuepress/client'
+import { useClientData } from 'vuepress/client'
 
 // fetch search params from url
 // https://www.sitepoint.com/get-url-parameters-with-javascript/
@@ -110,9 +110,21 @@ export default defineComponent( {
   },
   setup(props) {
       const lang = ref("en")
-      const pageLang = usePageLang()._value.toLowerCase()
-      console.log("Page Locale:",pageLang)
-      if (pageLang.startsWith("de")) {
+
+      const {
+        pageData,
+        pageFrontmatter,
+        pageHead,
+        pageHeadTitle,
+        pageLang,
+        routeLocale,
+        siteData,
+        siteLocaleData,
+      } = useClientData()
+
+      const pageLang_ = siteLocaleData._value.lang.toLowerCase()
+      console.log("Page Locale:",pageLang_)
+      if (pageLang_.startsWith("de")) {
         lang.value = "de"
       }
       console.log("Lang:",lang.value)
