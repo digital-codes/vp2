@@ -47,7 +47,7 @@ import { useOruga } from '@oruga-ui/oruga-next'
 /*
 import Oruga from "@oruga-ui/oruga-next";
 */
-import { defineComponent, ref, onBeforeMount, onBeforeUnmount } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 
 export default defineComponent( {

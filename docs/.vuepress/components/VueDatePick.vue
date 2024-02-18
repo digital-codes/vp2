@@ -31,7 +31,7 @@
   import { de } from 'date-fns/locale';
   import { enUS } from 'date-fns/locale';
   // -----
-  import { ref, computed, watch, onBeforeMount } from "vue"
+  import { ref, computed, watch } from "vue"
   // import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
   //import { useDarkMode } from '@vuepress/plugin-theme-data/client'
 

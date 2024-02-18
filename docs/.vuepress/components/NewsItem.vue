@@ -22,7 +22,7 @@
 <script>
 
 import axios from 'axios'
-import { defineComponent, ref, onBeforeMount, onBeforeUnmount } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 import { useClientData } from 'vuepress/client'
 

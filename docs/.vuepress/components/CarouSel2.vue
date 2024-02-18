@@ -75,7 +75,7 @@ import { useOruga } from '@oruga-ui/oruga-next'
 // import Oruga theme styling
 //import '@oruga-ui/theme-oruga/dist/oruga.css'
 
-import { defineComponent, ref, onBeforeMount, onBeforeUnmount } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 // zoom dynmic images
 // https://v2.vuepress.vuejs.org/reference/plugin/medium-zoom.html#usemediumzoom
