@@ -49,7 +49,7 @@ Replace google url ! (Abmahngefahr wg DSGVO) with local url e.g.
 
 ### FontAwesome Icons
 
-User select from [FA repo](https://github.com/FortAwesome/vue-fontawesome/tree/v6-readme-3x#installation)
+User select from [FA repo](https://github.com/FortAwesome/vue-fontawesome)
 
 Size can be sm, md, lg, xl. There are more options see above
 
