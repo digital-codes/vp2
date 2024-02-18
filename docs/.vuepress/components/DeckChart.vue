@@ -69,11 +69,13 @@ export default defineComponent({
     },
     methods: {
         async mkLabel(lbl = "Jahr ...") {
+            const txt = lbl.toString()
             const labels = await new TextLayer({
-                id: 'TextLayer',
+                // using the id has led to a type error on rc7 with vue3.4
+                // id: 'TextLayer',
                 data: [
                 {
-                    name: lbl.toString(),
+                    name: txt,
                     coordinates: [this.LABEL_VIEW_STATE.longitude, this.LABEL_VIEW_STATE.latitude]
                 },
                 ],
@@ -83,7 +85,9 @@ export default defineComponent({
                 getSize: 24,
                 getAngle: 0,
                 getTextAnchor: 'middle',
-                getAlignmentBaseline: 'center'
+                getAlignmentBaseline: 'center',
+                background: true,
+                getBackgroundColor: d => [255,255,255,200],
             })
             return labels
         },
