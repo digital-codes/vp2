@@ -22,9 +22,7 @@
 --> 
 ## Oruga Calendar
 
-<ClientOnly>
   <OrugaDatePick></OrugaDatePick>
-</ClientOnly>
 
 ## Carousel
 
@@ -35,9 +33,7 @@
 
 Needs *ClientOnly* wrapper 
 
-<ClientOnly>
 <CarouSel2 ></CarouSel2>
-</ClientOnly>
 
 <!-- 
 -->

@@ -56,14 +56,13 @@ Size can be sm, md, lg, xl. There are more options see above
 
 #### Icon components
 
-
 Component:
 <FaIcon icon="user-secret" type="solid"/>
 <FaIcon icon="github" type="brands" size="4x" mode="action"/>
 <FaIcon icon="linkedin" type="brands"/>
 <FaIcon icon="linux" type="brands" size="2x" mode="info"/>
 <FaIcon icon="calendar-days" type="solid"/>
-<FaIcon icon="calendar-days" type="regular"/>
+<FaIcon icon="calendar-days" type="regular" />
 
 > Direct loading of font-awesome-icon icon works just once in build mode => Use FaIcon component
 
@@ -82,11 +81,22 @@ Loading Spinner
 
 <LoaDing size="2x" icon="spinner">123</LoaDing>
 <LoaDing size="2x" icon="spinner">123</LoaDing>
+<!-- 
+--> 
 
 #### Direct load
 **Direct icon use in markdown works in dev mode (surprisingly) but for build we have to use the IconComponent or wrap in some html tag like span or div**
 
+```
+<span><font-awesome-icon :icon="['fas', 'user-secret']" ></font-awesome-icon></span>
+```
 
+Error:
+
+> Hydration completed but contains mismatches.
+
+
+<!-- 
 <span>
 one: <font-awesome-icon :icon="['fas', 'user-secret']" />
 </span>
@@ -111,6 +121,7 @@ four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
 <span>
 five: <font-awesome-icon :icon="['fab', 'twitter']" color="green" size="4x"/>
 </span>
+-->
 
 followed by component: 
 
