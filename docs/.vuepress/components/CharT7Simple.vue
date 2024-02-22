@@ -1,44 +1,5 @@
-<template>
-  <!-- need class for container div to set 100% height 
-  (div needed for v-if on chart) 
-  -->
 
-    <CardComp >
-    <template #header>
-        Card title
-    </template>
-
-    <template #default>
-        <vue-echarts 
-            :option="options" class="chart" autoresize ref="chart"  aria-role="meter"
-        />
-    </template>
-
-    <template #footer v-if="dataLoaded">
-        <p>Download Options</p>
-        <DownLoad :download-data="downData"
-            file-type="csv"
-            file-name="Down"
-            button-text="Download As CSV"/>
-        <DownLoad :download-data="downData"
-            file-type="json"
-            file-name="Down"
-            button-text="Download As JSON"/>
-    </template>
-<!--
-    <template #footer>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-    </template>
--->    
-
-    </CardComp >
-
-           
-
-</template>
-
-<script>
-
+<script setup>
 
 import * as echarts from 'echarts';
 import { VueEcharts } from 'vue3-echarts';
@@ -48,25 +9,26 @@ import 'echarts-wordcloud';
 //import { VueEcharts } from 'vue3-echarts';
 //import axios from 'axios'
 
-
 import { ref } from 'vue';
+import { onBeforeMount } from 'vue'
 
+import DownLoad from './DownLoad.vue'
 import CardComp from './CardComp.vue'
 
-const chartOptions  = {
+const chartOptions = {
     aria: {
         enabled: true,
         show: true
     },
     textStyle: {
-        fontFamily:"Palanquin",
+        fontFamily: "Palanquin",
     },
     title: {
         text: "Wordcloud 123456",
         left: "center",
     },
     tooltip: {},
-    series: [ {
+    series: [{
         type: 'wordCloud',
         gridSize: 2,
         sizeRange: [12, 50],
@@ -91,10 +53,10 @@ const chartOptions  = {
             }
         },
         data: []
-    } ]
+    }]
 };
 
-const chartData =  [
+const chartData = [
     {
         name: 'Sam S Club',
         value: 10000,
@@ -185,47 +147,49 @@ const chartData =  [
     }
 ];
 
-import DownLoad from './DownLoad.vue'
+const chart = ref(null)
+const options = ref(chartOptions)
 
+options.value.series[0].data = chartData
 
-export default {
-    components: {
-        VueEcharts, CardComp,
-        DownLoad
-    },
-    data ()  {
-        return {
-            /*
-            downData: [
-                {"a":1,"b":2,"c":3},
-                {"a":4,"b":5,"c":8}
-            ],
-            */
-        }
-    },
-    methods: {
-        setDav() {
-            this.dataLoaded = true
-        }
-    },
-    async beforeMount() {
-        // initialize data, just for demonstration ...
-        this.downData = [
-            {"a":1,"b":2,"c":3},
-            {"a":4,"b":5,"c":8}
-        ]
-        setTimeout(this.setDav,1000)
-    },
-    setup() {
-        const chart = ref(null)
-        const options = ref(chartOptions)
-        options.value.series[0].data = chartData
-        const dataLoaded = ref(false)
-        const downData = ref([])
-        return { chart, options, dataLoaded, downData }
-    },
+const dataLoaded = ref(false)
+const downData = ref([])
+
+const setDav = () => {
+    console.log("setDav done")
+    dataLoaded.value = true
 }
+
+// initialize data, just for demonstration ...
+onBeforeMount(() => {
+    downData.value = [
+        { "a": 1, "b": 2, "c": 3 },
+        { "a": 4, "b": 5, "c": 8 }
+    ]
+    setTimeout(setDav, 1000)
+    }
+)
+
 </script>
+
+<template>
+    <CardComp>
+        <template #header>
+            Card title
+        </template>
+
+        <template #default>
+            <vue-echarts :option="options" class="chart" autoresize ref="chart" aria-role="meter" />
+        </template>
+
+        <template #footer v-if="dataLoaded">
+            <p>Download Options</p>
+            <DownLoad :download-data="downData" file-type="csv" file-name="Down" button-text="Download As CSV" />
+            <DownLoad :download-data="downData" file-type="json" file-name="Down" button-text="Download As JSON" />
+        </template>
+
+    </CardComp>
+</template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
@@ -234,17 +198,16 @@ export default {
 }
 
 .chart {
-    height:400px;
+    height: 400px;
 }
 
 @media (max-width: 575.98px) {
-.chart {
-    height:250px;
+    .chart {
+        height: 250px;
     }
 }
 
 .color-2 {
     background: #ccc;
 }
-
 </style>
