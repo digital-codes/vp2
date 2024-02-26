@@ -75,10 +75,10 @@
   <section>
     <p>Calendar events</p>
     <o-datepicker
+    v-model="chkEvent"
       inline
       :events="events"
       indicators="dots"
-      v-model="chkEvent"
     >
     </o-datepicker>
   </section>
@@ -89,7 +89,7 @@
 
 // oruga datetimepicker
 //import {  Datetimepicker, Field, Input,  } from '@oruga-ui/oruga-next'
-import {  ODatetimepicker, OField, OInput, OButton } from '@oruga-ui/oruga-next'
+import {  ODatepicker, ODatetimepicker, OField, OInput, OButton } from '@oruga-ui/oruga-next'
 // newer oruga >= 0.8.0 uses theme-oruga instead:
 // import Oruga theme styling
 //import '@oruga-ui/theme-oruga/dist/oruga.css'
@@ -100,7 +100,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
     components: {
-      ODatetimepicker, OField, OInput, OButton
+      ODatetimepicker, ODatepicker, OField, OInput, OButton
     },
     data() {
       return {
@@ -145,44 +145,44 @@ export default defineComponent({
       const selected = ref("")
       const selected_date = ref("")
       const events = ref([
-        {date: new Date(2024, 10 + Math.floor(Math.random() * 2), 2)},
-        {date: new Date(2024, 10 + Math.floor(Math.random() * 2), 6)},
+        {date: new Date(2024, 1 + Math.floor(Math.random() * 12), 2)},
+        {date: new Date(2024, 1 + Math.floor(Math.random() * 12), 6)},
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 6),
-          type: 'info',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 6),
+          type: "info",
         },
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 8),
-          type: 'danger',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 8),
+          type: "danger",
         },
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 10),
-          type: 'success',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 10),
+          type: "success",
         },
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 10),
-          type: 'link',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 10),
+          type: "link",
         },
-        {date: new Date(2024, 10 + Math.floor(Math.random() * 2), 12)},
+        {date: new Date(2024, 1 + Math.floor(Math.random() * 12), 12)},
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 12),
-          type: 'warning',
-        },
-        {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 16),
-          type: 'danger',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 12),
+          type: "warning",
         },
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 29),
-          type: 'success',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 16),
+          type: "danger",
         },
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 29),
-          type: 'warning',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 29),
+          type: "success",
         },
         {
-          date: new Date(2024, 10 + Math.floor(Math.random() * 2), 29),
-          type: 'info',
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 29),
+          type: "warning",
+        },
+        {
+          date: new Date(2024, 1 + Math.floor(Math.random() * 12), 29),
+          type: "info",
         },
       ])
       return { picker, active, active2, active3, events, selected }
