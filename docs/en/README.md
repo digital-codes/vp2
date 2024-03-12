@@ -6,6 +6,8 @@
   <VueDatePick></VueDatePick>
 </ClientOnly>
 
+## Oruga Dropdown
+<OrugaDrop />
 
 ## Oruga Notifcation
 

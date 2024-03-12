@@ -125,6 +125,7 @@ export default defineUserConfig({
           OrugaDatePick: path.resolve(__dirname, './components/OrugaDatePick.vue'),
           OrugaNotify: path.resolve(__dirname, './components/OrugaNotify.vue'),
           OrugaUpload: path.resolve(__dirname, './components/OrugaUpload.vue'),
+          OrugaDrop: path.resolve(__dirname, './components/OrugaDrop.vue'),
           DownLoad: path.resolve(__dirname, './components/DownLoad.vue'),
           //
           CardComp: path.resolve(__dirname, './components/CardComp.vue'),
