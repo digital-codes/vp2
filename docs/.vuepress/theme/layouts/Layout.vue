@@ -1,17 +1,5 @@
 <script setup>
-//import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
-
-//import { usePageData, usePageFrontmatter } from 'vuepress/client'
-//import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
-//const page = usePageData()
-//console.log("Page",page.filePathRelative)
-//const frontmatter = usePageFrontmatter()
-//console.log("Front",frontmatter)
-//const themeLocale = useThemeLocaleData()
-//console.log("local",themeLocale)
-
-// see https://v2.vuepress.vuejs.org/reference/default-theme/extending.html#layout-slots
 
 </script>
 

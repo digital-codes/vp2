@@ -3,20 +3,16 @@ import { useRouteLocale } from 'vuepress/client'
 
 import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client' 
 
-
+import Navbar from '@theme/Navbar.vue'
 
 const routeLocale = useRouteLocale()
+const themeLocale = useThemeLocaleData()
 
-const themeLocale  = useThemeLocaleData()
-
-const homeLink = themeLocale.value.home ?? routeLocale.value
-const homeText = themeLocale.value.backToHome ?? 'Back to home'
 const messages = themeLocale.value.notFound ?? ['Not Found']
 const getMsg = (): string =>
   messages[Math.floor(Math.random() * messages.length)]
-
-import Navbar from '@theme/Navbar.vue'
-
+const homeLink = themeLocale.value.home ?? routeLocale.value
+const homeText = themeLocale.value.backToHome ?? 'Back to home'
 
 </script>
 

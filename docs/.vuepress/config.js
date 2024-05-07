@@ -6,7 +6,7 @@ import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { palettePlugin } from '@vuepress/plugin-palette'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { localTheme } from './theme'
-import { defaultTheme } from '@vuepress/theme-default'
+//import { defaultTheme } from '@vuepress/theme-default'
 
 import footnote from "markdown-it-footnote"
 
