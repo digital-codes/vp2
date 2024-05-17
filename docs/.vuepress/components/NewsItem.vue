@@ -66,11 +66,11 @@ export default defineComponent( {
     // overwrite if we are running in dev mode from localhost
     var host = location.host.split(":")[0];
     if ("localhost" == host) {
-    console.log("Host: " + host);
+    console.log("Localhost: " + host);
     baseUrl = "http://localhost:9000" + baseUrl;
     // dev mode only, needs server on port 9000 in docs/.vuepress/public/
     } else {
-    console.log("host:",host)
+    console.log("Host:",host)
     }
     const NI = getId()
     var url = baseUrl + String(NI); //newsId
