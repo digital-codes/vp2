@@ -140,7 +140,7 @@ export default defineUserConfig({
           GeoMapS: path.resolve(__dirname, './components/GeoMapSimple.vue'),
           VideoCardS: path.resolve(__dirname, './components/VideoCardSimple.vue'),
           //
-          NewsItem: path.resolve(__dirname, './components/NewsItem.vue'),
+          NewsItem: path.resolve(__dirname, './components/NewsItem2.vue'),
           //
           VueDatePick: path.resolve(__dirname, './components/VueDatePick.vue'),
 
