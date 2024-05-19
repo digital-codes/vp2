@@ -33,6 +33,7 @@ fd
 fwefwef
 
 <!--
+--> 
 
 ## Image Compare
 
@@ -41,5 +42,7 @@ fwefwef
   img2="/images/ohnePlatanen.jpg"
   >
   </ImageCompare>
--->
+
+
+<!-- -->
 

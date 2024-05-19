@@ -143,6 +143,8 @@ export default defineUserConfig({
           NewsItem: path.resolve(__dirname, './components/NewsItem.vue'),
           //
           VueDatePick: path.resolve(__dirname, './components/VueDatePick.vue'),
+          //
+          ImageCompare: path.resolve(__dirname, './components/ImageCompare.vue'),
 
         },
       }),
