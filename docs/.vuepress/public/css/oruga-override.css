@@ -3,4 +3,23 @@
     --oruga-variant-primary: green;
     --oruga-variant-danger: red;
     */
+    --oruga-variant-success: green;
+    --oruga-variant-warning: yellow;
+    --oruga-variant-danger: red;
+    --oruga-variant-error: blue;
+    .o-dpck__table__event {
+      background-color: var(--oruga-variant-error);
+    }
+  .o-dpck__table__event--success {
+      background-color: var(--oruga-variant-success);
   }
+  .o-dpck__table__event--error {
+    background-color: var(--oruga-variant-error);
+}
+.o-dpck__table__event--warning {
+  background-color: var(--oruga-variant-warning);
+}
+.o-dpck__table__event--danger {
+  background-color: var(--oruga-variant-danger);
+}
+}

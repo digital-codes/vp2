@@ -9,7 +9,10 @@ import Oruga from "@oruga-ui/oruga-next";
 // import Oruga theme styling
 // minimal or full ...
 // import '@oruga-ui/theme-oruga/dist/oruga.css'
-import '@oruga-ui/theme-oruga/dist/oruga-full.min.css'
+// import '@oruga-ui/theme-oruga/dist/oruga-full.min.css'
+// theme 0.3.0 changes to oruga.min.css
+import '@oruga-ui/theme-oruga/dist/oruga.min.css'
+
 
 // oruga customization  see 
 // https://oruga-ui.com/documentation/themes
