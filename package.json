@@ -44,7 +44,7 @@
     "@vuepress/plugin-register-components": "2.0.0-rc.30",
     "@vuepress/plugin-theme-data": "2.0.0-rc.30",
     "@vuepress/theme-default": "2.0.0-rc.30",
-    "axios": "^1.6.8",
+    "axios": "^1.7.1",
     "css-loader": "^7.1.1",
     "echarts": "^5.5.0",
     "echarts-gl": "^2.0.9",
