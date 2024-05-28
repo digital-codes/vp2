@@ -1,6 +1,5 @@
 import { defineUserConfig } from 'vuepress'
 
-// beta.51: require replaced by import
 import { path } from 'vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { palettePlugin } from '@vuepress/plugin-palette'
@@ -145,7 +144,8 @@ export default defineUserConfig({
           VueDatePick: path.resolve(__dirname, './components/VueDatePick.vue'),
           //
           ImageCompare: path.resolve(__dirname, './components/ImageCompare.vue'),
-
+          // Formkit
+          FormTest: path.resolve(__dirname, './components/FormTest.vue'),
         },
       }),
     ],

@@ -96,6 +96,15 @@ library.add(faCheck,
 )
 
 
+// if using formkit
+
+import { plugin as formPlugin } from '@formkit/vue'
+import { defaultConfig as formConfig } from '@formkit/vue'
+import formCfg from './formConfig.js'
+// see https://formkit.com/essentials/internationalization
+// for changing formkit locales
+
+
 export default defineClientConfig({
   enhance({ app, router, siteData }) {
     //app.use(somthing, {someOptions})
@@ -110,6 +119,9 @@ export default defineClientConfig({
       iconPack:"fas",
       iconComponent:"font-awesome-icon",
     })
+
+    // formkit
+    app.use(formPlugin, formConfig(formCfg))
 
   },
   setup() {},

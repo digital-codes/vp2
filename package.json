@@ -27,6 +27,8 @@
     "@deck.gl/geo-layers": "^8.9.36",
     "@deck.gl/layers": "^8.9.36",
     "@deck.gl/mesh-layers": "^8.9.36",
+    "@formkit/themes": "^1.6.5",
+    "@formkit/vue": "^1.6.5",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
