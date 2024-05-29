@@ -22,4 +22,9 @@
 .o-dpck__table__event--danger {
   background-color: var(--oruga-variant-danger);
 }
+/* with formkit, form messages are list items. disable decoration */
+.o-field__message {
+  list-style-type: none; 
+}
+
 }

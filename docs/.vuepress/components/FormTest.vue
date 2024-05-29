@@ -4,6 +4,10 @@
 import { FormKitSchema } from "@formkit/vue";
 import { ref } from "vue";
 
+// for styling see 
+// https://formkit.com/essentials/styling
+// scoped styles not possible?
+
 // form lang 
 import { useClientData } from 'vuepress/client'
 import { changeLocale } from '@formkit/vue'
@@ -20,10 +24,6 @@ changeLocale(lang.value)
 
 
 const schema = [
-    {
-        $el: "h3",
-        children: "FormKit Playground",  
-    },
   {
     $formkit: "text",
     name: "name",
@@ -45,7 +45,7 @@ const schema = [
     label: "Email",
     if: "$hasEmail",
     validation: "required|email",
-  },
+  }
 ];
 
 const data = ref({
@@ -65,8 +65,20 @@ const handleSubmit = () => alert("Valid submit!");
   <FormKitSchema :schema="schema" :data="data" />
 </FormKit>
 
+
 <pre>
 {{ data }}
 </pre>
 </template>
 
+<style>
+.half {
+  border: solid 2px green;
+}
+.half2 {
+  border: solid 2px blue;
+}
+.half3 {
+  border: solid 2px red;
+}
+</style>

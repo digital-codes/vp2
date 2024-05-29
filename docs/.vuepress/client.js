@@ -103,7 +103,7 @@ import { defaultConfig as formConfig } from '@formkit/vue'
 import formCfg from './formConfig.js'
 // see https://formkit.com/essentials/internationalization
 // for changing formkit locales
-
+console.log(formCfg)
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {
