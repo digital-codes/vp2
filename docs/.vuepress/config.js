@@ -2,7 +2,7 @@ import { defineUserConfig } from 'vuepress'
 
 import { path } from 'vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-import { palettePlugin } from '@vuepress/plugin-palette'
+//import { palettePlugin } from '@vuepress/plugin-palette'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { localTheme } from './theme'
 //import { defaultTheme } from '@vuepress/theme-default'
@@ -108,6 +108,11 @@ export default defineUserConfig({
         backToHome: "Back",
       },
     },
+    /* theme plugins:  zoom config here doesn't work*/
+    themePlugins: {
+      // options here ...
+      mediumZoom: false
+    }
   }),
   /* */
   extendsMarkdown: (md) => {
@@ -149,11 +154,13 @@ export default defineUserConfig({
         },
       }),
     ],
+    /*
     [
       palettePlugin({
         // options
       }),
     ],
+    */
     [
       mediumZoomPlugin({
         selector: 'img.zoomable',
@@ -188,6 +195,6 @@ export default defineUserConfig({
     },
   }
   */
- ),
+  ),
 })
 

@@ -1,5 +1,10 @@
 import { defineClientConfig } from 'vuepress/client'
 
+
+// additonal fonts
+import './public/css/fonts.css'
+
+
 // example. so far unused
 // import something from somthing
 
@@ -11,16 +16,11 @@ import Oruga from "@oruga-ui/oruga-next";
 // import '@oruga-ui/theme-oruga/dist/oruga.css'
 // import '@oruga-ui/theme-oruga/dist/oruga-full.min.css'
 // theme 0.3.0 changes to oruga.min.css
-import '@oruga-ui/theme-oruga/dist/oruga.min.css'
-
+import '@oruga-ui/theme-oruga/dist/oruga.css'
 
 // oruga customization  see 
 // https://oruga-ui.com/documentation/themes
 import "./public/css/oruga-override.css"
-
-// additonal fonts
-import './public/css/fonts.css'
-
 
 import Layout from './theme/layouts/Layout.vue'
 import NotFound from './theme/layouts/NotFound.vue'
