@@ -5,7 +5,6 @@ import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
 // import Navbar from '@theme/VPNavbar.vue'
 import VPNavbar from '@theme/VPNavbar.vue'
-import VPPage from '@theme/VPPage.vue'
 
 const routeLocale = useRouteLocale()
 const themeLocale = useThemeLocaleData()
@@ -19,7 +18,6 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
 defineSlots<{
   'navbar'?: (props: Record<never, never>) => any
   'page'?: (props: Record<never, never>) => any
-  'page-content-top'?: (props: Record<never, never>) => any
 }>()
 
 
@@ -33,24 +31,18 @@ defineSlots<{
       </VPNavbar>
     </slot>
 
-      <slot name="page">
-        <VPPage :key="404">
-          <template #top>
-            <slot name="page-content-top" />
-            <main class="page">
-              <div class="theme-default-content">
-                <h1>404</h1>
+    <slot name="page">
+      <main class="vp-page">
+        <div class="theme-default-content">
+          <h1>404</h1>
 
-                <blockquote>{{ getMsg() }}</blockquote>
+          <blockquote>{{ getMsg() }}</blockquote>
 
-                <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
+          <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
 
-              </div>
-            </main>
-          </template>
-      </VPPage>
-      </slot>
-
+        </div>
+      </main>
+    </slot>
 
     <div class="my-footer">This is my custom page footer</div>
 
@@ -89,4 +81,3 @@ div .not-found .vp-toggle-sidebar-button {
 @import '../../styles/palette.scss';
 @import '../../styles/index.scss';
 </style>
-
