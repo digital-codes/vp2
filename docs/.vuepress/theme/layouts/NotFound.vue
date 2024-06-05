@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { useRouteLocale } from 'vuepress/client'
 
-import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client' 
+import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
 
-import Navbar from '@theme/Navbar.vue'
+// import Navbar from '@theme/VPNavbar.vue'
+import VPNavbar from '@theme/VPNavbar.vue'
+import VPPage from '@theme/VPPage.vue'
 
 const routeLocale = useRouteLocale()
 const themeLocale = useThemeLocaleData()
@@ -14,38 +16,45 @@ const getMsg = (): string =>
 const homeLink = themeLocale.value.home ?? routeLocale.value
 const homeText = themeLocale.value.backToHome ?? 'Back to home'
 
+defineSlots<{
+  'navbar'?: (props: Record<never, never>) => any
+  'page'?: (props: Record<never, never>) => any
+  'page-content-top'?: (props: Record<never, never>) => any
+}>()
+
+
 </script>
 
 <template>
-  <div
-    class="theme-container not-found"
-  >
+  <div class="vp-theme-container not-found no-sidebar">
+
     <slot name="navbar">
-      <Navbar>
-        <template #before>
-          <slot name="navbar-before" />
-        </template>
-        <template #after>
-          <slot name="navbar-after" />
-        </template>
-      </Navbar>
+      <VPNavbar>
+      </VPNavbar>
     </slot>
 
-  <div class="theme-container">
-    <main class="page">
-      <div class="theme-default-content">
-        <h1>404</h1>
+      <slot name="page">
+        <VPPage :key="404">
+          <template #top>
+            <slot name="page-content-top" />
+            <main class="page">
+              <div class="theme-default-content">
+                <h1>404</h1>
 
-        <blockquote>{{ getMsg() }}</blockquote>
+                <blockquote>{{ getMsg() }}</blockquote>
 
-        <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
-      </div>
-    </main>
+                <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
+
+              </div>
+            </main>
+          </template>
+      </VPPage>
+      </slot>
+
+
+    <div class="my-footer">This is my custom page footer</div>
+
   </div>
-
-  <div class="my-footer">This is my custom page footer</div>
-
-</div>
 </template>
 
 
@@ -54,9 +63,10 @@ const homeText = themeLocale.value.backToHome ?? 'Back to home'
   text-align: center;
 }
 
-div .not-found .toggle-sidebar-button {
+div .not-found .vp-toggle-sidebar-button {
   display: none;
 }
+
 
 @media (max-width: 419px) {
   div .not-found .navbar {
@@ -69,7 +79,6 @@ div .not-found .toggle-sidebar-button {
     padding-left: 2rem;
   }
 }
-
 </style>
 
 <style lang="scss">
@@ -79,8 +88,5 @@ div .not-found .toggle-sidebar-button {
 // override  some ...
 @import '../../styles/palette.scss';
 @import '../../styles/index.scss';
-
-
-
 </style>
 
