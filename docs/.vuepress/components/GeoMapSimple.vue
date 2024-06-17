@@ -73,14 +73,42 @@ import * as L from "leaflet"
 
 const latLng = function (x, y) { return { lat: x, lon: y } }
 
+/*
+stadia maps:
+https://docs.stadiamaps.com/map-styles/alidade-satellite/#__tabbed_1_2
+
+attribution:
+&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>
+&copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a>
+&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>
+
+
+&copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a>
+
+© CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data)
+
+
+tiles:
+https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png
+https://tiles-eu.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg
+https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png
+
+*/
+
+
 export default {
   data: () => ({
     // new
     zoom: 13,
     center: latLng(48.9984, 8.402),
+    /*
     url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
     attribution:
       '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      */
+      url:"https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
+      attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
     //withPopup: latLng(48.995, 8.4),
     //withTooltip: latLng(49., 8.42),
     currentZoom: 11.5,

@@ -12,7 +12,7 @@
     </template>
 
     <template #footer>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+        Dynamic card using deck.gl and OSM tiles, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>
     </template>
 
     </CardComp >
@@ -181,7 +181,8 @@ export default defineComponent({
         this.tiles = await new TileLayer({
         // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
         id: 'TileLayer',
-        data: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        //data: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        data: 'https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}@2x.png',
 
         zoom: this.INITIAL_VIEW_STATE.zoom,
         minZoom: this.INITIAL_VIEW_STATE.minZoom,
@@ -199,7 +200,7 @@ export default defineComponent({
             } = props.tile;
 
             return new BitmapLayer(props, {
-            data: null,
+                data: null,
             image: props.data,
             bounds: [west, south, east, north]
             });
