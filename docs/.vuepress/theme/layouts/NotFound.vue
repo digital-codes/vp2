@@ -24,7 +24,7 @@ defineSlots<{
 </script>
 
 <template>
-  <div class="vp-theme-container not-found no-sidebar">
+<div class="vp-theme-container not-found no-sidebar">
 
     <slot name="navbar">
       <VPNavbar>
