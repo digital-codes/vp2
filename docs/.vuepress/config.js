@@ -138,7 +138,7 @@ export default defineUserConfig({
           FlexContainer: path.resolve(__dirname, './components/FlexContainer.vue'),
           BikeDeck: path.resolve(__dirname, './components/DeckChart.vue'),
           CharT1S: path.resolve(__dirname, './components/CharT1Simple.vue'),
-          CharT5S: path.resolve(__dirname, './components/CharT5Simple.vue'),
+          CharT5S: path.resolve(__dirname, './components/CharT5Simple2.vue'),
           CharT6S: path.resolve(__dirname, './components/CharT6Simple.vue'),
           CharT7S: path.resolve(__dirname, './components/CharT7Simple.vue'),
           GeoMapS: path.resolve(__dirname, './components/GeoMapSimple.vue'),
