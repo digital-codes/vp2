@@ -18,7 +18,10 @@ import CardComp from './CardComp.vue'
 const chartOptions = {
     aria: {
         enabled: true,
-        show: true
+        show: true,
+        decal: {
+            show: true
+        },
     },
     textStyle: {
         fontFamily: "Palanquin",

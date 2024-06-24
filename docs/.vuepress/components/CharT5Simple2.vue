@@ -86,7 +86,14 @@ var data = [[0, 0, 5], [0, 1, 1], [0, 2, 0], [0, 3, 0], [0, 4, 0], [0, 5, 0], [0
 const option = ref({
     aria: {
         enabled: true,
-        show: true
+        show: true,
+        decal: {
+            show: true,
+            decals: {
+                size: .5,
+                symbol: ['circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'],
+            }
+        }
     },
     textStyle: {
         fontFamily: "Palanquin",

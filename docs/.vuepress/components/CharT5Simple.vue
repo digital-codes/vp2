@@ -58,8 +58,11 @@ export default {
         return {
             option: {
                 aria: {
-                    enabled: true,
+                enabled: true,
+                show: true,
+                decal: {
                     show: true
+                    }
                 },
                 textStyle: {
                     fontFamily:"Palanquin",

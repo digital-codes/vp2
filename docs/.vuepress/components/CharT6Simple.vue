@@ -61,7 +61,15 @@ Later on, we can do further updates, example here with fakeUpdate()
 const chartOptions  = {
     aria: {
         enabled: true,
-        show: true
+        show: true,
+        decal: {
+            show: false,
+            decals: {
+                size: .5,
+                symbol: 'diamond',
+                //symbol: ['circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none']
+            }
+        },
     },
     textStyle: {
         fontFamily:"Palanquin",
