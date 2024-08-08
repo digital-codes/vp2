@@ -53,6 +53,7 @@ import {
     TitleComponent,
     TooltipComponent,
     LegendComponent,
+    VisualMapComponent,
 } from 'echarts/components';
 import { use } from 'echarts/core';
 
@@ -62,6 +63,7 @@ use([
     TitleComponent,
     TooltipComponent,
     LegendComponent,
+    VisualMapComponent,
 ]);
 
 

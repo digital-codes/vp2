@@ -1,10 +1,28 @@
 
 <script setup>
 
-import * as echarts from 'echarts';
-import { VueEcharts } from 'vue3-echarts';
-
 import 'echarts-wordcloud';
+import VChart from 'vue-echarts';
+// echart stuff for vue-echarts
+import { CanvasRenderer } from 'echarts/renderers';
+//import { PieChart } from 'echarts/charts';
+import {
+    TitleComponent,
+    TooltipComponent,
+    LegendComponent,
+    VisualMapComponent,
+} from 'echarts/components';
+
+import { use } from 'echarts/core';
+
+use([
+    CanvasRenderer,
+    //PieChart,
+    TitleComponent,
+    TooltipComponent,
+    LegendComponent,
+    VisualMapComponent,
+]);
 
 //import { VueEcharts } from 'vue3-echarts';
 //import axios from 'axios'
@@ -14,50 +32,6 @@ import { onBeforeMount } from 'vue'
 
 import DownLoad from './DownLoad.vue'
 import CardComp from './CardComp.vue'
-
-const chartOptions = {
-    aria: {
-        enabled: true,
-        show: true,
-        decal: {
-            show: true
-        },
-    },
-    textStyle: {
-        fontFamily: "Palanquin",
-    },
-    title: {
-        text: "Wordcloud 123456",
-        left: "center",
-    },
-    tooltip: {},
-    series: [{
-        type: 'wordCloud',
-        gridSize: 2,
-        sizeRange: [12, 50],
-        rotationRange: [-90, 90],
-        shape: 'pentagon',
-        width: 600,
-        height: 400,
-        drawOutOfBound: true,
-        textStyle: {
-            color: function () {
-                return 'rgb(' + [
-                    Math.round(Math.random() * 160),
-                    Math.round(Math.random() * 160),
-                    Math.round(Math.random() * 160)
-                ].join(',') + ')';
-            }
-        },
-        emphasis: {
-            textStyle: {
-                shadowBlur: 10,
-                shadowColor: '#333',
-            }
-        },
-        data: []
-    }]
-};
 
 const chartData = [
     {
@@ -150,10 +124,56 @@ const chartData = [
     }
 ];
 
-const chart = ref(null)
-const options = ref(chartOptions)
+const option = ref({
+    aria: {
+        enabled: true,
+        show: true,
+        decal: {
+            show: true
+        },
+    },
+    textStyle: {
+        fontFamily: "Palanquin",
+    },
+    title: {
+        text: "Wordcloud 123456",
+        left: "center",
+    },
+    tooltip: {},
+    series: [{
+        type: 'wordCloud',
+        gridSize: 2,
+        sizeRange: [12, 50],
+        rotationRange: [-90, 90],
+        shape: 'pentagon',
+        width: 600,
+        height: 400,
+        drawOutOfBound: true,
+        textStyle: {
+            color: function () {
+                return 'rgb(' + [
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160),
+                    Math.round(Math.random() * 160)
+                ].join(',') + ')';
+            }
+        },
+        emphasis: {
+            textStyle: {
+                shadowBlur: 10,
+                shadowColor: '#333',
+            }
+        },
+        data: 
+            chartData
+        
+    }]
+}
+)
 
-options.value.series[0].data = chartData
+
+const chart = ref(null)
+const theme = ref("light")
 
 const dataLoaded = ref(false)
 const downData = ref([])
@@ -182,7 +202,7 @@ onBeforeMount(() => {
         </template>
 
         <template #default>
-            <vue-echarts :option="options" class="chart" autoresize ref="chart" aria-role="meter" />
+            <v-chart class="chart" :option="option" aria-role="meter" ref="theChart" :theme="theme" autoresize />
         </template>
 
         <template #footer v-if="dataLoaded">

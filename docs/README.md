@@ -277,8 +277,11 @@ it greenlighted before working on i"
 </GeoMapS>
 </ClientOnly>
 
+
 ## Chart 1
+<ClientOnly>
 <CharT1S></CharT1S>
+</ClientOnly>
 
 <!-- 
 Chart5 needs client-only due to architecture of echarts-gl
@@ -291,7 +294,9 @@ Chart5 needs client-only due to architecture of echarts-gl
 
 
 ## Chart 6
+<ClientOnly>
 <CharT6S></CharT6S>
+</ClientOnly>
 
 
 <!-- 
