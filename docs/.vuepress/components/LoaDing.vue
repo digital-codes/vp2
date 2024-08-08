@@ -4,12 +4,20 @@ const props = defineProps({
   icon: String,
 })
 
+import { ref, onMounted } from 'vue'
+
+const mounted = ref(false)
+
+onMounted(() => {
+  mounted.value = true
+})
+
 
 </script>
 
 <template>
 
-<span 
+<span v-if="mounted"
   class="loading"
   >
   <slot></slot>

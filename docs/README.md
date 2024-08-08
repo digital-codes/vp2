@@ -81,8 +81,7 @@ Loading Spinner
 
 <LoaDing size="2x" icon="spinner">123</LoaDing>
 <LoaDing size="2x" icon="spinner">123</LoaDing>
-<!-- 
---> 
+
 
 #### Direct load
 **Direct icon use in markdown works in dev mode (surprisingly) but for build we have to use the IconComponent or wrap in some html tag like span or div**
@@ -96,36 +95,11 @@ Error:
 > Hydration completed but contains mismatches.
 
 
-<!-- 
-<span>
-one: <font-awesome-icon :icon="['fas', 'user-secret']" />
-</span>
-<span>
-one: <font-awesome-icon :icon="['fas', 'user-secret']" />
-</span>
-<span>
-two: <font-awesome-icon :icon="['fab', 'twitter']" />
-</span>
-<span>
-three: <font-awesome-icon :icon="['fas', 'gear']" spin />
-</span>
-<span>
-three: <font-awesome-icon :icon="['fas', 'gear']" spin />
-</span>
-<span>
-four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
-</span>
-<span>
-four: <font-awesome-icon :icon="['fab', 'github']" color="red" size="2x"/>
-</span>
-<span>
-five: <font-awesome-icon :icon="['fab', 'twitter']" color="green" size="4x"/>
-</span>
--->
 
 followed by component: 
 
 <FaIcon icon="twitter" type="brands" size="6x" mode="action"/>
+
 
 
 # Images
@@ -183,6 +157,7 @@ change content witdh in node_modules/@vuepress/theme-default/lib/client/styles/v
         Here's some contact info
     </template>
 </CardComp>
+
 
 ## Markdown Card
 
@@ -252,7 +227,6 @@ Provide convincing reason to add this feature. Ideally you should open a suggest
 it greenlighted before working on i"
   >
 </MdCard>
-
 
 
 ## Card Container

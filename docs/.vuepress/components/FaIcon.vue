@@ -1,5 +1,7 @@
 <script setup>
-import { computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+
+const mounted = ref(false)
 
 const color = computed(() => {
   switch (mode) {
@@ -22,12 +24,15 @@ const props = defineProps({
   mode: String, // text, info, action
 })
 
+onMounted(() => {
+  mounted.value = true
+})
 
 </script>
 
 <template>
 
-<span 
+<span v-if="mounted"
   class="icon"
   >
   <font-awesome-icon v-if="type == 'solid'" :icon="'fa-solid fa-' + icon" :size="size" :class="mode"></font-awesome-icon> 

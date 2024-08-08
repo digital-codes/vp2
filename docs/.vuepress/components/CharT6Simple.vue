@@ -67,7 +67,7 @@ use([
 
 
 
-import { ref, onBeforeMount, onUnmounted } from 'vue';
+import { ref, onBeforeMount, onMounted, onUnmounted } from 'vue';
 
 import CardComp from './CardComp.vue'
 
@@ -167,7 +167,7 @@ const fakeTimer = ref(null)
 
 const mapLoaded = ref(false)
 
-onBeforeMount(async () => {
+onMounted(async () => {
     // initialize map in before mount
     console.log("Before  mount")
     // load map data
