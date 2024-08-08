@@ -22,11 +22,12 @@
     "vuepress": "2.0.0-rc.14"
   },
   "dependencies": {
-    "@deck.gl/core": "^8.9.36",
-    "@deck.gl/extensions": "^8.9.36",
-    "@deck.gl/geo-layers": "^8.9.36",
-    "@deck.gl/layers": "^8.9.36",
-    "@deck.gl/mesh-layers": "^8.9.36",
+    "deck.gl": "^9.0.26",
+    "@deck.gl/core": "^9.0.26",
+    "@deck.gl/extensions": "^9.0.26",
+    "@deck.gl/layers": "^9.0.26",
+    "@deck.gl/mesh-layers": "^9.0.26",
+    "@deck.gl/geo-layers": "^9.0.26",
     "@formkit/themes": "^1.6.5",
     "@formkit/vue": "^1.6.5",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
