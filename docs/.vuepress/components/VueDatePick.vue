@@ -2,7 +2,7 @@
   <!-- 
   <font-awesome-icon class="calIcon" icon="fa-regular fa-calendar-days" size="xl" pull="left" @click="$refs.picker.toggle()"/>
   -->
-  <VueDatePicker
+  <VueDatePicker 
     v-model="theDate" 
     ref="pkr"
     :locale="localeString" :cancelText="cancelString" :selectText="selectString"
@@ -31,11 +31,13 @@
   import { de } from 'date-fns/locale';
   import { enUS } from 'date-fns/locale';
   // -----
-  import { ref, computed, watch } from "vue"
+  import { ref, computed, watch, onMounted } from "vue"
   // import { useThemeLocaleData } from '@vuepress/plugin-theme-data/client'
   //import { useDarkMode } from '@vuepress/plugin-theme-data/client'
 
   import { useClientData } from 'vuepress/client'
+
+  const mounted = ref(false)
 
   const theDate = ref(new Date())
   const pkr = ref(null)
@@ -85,6 +87,10 @@
   const cancelString = computed(() => {
     return lang.value == "de"?"abbrechen":"cancel"
   })
+
+onMounted(() => {
+  mounted.value = true
+})
 
 </script>
 
