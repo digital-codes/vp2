@@ -38,7 +38,7 @@
     "@oruga-ui/oruga-next": "^0.9.0-pre.1",
     "@oruga-ui/theme-oruga": "^0.4.1",
     "@types/dompurify": "^3.0.5",
-    "@vuepic/vue-datepicker": "^9.0.2",
+    "@vuepic/vue-datepicker": "^9.0.3",
     "@vuepress/bundler-vite": "2.0.0-rc.15",
     "@vuepress/plugin-medium-zoom": "2.0.0-rc.42",
     "@vuepress/plugin-palette": "2.0.0-rc.42",
@@ -46,7 +46,7 @@
     "@vuepress/plugin-register-components": "2.0.0-rc.42",
     "@vuepress/plugin-theme-data": "2.0.0-rc.42",
     "@vuepress/theme-default": "2.0.0-rc.42",
-    "axios": "^1.7.3",
+    "axios": "^1.7.7",
     "css-loader": "^7.1.2",
     "deck.gl": "^9.0.26",
     "echarts-gl": "^2.0.9",
@@ -54,7 +54,7 @@
     "isomorphic-dompurify": "^2.13.0",
     "marked": "^13.0.2",
     "node-sass": "^9.0.0",
-    "vue-echarts": "^7.0.1",
+    "vue-echarts": "^7.0.3",
     "vue3-markdown-it": "^1.0.10"
   }
 }
