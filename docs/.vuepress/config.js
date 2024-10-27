@@ -151,6 +151,8 @@ export default defineUserConfig({
           ImageCompare: path.resolve(__dirname, './components/ImageCompare.vue'),
           // Formkit
           FormTest: path.resolve(__dirname, './components/FormTest.vue'),
+          // JsFomrs
+          JsForm: path.resolve(__dirname, './components/JsForm.vue'),
         },
       }),
     ],
