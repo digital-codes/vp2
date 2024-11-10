@@ -108,7 +108,11 @@ export default {
       */
       url:"https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
       attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+      '\
+      &copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>|\
+      &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a>|\
+      &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>\
+      ',
     //withPopup: latLng(48.995, 8.4),
     //withTooltip: latLng(49., 8.42),
     currentZoom: 11.5,
