@@ -24,8 +24,13 @@ import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 //@import '@vuepress/plugin-palette/palette';
 
 // override  some ...
+/*
 @import '../../styles/palette.scss';
 @import '../../styles/index.scss';
+*/
+@use "sass:color";
+@use '@/styles/palette.scss';
+@use '@/styles/index.scss';
 
 
 </style>

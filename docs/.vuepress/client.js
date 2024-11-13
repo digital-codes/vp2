@@ -2,7 +2,7 @@ import { defineClientConfig } from 'vuepress/client'
 
 
 // additonal fonts
-import './public/css/fonts.css'
+import '@/styles/fonts.css'
 
 
 // example. so far unused
@@ -20,10 +20,10 @@ import '@oruga-ui/theme-oruga/dist/oruga.css'
 
 // oruga customization  see 
 // https://oruga-ui.com/documentation/themes
-import "./public/css/oruga-override.css"
+import "@/styles/oruga-override.css"
 
-import Layout from './theme/layouts/Layout.vue'
-import NotFound from './theme/layouts/NotFound.vue'
+import Layout from '@/theme/layouts/Layout.vue'
+import NotFound from '@/theme/layouts/NotFound.vue'
 
 
 // fontawesome

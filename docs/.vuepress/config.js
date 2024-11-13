@@ -185,18 +185,30 @@ export default defineUserConfig({
   // bundler options ...
   // SSR now work with vite default settings
   bundler: viteBundler(
-    /*
     {
-    viteOptions: {
+      viteOptions: {
+        css: {
+          preprocessorOptions: {
+            scss: {
+              api: 'modern-compiler', // or "modern", "legacy"
+            },
+          },
+        },
+        resolve: {
+          alias: {
+            '@': path.resolve(__dirname, './')
+          }
+        },
+        /*
              plugins: [visualizer()],
              build: {
                chunkSizeWarningLimit: 1200,
                reportCompressedSize: true,
                minify: true,
              },
-    },
-  }
-  */
+        */
+      },
+    }
   ),
 })
 
