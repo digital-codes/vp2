@@ -18,9 +18,12 @@
     -->
     <template #footer>
         Dynamic card using deck.gl and OSM tiles, 
+        <v-html v-html="mapAttrString"></v-html>
+        <!-- 
       &copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>|
       &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a>|
       &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>
+        -->
 
     </template>
 
@@ -44,6 +47,12 @@ import { TileLayer } from '@deck.gl/geo-layers';
 import { TextLayer } from '@deck.gl/layers';
 
 import { MapView } from '@deck.gl/core';
+
+const mapUrl = "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png"
+const mapAttr = '\
+&copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>|\
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>\
+'
 
 
 const C_INITIAL_VIEW_STATE = {
@@ -191,7 +200,7 @@ export default defineComponent({
         // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
         id: 'TileLayer',
         //data: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-        data: 'https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}@2x.png',
+        data: mapUrl, // 'https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}@2x.png',
 
         zoom: this.INITIAL_VIEW_STATE.zoom,
         minZoom: this.INITIAL_VIEW_STATE.minZoom,
@@ -266,10 +275,11 @@ export default defineComponent({
         const INITIAL_VIEW_STATE = ref(C_INITIAL_VIEW_STATE)
         const LABEL_VIEW_STATE = ref(C_LABEL_VIEW_STATE)
         const deckgl = ref(null)
+        const mapAttrString = ref(mapAttr)
 
         return { cv, deckgl, deck, tiles, tripData, 
         startYear, stopYear, startWeek, tm, speed, 
-        INITIAL_VIEW_STATE,LABEL_VIEW_STATE,
+        INITIAL_VIEW_STATE,LABEL_VIEW_STATE, mapAttrString
         }
     },
 })

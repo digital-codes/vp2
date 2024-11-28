@@ -73,6 +73,13 @@ import * as L from "leaflet"
 
 const latLng = function (x, y) { return { lat: x, lon: y } }
 
+/* OSM
+url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+attribution:
+  '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  */
+
+
 /*
 stadia maps:
 https://docs.stadiamaps.com/map-styles/alidade-satellite/#__tabbed_1_2
@@ -108,31 +115,21 @@ attribution:
 
 */
 
+const mapUrl = "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png"
+const mapAttr = '\
+&copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>|\
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>\
+'
+
+
+
 export default {
   data: () => ({
     // new
     zoom: 13,
     center: latLng(48.9984, 8.402),
-    /*
-    url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-    attribution:
-      '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      */
-      //url:"https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
-      url: "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png",
-      /*
-      attribution:
-      '\
-      &copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>|\
-      &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a>|\
-      &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>\
-      ',
-      */
-      attribution:
-      '\
-      &copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>|\
-      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>\
-      ',
+      url: mapUrl,
+      attribution: mapAttr,
     //withPopup: latLng(48.995, 8.4),
     //withTooltip: latLng(49., 8.42),
     currentZoom: 11.5,
