@@ -95,6 +95,18 @@ https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png
 
 */
 
+/* basemap.de
+raster tiles
+https://sgx.geodatenzentrum.de/web_public/gdz/lizenz/deu/Nutzungsbedingungen_basemapde.pdf
+
+url: "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png",
+attribution:
+'\
+&copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>|\
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>\
+',
+
+*/
 
 export default {
   data: () => ({
@@ -106,12 +118,20 @@ export default {
     attribution:
       '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       */
-      url:"https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
+      //url:"https://tiles-eu.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
+      url: "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png",
+      /*
       attribution:
       '\
       &copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>|\
       &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a>|\
       &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>\
+      ',
+      */
+      attribution:
+      '\
+      &copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>|\
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>\
       ',
     //withPopup: latLng(48.995, 8.4),
     //withTooltip: latLng(49., 8.42),
@@ -187,10 +207,16 @@ navbar is 20, sidebar is 10. stay below!
   z-index: 6;
 }
 
+.leaflet-control-zoom a,
+.leaflet-control-zoom a:hover {
+  color: unset;
+  text-decoration: none !important;
+}
+
 .leaflet-control-attribution a,
 .leaflet-control-attribution a:hover {
   color: unset;
-  text-decoration: none;
+  text-decoration: underline;
 }
 </style>
 
