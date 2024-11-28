@@ -17,7 +17,7 @@
     </template>
     -->
     <template #footer>
-        Dynamic card using deck.gl and OSM tiles, 
+        Dynamic card using deck.gl and map tiles from  
         <v-html v-html="mapAttrString"></v-html>
         <!-- 
       &copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>|
