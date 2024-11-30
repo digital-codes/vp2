@@ -129,6 +129,16 @@ const mapAttr = '\
 &copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>| \
 <a href="https://www.govdata.de/dl-de/by-2-0" target="_blank">Datenlizenz Deutschland - Namensnennung - Version 2.0</a>\
 '
+/* alternatives:
+web_grau
+https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web_grau/default/WEBMERCATOR/10/343/549.png
+web_light
+https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web_light/default/WEBMERCATOR/10/343/549.png
+web_light_grau
+https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web_light_grau/default/WEBMERCATOR/10/343/549.png
+
+*/
+
 
 
 export default {
