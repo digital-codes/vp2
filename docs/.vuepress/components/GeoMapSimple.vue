@@ -115,12 +115,20 @@ attribution:
 
 */
 
+/*
 const mapUrl = "https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png"
 const mapAttr = '\
 &copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>|\
 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>\
 '
-
+*/
+// https://gdz.bkg.bund.de/index.php/default/webdienste/topplusopen-produkte/wmts-topplusopen-wmts-topplus-open.html
+const mapUrl = "https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web/default/WEBMERCATOR/{z}/{y}/{x}.png"
+// © Bundesamt für Kartographie und Geodäsie (aktuelles Jahr), Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/Datenquellen_TopPlusOpen.html
+const mapAttr = '\
+&copy; <a href="https://www.bkg.bund.de" target="_blank">GeoBasis-DE/BKG (' + new Date().getFullYear() +')</a>| \
+<a href="https://www.govdata.de/dl-de/by-2-0" target="_blank">Datenlizenz Deutschland - Namensnennung - Version 2.0</a>\
+'
 
 
 export default {
