@@ -1,11 +1,14 @@
 <script setup>
 import CardComp from './CardComp.vue'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 // iPhone 6se doesn't render vue-markdown,
 // maybe due to memory issues
 // => we use the small "marked" library to save memory
  
 import { marked } from "marked" 
+
+import { useMediumZoom } from '@vuepress/plugin-medium-zoom/client'
+import { nextTick } from 'vue'
 
 // Set options. not needed for version 10 (looks like)
 marked.use({
@@ -53,6 +56,16 @@ const mdImgClass = computed(() => {
         c += " " + "zoomable"
     return c
 })
+
+
+onMounted(() => {
+    const zoom = useMediumZoom()
+    // then you may need to call `refresh` manually to make those new images zoomable
+    nextTick(() => {
+    zoom.refresh()
+    })
+})
+
 
 </script>
 
