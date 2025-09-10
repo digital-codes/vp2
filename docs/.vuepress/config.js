@@ -148,6 +148,8 @@ export default defineUserConfig({
           //
           VueDatePick: path.resolve(__dirname, './components/VueDatePick.vue'),
           //
+          IvmCal: path.resolve(__dirname, './components/IvmCal.vue'),
+          //
           ImageCompare: path.resolve(__dirname, './components/ImageCompare.vue'),
           // Formkit
           FormTest: path.resolve(__dirname, './components/FormTest.vue'),
