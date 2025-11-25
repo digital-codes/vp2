@@ -11,8 +11,10 @@
         :ftr="date"
         :src="getLocale(item.text)"
         :zoom=true
-        :img="item.img"
-        :imgAlt="getLocale(item.alt)"
+        :img="item.img.src"
+        :imgAlt="getLocale(item.img.alt)"
+        :moreLink="item.more ? getLocale(item.more.src) : ''"
+        :moreLabel="item.more ? getLocale(item.more.label) : ''"
         purify=true
         ></MdCard>
     </div>

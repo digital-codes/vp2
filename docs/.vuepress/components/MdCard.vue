@@ -33,6 +33,8 @@ const props = defineProps({
   img: String,
   imgAlt: String,
   zoom: Boolean,
+  moreLink: String,
+  moreLabel: String,
   purify: {
     // normally, we only purify dynamic content (from axios)
     type: Boolean,
@@ -82,7 +84,14 @@ onMounted(() => {
     </template>
 
     <template #footer>
-        {{ ftr }}
+        <div>
+            <div v-if="moreLink">
+                <a :href="moreLink" target="_blank" class="mdmore">{{ moreLabel }}</a>
+            </div>
+            <p>
+            {{ ftr }}
+            </p>
+        </div>
     </template>
 
     </CardComp>
@@ -103,12 +112,22 @@ onMounted(() => {
     max-height:200px;
 }
 
+
 </style>
 
 <style>
 /* remove margin on first paragraf. Not scoped! */
 .mdcontent > p:first-of-type {
     margin-top:0;
+}
+
+.mdmore {
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 2px;
+    text-decoration: none;
+    font-size: 110%;
+    margin-top: 5px;
 }
 
 </style>
