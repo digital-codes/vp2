@@ -2,10 +2,8 @@ import { defineUserConfig } from 'vuepress'
 
 import { path } from 'vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-//import { palettePlugin } from '@vuepress/plugin-palette'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { localTheme } from './theme'
-//import { defaultTheme } from '@vuepress/theme-default'
 
 import footnote from "markdown-it-footnote"
 
@@ -35,24 +33,6 @@ export default defineUserConfig({
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     // fonts, if not loaded via scss/css
     // don't load from external gogle due to GDPR "abmahngefahr"
-    /*
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@200;400;600&display=swap" rel="stylesheet"> 
-    or 
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@200;400;600&display=swap');
-    </style> 
-    or use font faces in index.scss
-
-    CSS rules to specify families
-    font-family: 'Palanquin', sans-serif;
-    */
-    /*
-    ["link", {rel:"preconnect",href:"https://fonts.googleapis.com"}],
-    ["link", {rel:"preconnect",href:"https://fonts.gstatic.com"}],
-    ["link", {rel:"stylesheet",href:"https://fonts.googleapis.com/css2?family=Palanquin:wght@200;400;600&display=swap"}],
-    */
     // devtools
     //["script", { src: "http://localhost:8098" }],
     // ...other tags
@@ -158,13 +138,6 @@ export default defineUserConfig({
         },
       }),
     ],
-    /*
-    [
-      palettePlugin({
-        // options
-      }),
-    ],
-    */
     [
       mediumZoomPlugin({
         selector: 'img.zoomable',
