@@ -51,12 +51,12 @@
     "@vuepress/theme-default": "2.0.0-rc.121",
     "axios": "^1.13.2",
     "css-loader": "^7.1.2",
+    "dart-sass": "^1.25.0",
     "deck.gl": "^9.2.2",
     "echarts-gl": "^2.0.9",
     "echarts-wordcloud": "^2.1.0",
     "isomorphic-dompurify": "^2.33.0",
     "marked": "^15.0.12",
-    "node-sass": "^9.0.0",
     "vue-echarts": "^7.0.3",
     "vue3-markdown-it": "^1.0.10"
   }
