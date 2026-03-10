@@ -4,27 +4,28 @@
         <div v-for="col in COLS" :key="'header-' + col" class="cell header-cell">
             <h3>{{ COL_NAMES[col - 1] }}</h3>
         </div>
+
         <!-- Grid cells (rows 1‑5) -->
         <template v-for="row in ROWS">
             <div v-for="col in COLS" :key="`r${row}c${col}`" class="cell content-cell">
 
-            <div v-if="grid[row - 1][col - 1].valid">                
-                <!-- Row that holds the number **and** the button -->
-                <div class="header-row">
-                    <div class="item-number">#{{ row }}‑{{ col }}</div>
-                    <button @click="addItem(row, col)" class="add-btn">+</button>
-                </div>
-
-
-                <!-- Scrollable list of entries -->
-                <ul class="entry-list">
-                    <div class="list-wrapper">
-                        <li v-for="(entry, idx) in grid[row - 1][col - 1].entries" :key="idx"
-                            @click="handleItemClick(row, col, idx, entry)" class="entry">{{ entry }}</li>
+                <div v-if="grid[row - 1][col - 1].valid">
+                    <!-- Row that holds the number **and** the button -->
+                    <div class="header-row">
+                        <div class="item-number">#{{ row }}‑{{ col }}</div>
+                        <button @click="addItem(row, col)" class="add-btn">+</button>
                     </div>
-                </ul>
-            </div>
-            <div v-else class="cell content-cell empty-cell"/>
+
+
+                    <!-- Scrollable list of entries -->
+                    <ul class="entry-list">
+                        <div class="list-wrapper">
+                            <li v-for="(entry, idx) in grid[row - 1][col - 1].entries" :key="idx"
+                                @click="handleItemClick(row, col, idx, entry)" class="entry">{{ entry }}</li>
+                        </div>
+                    </ul>
+                </div>
+                <div v-else class="cell content-cell empty-cell" />
             </div>
         </template>
     </div>
@@ -59,7 +60,7 @@ type Cell = {
 const grid = reactive<Cell[][]>(Array.from({ length: ROWS }, (_, r) =>
     Array.from({ length: COLS }, (_, c) => ({
         id: `r${r + 1}c${c + 1}`,
-        valid: true,                  // example extra property
+        valid: r * COLS + c < 31 ? true : false,                  // example extra property
         entries: []                     // start empty – you can pre‑populate here
     }))
 ))
@@ -183,36 +184,43 @@ onMounted(() => {
    Header row inside each cell – number centered, button right
    -------------------------------------------------------------- */
 .header-row {
-  display: flex;
-  align-items: center;          /* vertical centering */
-  justify-content: space-between; /* number left, button right */
-  padding: 0 4px;               /* optional tiny horizontal gutter */
+    display: flex;
+    align-items: center;
+    /* vertical centering */
+    justify-content: space-between;
+    /* number left, button right */
+    padding: 0 4px;
+    /* optional tiny horizontal gutter */
 }
 
 /* Center the item number within the space left of the button */
 .item-number {
-  flex: 1;                      /* take all remaining width */
-  text-align: center;           /* centre the text */
-  font-size: 0.85rem;
-  color: #555;
+    flex: 1;
+    /* take all remaining width */
+    text-align: center;
+    /* centre the text */
+    font-size: 0.85rem;
+    color: #555;
 }
 
 /* Small “+” button – keep it compact */
 .add-btn {
-  background: #1976d2;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  width: 24px;
-  height: 24px;
-  min-width: 0;                 /* override default button sizing */
-  padding: 0;
-  font-size: 1.2rem;
-  line-height: 1;
-  cursor: pointer;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    width: 24px;
+    height: 24px;
+    min-width: 0;
+    /* override default button sizing */
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
 }
+
 .add-btn:hover {
-  background: #1565c0;
+    background: #1565c0;
 }
 
 
