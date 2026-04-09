@@ -109,7 +109,7 @@ ffffff e0e0e0e c0c0c0 808080 202020 000000
   --c-text-light: var(--c-text);
   --c-text-lighter: var(--c-text);
   --c-text-lightest: var(--c-text);
-  --c-text-quote: var(#e0e0e0e);
+  --c-text-quote: var(--c-bg);
 
   // border colors
   --c-border: #808080;
@@ -214,7 +214,7 @@ html.dark {
   --c-text-light: var(--c-text);
   --c-text-lighter: var(--c-text);
   --c-text-lightest: var(--c-text);
-  --c-text-quote: var(#e0e0e0e);
+  --c-text-quote: var(--c-bg);
 
   // border colors
   --c-border: #c0c0c0;

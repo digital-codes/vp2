@@ -15,12 +15,12 @@
   "license": "ISC",
   "devDependencies": {
     "@vue-leaflet/vue-leaflet": "^0.10.1",
-    "@vuepress/plugin-sitemap": "2.0.0-rc.125",
+    "@vuepress/plugin-sitemap": "2.0.0-rc.128",
     "esm": "^3.2.25",
     "leaflet": "^1.9.4",
-    "sass-embedded": "^1.97.3",
+    "sass-embedded": "^1.99.0",
     "vp-update": "^2.0.0-rc.30",
-    "vuepress": "2.0.0-rc.26"
+    "vuepress": "2.0.0-rc.28"
   },
   "dependencies": {
     "@deck.gl/core": "^9.2.2",
@@ -42,13 +42,13 @@
     "@oruga-ui/oruga-next": "^0.10.6",
     "@oruga-ui/theme-oruga": "^0.6.0",
     "@vuepic/vue-datepicker": "^11.0.3",
-    "@vuepress/bundler-vite": "2.0.0-rc.26",
-    "@vuepress/plugin-medium-zoom": "2.0.0-rc.125",
-    "@vuepress/plugin-palette": "2.0.0-rc.125",
-    "@vuepress/plugin-pwa": "2.0.0-rc.125",
-    "@vuepress/plugin-register-components": "2.0.0-rc.125",
-    "@vuepress/plugin-theme-data": "2.0.0-rc.125",
-    "@vuepress/theme-default": "2.0.0-rc.125",
+    "@vuepress/bundler-vite": "2.0.0-rc.28",
+    "@vuepress/plugin-medium-zoom": "2.0.0-rc.128",
+    "@vuepress/plugin-palette": "2.0.0-rc.128",
+    "@vuepress/plugin-pwa": "2.0.0-rc.128",
+    "@vuepress/plugin-register-components": "2.0.0-rc.128",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.128",
+    "@vuepress/theme-default": "2.0.0-rc.128",
     "axios": "^1.13.5",
     "css-loader": "^7.1.2",
     "deck.gl": "^9.2.2",
@@ -56,8 +56,11 @@
     "echarts-wordcloud": "^2.1.0",
     "isomorphic-dompurify": "^2.33.0",
     "marked": "^15.0.12",
-    "sass": "^1.97.3",
+    "sass": "^1.99.0",
     "vue-echarts": "^7.0.3",
     "vue3-markdown-it": "^1.0.10"
+  },
+  "overrides": {
+    "serialize-javascript": ">=7.0.5"
   }
 }
